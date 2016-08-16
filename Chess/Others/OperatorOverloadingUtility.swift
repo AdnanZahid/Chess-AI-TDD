@@ -18,6 +18,11 @@ func != (object1: AnyObject!, object2: AnyObject!) -> Bool {
     return !(object_getClassName(object1) == object_getClassName(object2))
 }
 
+func == (object1: Piece, object2: Piece) -> Bool {
+    
+    return object1.id == object2.id
+}
+
 func == (square1: Square!, square2: Square!) -> Bool {
     
     return square1.file == square2.file
@@ -49,7 +54,22 @@ func + (rankIndex: RankIndex, number: Int) -> RankIndex {
     return RankIndex(rawValue: rankIndex.rawValue + number)!
 }
 
+func - (fileIndex: FileIndex, number: Int) -> FileIndex {
+    
+    return FileIndex(rawValue: fileIndex.rawValue - number)!
+}
+
+func - (rankIndex: RankIndex, number: Int) -> RankIndex {
+    
+    return RankIndex(rawValue: rankIndex.rawValue - number)!
+}
+
 func + (square: Square, fileRankPair: (Int, Int)) -> Square {
     
     return Square(file: square.file + fileRankPair.0, rank: square.rank + fileRankPair.1)
+}
+
+func - (square: Square, fileRankPair: (Int, Int)) -> Square {
+    
+    return Square(file: square.file - fileRankPair.0, rank: square.rank - fileRankPair.1)
 }

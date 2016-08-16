@@ -1,5 +1,5 @@
 //
-//  KnightTests.swift
+//  SoloKnightTests.swift
 //  Chess
 //
 //  Created by Adnan Zahid on 8/9/16.
@@ -8,12 +8,12 @@
 
 import XCTest
 
-class KnightTests: XCTestCase {
+class SoloKnightTests: XCTestCase {
     
-    override func tearDown() {
-        super.tearDown()
+    override func setUp() {
+        super.setUp()
         
-        Board.sharedInstance.setupPieceBoard()
+        Board.sharedInstance.setupEmptyBoard()
     }
     
     /////////////////////////////
@@ -22,45 +22,45 @@ class KnightTests: XCTestCase {
     
     func testMoveWhiteKnightFromD4ToE6() {
         
-        kKnight > (D4 > E6)
+        kKnightValue > (D4 > E6)
     }
     
     func testMoveWhiteKnightFromD4ToC2ToE1() {
         
-        (kKnight > (D4 > C2)) > E1
+        (kKnightValue > (D4 > C2)) > E1
     }
     
     func testGetWhiteKnightOnD4() {
         
-        kKnight ?? D4
+        kKnightValue ?? D4
     }
     
     func testPutWhiteKnightOnD4() {
         
-        kKnight >> D4
+        kKnightValue >> D4
     }
     
     /////////////////////////////
     // BLACK KNIGHT TEST CASES //
     /////////////////////////////
     
-    func testMoveBlackKnightFromD4ToE6() {
+    func testMoveBlackKnightValueFromD4ToE6() {
         
-        -kKnight > (D4 > E6)
+        -kKnightValue > (D4 > E6)
     }
     
-    func testMoveBlackKnightFromD4ToC2ToE1() {
+    func testMoveBlackKnightValueFromD4ToC2ToE1() {
         
-        (-kKnight > (D4 > C2)) > E1
+        (-kKnightValue > (D4 > C2)) > E1
     }
     
-    func testGetBlackKnightOnD4() {
+    func testGetBlackKnightValueOnD4() {
         
-        -kKnight ?? D4
+        -kKnightValue ?? D4
     }
     
-    func testPutBlackKnightOnD4() {
+    func testPutBlackKnightValueOnD4() {
         
-        -kKnight >> D4
+        -kKnightValue >> D4
     }
 }

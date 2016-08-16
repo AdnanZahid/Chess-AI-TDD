@@ -1,5 +1,5 @@
 //
-//  BishopTests.swift
+//  SoloBishopTests.swift
 //  Chess
 //
 //  Created by Adnan Zahid on 8/9/16.
@@ -8,12 +8,12 @@
 
 import XCTest
 
-class BishopTests: XCTestCase {
+class SoloBishopTests: XCTestCase {
     
-    override func tearDown() {
-        super.tearDown()
+    override func setUp() {
+        super.setUp()
         
-        Board.sharedInstance.setupPieceBoard()
+        Board.sharedInstance.setupEmptyBoard()
     }
     
     /////////////////////////////
@@ -22,45 +22,45 @@ class BishopTests: XCTestCase {
     
     func testMoveWhiteBishopFromA1ToH8() {
         
-        kBishop > (A1 > H8)
+        kBishopValue > (A1 > H8)
     }
     
     func testMoveWhiteBishopFromH1ToA8() {
         
-        kBishop > (H1 > A8)
+        kBishopValue > (H1 > A8)
     }
     
     func testMoveWhiteBishopFromD4ToE5ToF4() {
         
-        (kBishop > (D4 > E5)) > F4
+        (kBishopValue > (D4 > E5)) > F4
     }
     
     func testGetWhiteBishopOnD4() {
         
-        kBishop ?? D4
+        kBishopValue ?? D4
     }
     
     func testPutWhiteBishopOnD4() {
         
-        kBishop >> D4
+        kBishopValue >> D4
     }
     
     /////////////////////////////
     // BLACK BISHOP TEST CASES //
     /////////////////////////////
     
-    func testMoveBlackBishopFromA1ToH8() {
+    func testMoveBlackBishopValueFromA1ToH8() {
         
-        kBishop > (A1 > H8)
+        kBishopValue > (A1 > H8)
     }
     
-    func testMoveBlackBishopFromH1ToA8() {
+    func testMoveBlackBishopValueFromH1ToA8() {
         
-        kBishop > (H1 > A8)
+        kBishopValue > (H1 > A8)
     }
     
-    func testMoveBlackBishopFromD4ToE5ToF4() {
+    func testMoveBlackBishopValueFromD4ToE5ToF4() {
         
-        (kBishop > (D4 > E5)) > F4
+        (kBishopValue > (D4 > E5)) > F4
     }
 }

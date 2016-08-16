@@ -12,14 +12,19 @@ protocol PieceDelegate: class {
     
 }
 
-class Piece {
+class Piece: Equatable {
+    
+    var symbol: String = kEmptySymbol
     
     var value: Int?
     var color: Color
     var position: Square
     var hasMoved: Bool
+    var id: Int
     
     weak var delegate: PieceDelegate?
+    
+    var possibleMovesToSquaresList: [Square] = []
     
     init(color: Color, position: Square, hasMoved: Bool, delegate: PieceDelegate?) {
         
@@ -28,6 +33,8 @@ class Piece {
         self.hasMoved = hasMoved
         
         self.delegate = delegate
+        
+        id = (position.rank.rawValue * 10) + position.file.rawValue
     }
     
     func move(toSquare: Square) -> Bool {
@@ -47,15 +54,20 @@ class Piece {
     
     func checkForCollisionsInBetween(toSquare: Square, fileRankPair: (Int, Int)) -> Bool {
         
-        var result: Bool = false
+        var result: Bool = true
     
         var positionToCheck: Square = position
         
-        while positionToCheck != toSquare {
+        while positionToCheck != toSquare - getFileAndRankSingleAdvance(fileRankPair) {
             
             positionToCheck = positionToCheck + getFileAndRankSingleAdvance(fileRankPair)
             
-            result = checkIfPieceExistsOnSquare(positionToCheck)
+            result = !checkIfPieceExistsOnSquare(positionToCheck)
+            
+            if result == false {
+                
+                break;
+            }
         }
             
         return result
@@ -65,9 +77,9 @@ class Piece {
         
         if let _ = Board.sharedInstance.getPieceOnPosition(square) {
             
-            return false
+            return true
         }
         
-        return true
+        return false
     }
 }

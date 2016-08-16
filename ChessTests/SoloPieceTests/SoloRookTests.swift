@@ -1,5 +1,5 @@
 //
-//  RookTests.swift
+//  SoloRookTests.swift
 //  Chess
 //
 //  Created by Adnan Zahid on 8/9/16.
@@ -8,12 +8,12 @@
 
 import XCTest
 
-class RookTests: XCTestCase {
+class SoloRookTests: XCTestCase {
     
-    override func tearDown() {
-        super.tearDown()
+    override func setUp() {
+        super.setUp()
         
-        Board.sharedInstance.setupPieceBoard()
+        Board.sharedInstance.setupEmptyBoard()
     }
     
     ///////////////////////////
@@ -22,65 +22,65 @@ class RookTests: XCTestCase {
     
     func testMoveWhiteRookFromD4ToD5() {
         
-        kRook > (D4 > D5)
+        kRookValue > (D4 > D5)
     }
     
     func testMoveWhiteRookFromD4ToD5ToE5() {
         
-        (kRook > (D4 > D5)) > E5
+        (kRookValue > (D4 > D5)) > E5
     }
 
     func testMoveWhiteRookFromF6ToF1() {
         
-        kRook > (F6 > F1)
+        kRookValue > (F6 > F1)
     }
     
     func testMoveWhiteRookFromF6ToF2ToA2() {
         
-        (kRook > (F6 > F2)) > A2
+        (kRookValue > (F6 > F2)) > A2
     }
     
     func testGetWhiteRookOnD4() {
         
-        kRook ?? D4
+        kRookValue ?? D4
     }
     
     func testPutWhiteRookOnD4() {
         
-        kRook >> D4
+        kRookValue >> D4
     }
     
     ///////////////////////////
     // BLACK ROOK TEST CASES //
     ///////////////////////////
     
-    func testMoveBlackRookFromD4ToD5() {
+    func testMoveBlackRookValueFromD4ToD5() {
     
-        kRook > (D4 > D5)
+        kRookValue > (D4 > D5)
     }
     
-    func testMoveBlackRookFromD4ToD5ToE5() {
+    func testMoveBlackRookValueFromD4ToD5ToE5() {
         
-        (kRook > (D4 > D5)) > E5
+        (kRookValue > (D4 > D5)) > E5
     }
     
-    func testMoveBlackRookFromF6ToF1() {
+    func testMoveBlackRookValueFromF6ToF1() {
         
-        kRook > (F6 > F1)
+        kRookValue > (F6 > F1)
     }
     
-    func testMoveBlackRookFromF6ToF2ToA2() {
+    func testMoveBlackRookValueFromF6ToF2ToA2() {
         
-        (kRook > (F6 > F2)) > A2
+        (kRookValue > (F6 > F2)) > A2
     }
     
-    func testGetBlackRookOnD4() {
+    func testGetBlackRookValueOnD4() {
         
-        -kRook ?? D4
+        -kRookValue ?? D4
     }
     
-    func testPutBlackRookOnD4() {
+    func testPutBlackRookValueOnD4() {
         
-        -kRook >> D4
+        -kRookValue >> D4
     }
 }

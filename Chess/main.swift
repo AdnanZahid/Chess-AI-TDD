@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+Board.sharedInstance.printBoard()

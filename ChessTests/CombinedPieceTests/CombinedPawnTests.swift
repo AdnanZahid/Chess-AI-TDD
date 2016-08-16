@@ -1,5 +1,5 @@
 //
-//  PawnTests.swift
+//  CombinedPawnTests.swift
 //  Chess
 //
 //  Created by Adnan Zahid on 8/9/16.
@@ -8,12 +8,12 @@
 
 import XCTest
 
-class PawnTests: XCTestCase {
+class CombinedPawnTests: XCTestCase {
     
-    override func tearDown() {
-        super.tearDown()
+    override func setUp() {
+        super.setUp()
         
-        Board.sharedInstance.setupPieceBoard()
+        Board.sharedInstance.setupEmptyBoard()
     }
     
     ///////////////////////////
@@ -22,45 +22,45 @@ class PawnTests: XCTestCase {
     
     func testMoveWhitePawnFromA2ToA4() {
         
-        kPawn > (A2 > A4)
+        kPawnValue > (A2 > A4)
     }
     
     func testMoveWhitePawnFromA2ToA4ToA5() {
         
-        (kPawn > (A2 > A4)) > A5
+        (kPawnValue > (A2 > A4)) > A5
     }
     
     func testGetWhitePawnOnD4() {
         
-        kPawn ?? D4
+        kPawnValue ?? D4
     }
     
     func testPutWhitePawnOnD4() {
         
-        kPawn >> D4
+        kPawnValue >> D4
     }
     
     ///////////////////////////
     // BLACK PAWN TEST CASES //
     ///////////////////////////
     
-    func testMoveBlackPawnFromG7ToG5() {
+    func testMoveBlackPawnValueFromG7ToG5() {
         
-        -kPawn > (G7 > G5)
+        -kPawnValue > (G7 > G5)
     }
     
-    func testMoveBlackPawnFromG7ToG5ToG4() {
+    func testMoveBlackPawnValueFromG7ToG5ToG4() {
         
-        (-kPawn > (G7 > G5)) > G4
+        (-kPawnValue > (G7 > G5)) > G4
     }
     
-    func testGetBlackPawnOnD4() {
+    func testGetBlackPawnValueOnD4() {
         
-        -kPawn ?? D4
+        -kPawnValue ?? D4
     }
     
-    func testPutBlackPawnOnD4() {
+    func testPutBlackPawnValueOnD4() {
         
-        -kPawn >> D4
+        -kPawnValue >> D4
     }
 }

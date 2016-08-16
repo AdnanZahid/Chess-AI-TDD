@@ -55,39 +55,47 @@ enum Color: Int {
     case black = -1
 }
 
-let kNil    = -1
-let kEmpty  = 0
-let kPawn   = 100
-let kBishop = 305
-let kKnight = 300
-let kRook   = 500
-let kQueen  = 900
-let kKing   = 2000
+let kNewLineSymbol = "\n"
+let kNilSymbol     = "X"
+let kEmptySymbol   = "-"
+let kPawnSymbol    = "P"
+let kKnightSymbol  = "N"
+let kBishopSymbol  = "B"
+let kRookSymbol    = "R"
+let kQueenSymbol   = "Q"
+let kKingSymbol    = "K"
+
+let kNilValue    = -1
+let kEmptyValue  = 0
+let kPawnValue   = 100
+let kKnightValue = 300
+let kBishopValue = 305
+let kRookValue   = 500
+let kQueenValue  = 900
+let kKingValue   = 2000
 
 let piecesConfigurationArray: [[Int]] = [
     
-    [ kNil, kNil,        kNil,   kNil,     kNil,     kNil,    kNil,   kNil,     kNil,     kNil,          kNil, kNil ],
-    [ kNil, kNil,        kNil,   kNil,     kNil,     kNil,    kNil,   kNil,     kNil,     kNil,          kNil, kNil ],
+    [ kNilValue, kNilValue,        kNilValue,   kNilValue,     kNilValue,     kNilValue,    kNilValue,   kNilValue,     kNilValue,     kNilValue,          kNilValue, kNilValue ],
+    [ kNilValue, kNilValue,        kNilValue,   kNilValue,     kNilValue,     kNilValue,    kNilValue,   kNilValue,     kNilValue,     kNilValue,          kNilValue, kNilValue ],
     
     
     
     
-    [ kNil, kNil,        kRook,  kKnight,  kBishop,  kQueen,  kKing,  kBishop,  kKnight,  kRook,         kNil, kNil ],
-    [ kNil, kNil,        kPawn,  kPawn,    kPawn,    kPawn,   kPawn,  kPawn,    kPawn,    kPawn,         kNil, kNil ],
-    [ kNil, kNil,        kEmpty, kEmpty,   kEmpty,   kEmpty,  kEmpty, kEmpty,   kEmpty,   kEmpty,        kNil, kNil ],
-    [ kNil, kNil,        kEmpty, kEmpty,   kEmpty,   kEmpty,  kEmpty, kEmpty,   kEmpty,   kEmpty,        kNil, kNil ],
-    [ kNil, kNil,        kEmpty, kEmpty,   kEmpty,   kEmpty,  kEmpty, kEmpty,   kEmpty,   kEmpty,        kNil, kNil ],
-    [ kNil, kNil,        kEmpty, kEmpty,   kEmpty,   kEmpty,  kEmpty, kEmpty,   kEmpty,   kEmpty,        kNil, kNil ],
-    [ kNil, kNil,        kEmpty, kEmpty,   kEmpty,   kEmpty,  kEmpty, kEmpty,   kEmpty,   kEmpty,        kNil, kNil ],
-    [ kNil, kNil,        kEmpty, kEmpty,   kEmpty,   kEmpty,  kEmpty, kEmpty,   kEmpty,   kEmpty,        kNil, kNil ],
-    [ kNil, kNil,       -kPawn, -kPawn,   -kPawn,   -kPawn,  -kPawn, -kPawn,   -kPawn,   -kPawn,         kNil, kNil ],
-    [ kNil, kNil,       -kRook, -kKnight, -kBishop, -kQueen, -kKing, -kBishop, -kKnight, -kRook,         kNil, kNil ],
+    [ kNilValue, kNilValue,        kRookValue,  kKnightValue,  kBishopValue,  kQueenValue,  kKingValue,  kBishopValue,  kKnightValue,  kRookValue,         kNilValue, kNilValue ],
+    [ kNilValue, kNilValue,        kPawnValue,  kPawnValue,    kPawnValue,    kPawnValue,   kPawnValue,  kPawnValue,    kPawnValue,    kPawnValue,         kNilValue, kNilValue ],
+    [ kNilValue, kNilValue,        kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,  kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,        kNilValue, kNilValue ],
+    [ kNilValue, kNilValue,        kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,  kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,        kNilValue, kNilValue ],
+    [ kNilValue, kNilValue,        kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,  kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,        kNilValue, kNilValue ],
+    [ kNilValue, kNilValue,        kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,  kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,        kNilValue, kNilValue ],
+    [ kNilValue, kNilValue,       -kPawnValue, -kPawnValue,   -kPawnValue,   -kPawnValue,  -kPawnValue, -kPawnValue,   -kPawnValue,   -kPawnValue,         kNilValue, kNilValue ],
+    [ kNilValue, kNilValue,       -kRookValue, -kKnightValue, -kBishopValue, -kQueenValue, -kKingValue, -kBishopValue, -kKnightValue, -kRookValue,         kNilValue, kNilValue ],
     
     
     
     
-    [ kNil, kNil,        kNil,   kNil,     kNil,     kNil,    kNil,   kNil,     kNil,     kNil,          kNil, kNil ],
-    [ kNil, kNil,        kNil,   kNil,     kNil,     kNil,    kNil,   kNil,     kNil,     kNil,          kNil, kNil ]
+    [ kNilValue, kNilValue,        kNilValue,   kNilValue,     kNilValue,     kNilValue,    kNilValue,   kNilValue,     kNilValue,     kNilValue,          kNilValue, kNilValue ],
+    [ kNilValue, kNilValue,        kNilValue,   kNilValue,     kNilValue,     kNilValue,    kNilValue,   kNilValue,     kNilValue,     kNilValue,          kNilValue, kNilValue ]
     
 ]
 

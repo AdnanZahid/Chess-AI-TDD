@@ -10,10 +10,14 @@ import Foundation
 
 class Rook: Piece {
     
+    let localSymbol: String = "R"
+    
     override init(color: Color, position: Square, hasMoved: Bool, delegate: PieceDelegate?) {
         super.init(color: color, position: position, hasMoved: hasMoved, delegate: delegate)
         
-        value = abs(kRook)
+        symbol = kRookSymbol
+        
+        value = abs(kRookValue)
     }
     
     override func move(toSquare: Square) -> Bool {

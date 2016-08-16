@@ -13,7 +13,9 @@ class Queen: Piece {
     override init(color: Color, position: Square, hasMoved: Bool, delegate: PieceDelegate?) {
         super.init(color: color, position: position, hasMoved: hasMoved, delegate: delegate)
         
-        value = abs(kQueen)
+        symbol = kQueenSymbol
+        
+        value = abs(kQueenValue)
     }
 
     override func move(toSquare: Square) -> Bool {

@@ -11,43 +11,43 @@ import Foundation
 class PieceFactory {
     
     static func getPiece(value: Int, position: Square, delegate: PieceDelegate?) -> Piece {
-    
+        
         switch value {
-        case kNil:
+        case kNilValue:
             return EmptyPiece.sharedInstance
             
         //////////////////
         // WHITE PIECES //
         //////////////////
             
-        case kKing:
+        case kKingValue:
             return King(color: Color.white, position: position, hasMoved: false, delegate: delegate)
-        case kQueen:
+        case kQueenValue:
             return Queen(color: Color.white, position: position, hasMoved: false, delegate: delegate)
-        case kRook:
+        case kRookValue:
             return Rook(color: Color.white, position: position, hasMoved: false, delegate: delegate)
-        case kKnight:
+        case kKnightValue:
             return Knight(color: Color.white, position: position, hasMoved: false, delegate: delegate)
-        case kBishop:
+        case kBishopValue:
             return Bishop(color: Color.white, position: position, hasMoved: false, delegate: delegate)
-        case kPawn:
+        case kPawnValue:
             return Pawn(color: Color.white, position: position, hasMoved: false, delegate: delegate)
             
         //////////////////
         // BLACK PIECES //
         //////////////////
             
-        case -kKing:
+        case -kKingValue:
             return King(color: Color.black, position: position, hasMoved: false, delegate: delegate)
-        case -kQueen:
+        case -kQueenValue:
             return Queen(color: Color.black, position: position, hasMoved: false, delegate: delegate)
-        case -kRook:
+        case -kRookValue:
             return Rook(color: Color.black, position: position, hasMoved: false, delegate: delegate)
-        case -kKnight:
+        case -kKnightValue:
             return Knight(color: Color.black, position: position, hasMoved: false, delegate: delegate)
-        case -kBishop:
+        case -kBishopValue:
             return Bishop(color: Color.black, position: position, hasMoved: false, delegate: delegate)
-        case -kPawn:
+        case -kPawnValue:
             return Pawn(color: Color.black, position: position, hasMoved: false, delegate: delegate)
             
         default:

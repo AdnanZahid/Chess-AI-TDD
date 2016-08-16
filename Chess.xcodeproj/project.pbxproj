@@ -24,8 +24,6 @@
 		2716D4361D59028D0056C582 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D4341D59028D0056C582 /* Utility.swift */; };
 		2716D4381D5905B70056C582 /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D4371D5905B70056C582 /* King.swift */; };
 		2716D4391D5905B70056C582 /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D4371D5905B70056C582 /* King.swift */; };
-		2716D43B1D5911B50056C582 /* PawnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D43A1D5911B50056C582 /* PawnTests.swift */; };
-		2716D43D1D5912FE0056C582 /* KingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D43C1D5912FE0056C582 /* KingTests.swift */; };
 		2716D43F1D5913DD0056C582 /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D43E1D5913DD0056C582 /* Bishop.swift */; };
 		2716D4401D5913DD0056C582 /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D43E1D5913DD0056C582 /* Bishop.swift */; };
 		2716D4421D5914420056C582 /* Rook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D4411D5914420056C582 /* Rook.swift */; };
@@ -34,19 +32,27 @@
 		2716D4461D5916370056C582 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D4441D5916370056C582 /* Queen.swift */; };
 		2716D4481D5916B70056C582 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D4471D5916B70056C582 /* Knight.swift */; };
 		2716D4491D5916B70056C582 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D4471D5916B70056C582 /* Knight.swift */; };
-		2716D44E1D5917A70056C582 /* BishopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D44A1D5917A70056C582 /* BishopTests.swift */; };
-		2716D44F1D5917A70056C582 /* BishopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D44A1D5917A70056C582 /* BishopTests.swift */; };
-		2716D4501D5917A70056C582 /* KnightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D44B1D5917A70056C582 /* KnightTests.swift */; };
-		2716D4511D5917A70056C582 /* KnightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D44B1D5917A70056C582 /* KnightTests.swift */; };
-		2716D4521D5917A70056C582 /* QueenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D44C1D5917A70056C582 /* QueenTests.swift */; };
-		2716D4531D5917A70056C582 /* QueenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D44C1D5917A70056C582 /* QueenTests.swift */; };
-		2716D4541D5917A70056C582 /* RookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D44D1D5917A70056C582 /* RookTests.swift */; };
-		2716D4551D5917A70056C582 /* RookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D44D1D5917A70056C582 /* RookTests.swift */; };
+		840267E21D6193D5001A958B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840267E11D6193D5001A958B /* Player.swift */; };
+		840267EB1D621FB1001A958B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840267E11D6193D5001A958B /* Player.swift */; };
 		846A4FDF1D5BD1020062B47D /* TestUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A4FDE1D5BD1020062B47D /* TestUtility.swift */; };
 		846A4FE11D5BD2030062B47D /* OperatorOverloadingUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A4FE01D5BD2030062B47D /* OperatorOverloadingUtility.swift */; };
 		846A4FE21D5BD20C0062B47D /* OperatorOverloadingUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A4FE01D5BD2030062B47D /* OperatorOverloadingUtility.swift */; };
 		846A4FE41D5BD2280062B47D /* PieceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A4FE31D5BD2280062B47D /* PieceFactory.swift */; };
 		846A4FE51D5BD2560062B47D /* PieceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A4FE31D5BD2280062B47D /* PieceFactory.swift */; };
+		849A19261D62F43A000BE807 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A19251D62F43A000BE807 /* ArrayExtension.swift */; };
+		849A19271D62F5F8000BE807 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A19251D62F43A000BE807 /* ArrayExtension.swift */; };
+		84BF66021D5F4A3A005DD48F /* CombinedBishopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF65FC1D5F4A3A005DD48F /* CombinedBishopTests.swift */; };
+		84BF66031D5F4A3A005DD48F /* CombinedKingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF65FD1D5F4A3A005DD48F /* CombinedKingTests.swift */; };
+		84BF66041D5F4A3A005DD48F /* CombinedKnightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF65FE1D5F4A3A005DD48F /* CombinedKnightTests.swift */; };
+		84BF66051D5F4A3A005DD48F /* CombinedPawnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF65FF1D5F4A3A005DD48F /* CombinedPawnTests.swift */; };
+		84BF66061D5F4A3A005DD48F /* CombinedQueenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF66001D5F4A3A005DD48F /* CombinedQueenTests.swift */; };
+		84BF66071D5F4A3A005DD48F /* CombinedRookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF66011D5F4A3A005DD48F /* CombinedRookTests.swift */; };
+		84BF660E1D5F4ADD005DD48F /* SoloKingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF66081D5F4ADD005DD48F /* SoloKingTests.swift */; };
+		84BF660F1D5F4ADD005DD48F /* SoloKnightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF66091D5F4ADD005DD48F /* SoloKnightTests.swift */; };
+		84BF66101D5F4ADD005DD48F /* SoloPawnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF660A1D5F4ADD005DD48F /* SoloPawnTests.swift */; };
+		84BF66111D5F4ADD005DD48F /* SoloRookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF660B1D5F4ADD005DD48F /* SoloRookTests.swift */; };
+		84BF66121D5F4ADD005DD48F /* SoloQueenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF660C1D5F4ADD005DD48F /* SoloQueenTests.swift */; };
+		84BF66131D5F4ADD005DD48F /* SoloBishopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF660D1D5F4ADD005DD48F /* SoloBishopTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,19 +80,27 @@
 		2716D4311D5900320056C582 /* Pawn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pawn.swift; path = Models/Pieces/Pawn.swift; sourceTree = "<group>"; };
 		2716D4341D59028D0056C582 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utility.swift; path = Others/Utility.swift; sourceTree = "<group>"; };
 		2716D4371D5905B70056C582 /* King.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = King.swift; path = Models/Pieces/King.swift; sourceTree = "<group>"; };
-		2716D43A1D5911B50056C582 /* PawnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PawnTests.swift; sourceTree = "<group>"; };
-		2716D43C1D5912FE0056C582 /* KingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KingTests.swift; sourceTree = "<group>"; };
 		2716D43E1D5913DD0056C582 /* Bishop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bishop.swift; path = Models/Pieces/Bishop.swift; sourceTree = "<group>"; };
 		2716D4411D5914420056C582 /* Rook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rook.swift; path = Models/Pieces/Rook.swift; sourceTree = "<group>"; };
 		2716D4441D5916370056C582 /* Queen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Queen.swift; path = Models/Pieces/Queen.swift; sourceTree = "<group>"; };
 		2716D4471D5916B70056C582 /* Knight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Knight.swift; path = Models/Pieces/Knight.swift; sourceTree = "<group>"; };
-		2716D44A1D5917A70056C582 /* BishopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BishopTests.swift; sourceTree = "<group>"; };
-		2716D44B1D5917A70056C582 /* KnightTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnightTests.swift; sourceTree = "<group>"; };
-		2716D44C1D5917A70056C582 /* QueenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueenTests.swift; sourceTree = "<group>"; };
-		2716D44D1D5917A70056C582 /* RookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RookTests.swift; sourceTree = "<group>"; };
+		840267E11D6193D5001A958B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Models/Player.swift; sourceTree = "<group>"; };
 		846A4FDE1D5BD1020062B47D /* TestUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtility.swift; sourceTree = "<group>"; };
 		846A4FE01D5BD2030062B47D /* OperatorOverloadingUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperatorOverloadingUtility.swift; path = Others/OperatorOverloadingUtility.swift; sourceTree = "<group>"; };
 		846A4FE31D5BD2280062B47D /* PieceFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieceFactory.swift; path = Others/PieceFactory.swift; sourceTree = "<group>"; };
+		849A19251D62F43A000BE807 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtension.swift; path = Others/ArrayExtension.swift; sourceTree = "<group>"; };
+		84BF65FC1D5F4A3A005DD48F /* CombinedBishopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedBishopTests.swift; path = CombinedPieceTests/CombinedBishopTests.swift; sourceTree = "<group>"; };
+		84BF65FD1D5F4A3A005DD48F /* CombinedKingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedKingTests.swift; path = CombinedPieceTests/CombinedKingTests.swift; sourceTree = "<group>"; };
+		84BF65FE1D5F4A3A005DD48F /* CombinedKnightTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedKnightTests.swift; path = CombinedPieceTests/CombinedKnightTests.swift; sourceTree = "<group>"; };
+		84BF65FF1D5F4A3A005DD48F /* CombinedPawnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedPawnTests.swift; path = CombinedPieceTests/CombinedPawnTests.swift; sourceTree = "<group>"; };
+		84BF66001D5F4A3A005DD48F /* CombinedQueenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedQueenTests.swift; path = CombinedPieceTests/CombinedQueenTests.swift; sourceTree = "<group>"; };
+		84BF66011D5F4A3A005DD48F /* CombinedRookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedRookTests.swift; path = CombinedPieceTests/CombinedRookTests.swift; sourceTree = "<group>"; };
+		84BF66081D5F4ADD005DD48F /* SoloKingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoloKingTests.swift; path = SoloPieceTests/SoloKingTests.swift; sourceTree = "<group>"; };
+		84BF66091D5F4ADD005DD48F /* SoloKnightTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoloKnightTests.swift; path = SoloPieceTests/SoloKnightTests.swift; sourceTree = "<group>"; };
+		84BF660A1D5F4ADD005DD48F /* SoloPawnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoloPawnTests.swift; path = SoloPieceTests/SoloPawnTests.swift; sourceTree = "<group>"; };
+		84BF660B1D5F4ADD005DD48F /* SoloRookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoloRookTests.swift; path = SoloPieceTests/SoloRookTests.swift; sourceTree = "<group>"; };
+		84BF660C1D5F4ADD005DD48F /* SoloQueenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoloQueenTests.swift; path = SoloPieceTests/SoloQueenTests.swift; sourceTree = "<group>"; };
+		84BF660D1D5F4ADD005DD48F /* SoloBishopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoloBishopTests.swift; path = SoloPieceTests/SoloBishopTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,14 +152,10 @@
 		2716D40D1D58E9140056C582 /* ChessTests */ = {
 			isa = PBXGroup;
 			children = (
-				2716D44A1D5917A70056C582 /* BishopTests.swift */,
 				2716D40E1D58E9140056C582 /* ChessTests.swift */,
+				84BF65FB1D5F49A5005DD48F /* CombinedPieceTests */,
 				2716D4101D58E9140056C582 /* Info.plist */,
-				2716D43C1D5912FE0056C582 /* KingTests.swift */,
-				2716D44B1D5917A70056C582 /* KnightTests.swift */,
-				2716D43A1D5911B50056C582 /* PawnTests.swift */,
-				2716D44C1D5917A70056C582 /* QueenTests.swift */,
-				2716D44D1D5917A70056C582 /* RookTests.swift */,
+				84BF65E21D5F4910005DD48F /* SoloPieceTests */,
 				846A4FDE1D5BD1020062B47D /* TestUtility.swift */,
 			);
 			path = ChessTests;
@@ -156,6 +166,7 @@
 			children = (
 				2716D4151D58E9620056C582 /* Board.swift */,
 				2716D42A1D58F2230056C582 /* Pieces */,
+				840267E11D6193D5001A958B /* Player.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -163,6 +174,7 @@
 		2716D4291D58F1650056C582 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				849A19251D62F43A000BE807 /* ArrayExtension.swift */,
 				2716D41D1D58EA2A0056C582 /* Constants.swift */,
 				846A4FE01D5BD2030062B47D /* OperatorOverloadingUtility.swift */,
 				846A4FE31D5BD2280062B47D /* PieceFactory.swift */,
@@ -184,6 +196,32 @@
 				2716D4411D5914420056C582 /* Rook.swift */,
 			);
 			name = Pieces;
+			sourceTree = "<group>";
+		};
+		84BF65E21D5F4910005DD48F /* SoloPieceTests */ = {
+			isa = PBXGroup;
+			children = (
+				84BF66081D5F4ADD005DD48F /* SoloKingTests.swift */,
+				84BF66091D5F4ADD005DD48F /* SoloKnightTests.swift */,
+				84BF660A1D5F4ADD005DD48F /* SoloPawnTests.swift */,
+				84BF660B1D5F4ADD005DD48F /* SoloRookTests.swift */,
+				84BF660C1D5F4ADD005DD48F /* SoloQueenTests.swift */,
+				84BF660D1D5F4ADD005DD48F /* SoloBishopTests.swift */,
+			);
+			name = SoloPieceTests;
+			sourceTree = "<group>";
+		};
+		84BF65FB1D5F49A5005DD48F /* CombinedPieceTests */ = {
+			isa = PBXGroup;
+			children = (
+				84BF65FC1D5F4A3A005DD48F /* CombinedBishopTests.swift */,
+				84BF65FD1D5F4A3A005DD48F /* CombinedKingTests.swift */,
+				84BF65FE1D5F4A3A005DD48F /* CombinedKnightTests.swift */,
+				84BF65FF1D5F4A3A005DD48F /* CombinedPawnTests.swift */,
+				84BF66001D5F4A3A005DD48F /* CombinedQueenTests.swift */,
+				84BF66011D5F4A3A005DD48F /* CombinedRookTests.swift */,
+			);
+			name = CombinedPieceTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,17 +318,15 @@
 				846A4FE41D5BD2280062B47D /* PieceFactory.swift in Sources */,
 				2716D4321D5900320056C582 /* Pawn.swift in Sources */,
 				2716D4451D5916370056C582 /* Queen.swift in Sources */,
-				2716D4501D5917A70056C582 /* KnightTests.swift in Sources */,
 				2716D4481D5916B70056C582 /* Knight.swift in Sources */,
 				2716D42F1D58F23C0056C582 /* Piece.swift in Sources */,
-				2716D44E1D5917A70056C582 /* BishopTests.swift in Sources */,
-				2716D4541D5917A70056C582 /* RookTests.swift in Sources */,
 				2716D4421D5914420056C582 /* Rook.swift in Sources */,
 				2716D42D1D58F23C0056C582 /* EmptyPiece.swift in Sources */,
 				2716D43F1D5913DD0056C582 /* Bishop.swift in Sources */,
-				2716D4521D5917A70056C582 /* QueenTests.swift in Sources */,
+				849A19261D62F43A000BE807 /* ArrayExtension.swift in Sources */,
 				2716D4161D58E9620056C582 /* Board.swift in Sources */,
 				2716D4381D5905B70056C582 /* King.swift in Sources */,
+				840267E21D6193D5001A958B /* Player.swift in Sources */,
 				2716D41E1D58EA2A0056C582 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,25 +338,33 @@
 				2716D42E1D58F23C0056C582 /* EmptyPiece.swift in Sources */,
 				2716D4331D5900320056C582 /* Pawn.swift in Sources */,
 				2716D4461D5916370056C582 /* Queen.swift in Sources */,
-				2716D43D1D5912FE0056C582 /* KingTests.swift in Sources */,
-				2716D44F1D5917A70056C582 /* BishopTests.swift in Sources */,
 				2716D4491D5916B70056C582 /* Knight.swift in Sources */,
+				84BF66041D5F4A3A005DD48F /* CombinedKnightTests.swift in Sources */,
+				84BF66131D5F4ADD005DD48F /* SoloBishopTests.swift in Sources */,
+				84BF66101D5F4ADD005DD48F /* SoloPawnTests.swift in Sources */,
 				2716D4391D5905B70056C582 /* King.swift in Sources */,
+				84BF66061D5F4A3A005DD48F /* CombinedQueenTests.swift in Sources */,
 				2716D4301D58F23C0056C582 /* Piece.swift in Sources */,
-				2716D4551D5917A70056C582 /* RookTests.swift in Sources */,
-				2716D4531D5917A70056C582 /* QueenTests.swift in Sources */,
+				84BF66051D5F4A3A005DD48F /* CombinedPawnTests.swift in Sources */,
+				840267EB1D621FB1001A958B /* Player.swift in Sources */,
+				84BF66071D5F4A3A005DD48F /* CombinedRookTests.swift in Sources */,
 				2716D41F1D58EA2A0056C582 /* Constants.swift in Sources */,
+				84BF660E1D5F4ADD005DD48F /* SoloKingTests.swift in Sources */,
+				849A19271D62F5F8000BE807 /* ArrayExtension.swift in Sources */,
 				2716D4361D59028D0056C582 /* Utility.swift in Sources */,
 				2716D4171D58E9700056C582 /* main.swift in Sources */,
+				84BF66111D5F4ADD005DD48F /* SoloRookTests.swift in Sources */,
+				84BF66021D5F4A3A005DD48F /* CombinedBishopTests.swift in Sources */,
 				2716D4401D5913DD0056C582 /* Bishop.swift in Sources */,
 				2716D40F1D58E9140056C582 /* ChessTests.swift in Sources */,
 				2716D4181D58E9740056C582 /* Board.swift in Sources */,
 				846A4FDF1D5BD1020062B47D /* TestUtility.swift in Sources */,
+				84BF66121D5F4ADD005DD48F /* SoloQueenTests.swift in Sources */,
 				2716D4431D5914420056C582 /* Rook.swift in Sources */,
 				846A4FE21D5BD20C0062B47D /* OperatorOverloadingUtility.swift in Sources */,
+				84BF660F1D5F4ADD005DD48F /* SoloKnightTests.swift in Sources */,
 				846A4FE51D5BD2560062B47D /* PieceFactory.swift in Sources */,
-				2716D4511D5917A70056C582 /* KnightTests.swift in Sources */,
-				2716D43B1D5911B50056C582 /* PawnTests.swift in Sources */,
+				84BF66031D5F4A3A005DD48F /* CombinedKingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

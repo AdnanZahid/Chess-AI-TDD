@@ -13,7 +13,9 @@ class Bishop: Piece {
     override init(color: Color, position: Square, hasMoved: Bool, delegate: PieceDelegate?) {
         super.init(color: color, position: position, hasMoved: hasMoved, delegate: delegate)
         
-        value = abs(kBishop)
+        symbol = kBishopSymbol
+        
+        value = abs(kBishopValue)
     }
     
     override func move(toSquare: Square) -> Bool {
@@ -42,5 +44,10 @@ class Bishop: Piece {
         }
         
         return result
+    }
+    
+    static func generateMoves(fileRankPair: (Int, Int)) -> [Square] {
+        
+        return nil
     }
 }
