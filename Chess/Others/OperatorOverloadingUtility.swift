@@ -18,18 +18,18 @@ func != (object1: AnyObject!, object2: AnyObject!) -> Bool {
     return !(object_getClassName(object1) == object_getClassName(object2))
 }
 
-func == (object1: Piece, object2: Piece) -> Bool {
+func == (piece1: Piece, piece2: Piece) -> Bool {
     
-    return object1.id == object2.id
+    return piece1.id == piece2.id
 }
 
-func == (square1: Square!, square2: Square!) -> Bool {
+func == (square1: Square, square2: Square) -> Bool {
     
     return square1.file == square2.file
         && square1.rank == square2.rank
 }
 
-func != (square1: Square!, square2: Square!) -> Bool {
+func != (square1: Square, square2: Square) -> Bool {
     
     return !(square1 == square2)
 }

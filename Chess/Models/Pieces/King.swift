@@ -16,29 +16,45 @@ class King: Piece {
         symbol = kKingSymbol
         
         value = abs(kKingValue)
+        
+        /**
+         * King directions
+         */
+        directionsList.append(( 1,  1))
+        directionsList.append(( 1, -1))
+        directionsList.append((-1,  1))
+        directionsList.append((-1, -1))
+        
+        directionsList.append(( 1,  0))
+        directionsList.append(( 0,  1))
+        directionsList.append((-1,  0))
+        directionsList.append(( 0, -1))
+        
+        moveStrategy = LimitedMoveStrategy(directionsList: directionsList)
     }
     
     override func move(toSquare: Square) -> Bool {
         
-        var result: Bool = false
-        
-        if     getFileAndRankAdvance(position, square2: toSquare) == (0,  1)
-            || getFileAndRankAdvance(position, square2: toSquare) == (0, -1)
-            
-            || getFileAndRankAdvance(position, square2: toSquare) == ( 1, 0)
-            || getFileAndRankAdvance(position, square2: toSquare) == (-1, 0)
-            
-            || getFileAndRankAdvance(position, square2: toSquare) == ( 1,  1)
-            || getFileAndRankAdvance(position, square2: toSquare) == (-1, -1)
-            
-            || getFileAndRankAdvance(position, square2: toSquare) == ( 1, -1)
-            || getFileAndRankAdvance(position, square2: toSquare) == (-1,  1) {
-            
-            
-            result = true
-        }
+        let result: Bool = King.move(position, toSquare: toSquare, directionsList: directionsList)
         
         updatePosition(result, toSquare: toSquare)
+        
+        return result
+    }
+    
+    static func move(position: Square, toSquare: Square, directionsList: [(Int, Int)]) -> Bool {
+        
+        var result: Bool = false
+        
+        for direction in directionsList {
+            
+            result = direction == getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare))
+            
+            if result == true {
+                
+                break
+            }
+        }
         
         return result
     }

@@ -16,25 +16,49 @@ class Pawn: Piece {
         symbol = kPawnSymbol
         
         value = abs(kPawnValue)
+        
+        /**
+         * Pawn directions
+         *
+         * ---------------
+         *
+         * The method pawnMoveDirection(number) determines the DIRECTION according to COLOR
+         */
+        directionsList.append((0, pawnMoveDirection(1)))
+        directionsList.append((0, pawnMoveDirection(2)))
+        
+        directionsList.append((-1, pawnMoveDirection(1)))
+        directionsList.append(( 1, pawnMoveDirection(1)))
+        
+        moveStrategy = LimitedMoveStrategy(directionsList: directionsList)
     }
     
     override func move(toSquare: Square) -> Bool {
         
         var result: Bool = false
         
-        if        getFileAndRankAdvance(position, square2: toSquare) == (0, pawnMoveDirection(1)) {
+        if Board.sharedInstance.checkIfSquareIsEmpty(toSquare) {
             
-            result = true
+            if        getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare)) == directionsList[0] {
+                
+                result = true
+                
+            } else if getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare)) == directionsList[1]
+                
+                && hasMoved == false {
+                
+                let fileRankPair = getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare))
+                
+                result = checkForClearPath(toSquare, fileRankPair: fileRankPair)
+            }
             
-        } else if getFileAndRankAdvance(position, square2: toSquare) == (0, pawnMoveDirection(2))
+        } else if Board.sharedInstance.getPieceOnPosition(toSquare)?.color != color {
             
-            && hasMoved == false {
+            let fileAndRankAdvance: (Int, Int) = getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare))
             
-            let fileRankPair = getFileAndRankAdvance(position, square2: toSquare)
-            
-            result = checkForCollisionsInBetween(toSquare, fileRankPair: fileRankPair)
+            result = fileAndRankAdvance == directionsList[2] || fileAndRankAdvance == directionsList[3]
         }
-        
+    
         updatePosition(result, toSquare: toSquare)
         
         return result

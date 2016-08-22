@@ -13,55 +13,133 @@ import XCTest
 /////////////////////////////////////////
 
 /**
- * Get PIECE by PieceValue and perform the MOVE on it
+ * GET PIECE by PieceValue and perform the MOVE on it, returns TRUE
  */
 func > (pieceValue: Int, move: Move) -> Piece {
     
+    /**
+     * GETTING a PIECE from the PIECE FACTORY - Given the PIECE VALUE and STARTING SQUARE
+     */
     let piece: Piece = PieceFactory.getPiece(pieceValue, position: move.fromSquare, delegate: nil)
     
+    /**
+     * SETTING the CURRENT TURN COLOR of BOARD to match the PIECE COLOR - Because we are not testing the turn based GAME LOGIC yet
+     */
+    Board.sharedInstance.currentTurnColor = piece.color
+    
+    /**
+     * PUTTING the PIECE on the given SQUARE
+     */
+    Board.sharedInstance.putPieceOnPosition(piece, square: piece.position)
+    
+    /**
+     * MOVING the PIECE to the given SQUARE - EXPECTING it to PASS
+     */
     piece > move.toSquare
     
     return piece
 }
 
 /**
- * Get PIECE and move on it to the SQUARE
+ * GET PIECE and move on it to the SQUARE, ASSERTS TRUE
  */
 func > (piece: Piece, toSquare: Square) {
     
+    XCTAssertTrue(Board.sharedInstance.movePiece(Move(fromSquare: piece.position, toSquare: toSquare)))
+}
+
+/**
+ * GET PIECE by PieceValue and perform the MOVE on it, returns FALSE
+ */
+func !== (pieceValue: Int, move: Move) -> Piece {
+    
+    /**
+     * GETTING a PIECE from the PIECE FACTORY - Given the PIECE VALUE and STARTING SQUARE
+     */
+    let piece: Piece = PieceFactory.getPiece(pieceValue, position: move.fromSquare, delegate: nil)
+    
+    /**
+     * SETTING the CURRENT TURN COLOR of BOARD to match the PIECE COLOR - Because we are not testing the turn based GAME LOGIC yet
+     */
+    Board.sharedInstance.currentTurnColor = piece.color
+    
+    /**
+     * PUTTING the PIECE on the given SQUARE
+     */
     Board.sharedInstance.putPieceOnPosition(piece, square: piece.position)
     
-    XCTAssertTrue(Board.sharedInstance.movePiece(piece.position, toSquare: toSquare))
-}
-
-/**
- * Get two SQUARE's and make a MOVE out of them
- */
-func > (square1: Square, square2: Square) -> Move {
+    /**
+     * MOVING the PIECE to the given SQUARE - EXPECTING it to FAIL
+     */
+    piece !== move.toSquare
     
-    return Move(fromSquare: square1, toSquare: square2)
+    return piece
 }
 
 /**
- * Get PIECE by PieceValue, place it on the SQUARE and then try getting a non-nil value
+ * GET PIECE and move on it to the SQUARE, ASSERTS FALSE
+ */
+func !== (piece: Piece, toSquare: Square) {
+    
+    XCTAssertFalse(Board.sharedInstance.movePiece(Move(fromSquare: piece.position, toSquare: toSquare)))
+}
+
+/**
+ * GET two SQUARE's and make a MOVE out of them
+ */
+func > (fromSquare: Square, toSquare: Square) -> Move {
+    
+    return Move(fromSquare: fromSquare, toSquare: toSquare)
+}
+
+/**
+ * GET PIECE by PieceValue, place it on the SQUARE and then try getting a non-nil value
  */
 func ?? (pieceValue: Int, square: Square) {
     
+    /**
+     * GETTING a PIECE from the PIECE FACTORY - Given the PIECE VALUE and STARTING SQUARE
+     */
     let piece: Piece = PieceFactory.getPiece(pieceValue, position: square, delegate: nil)
     
+    /**
+     * PUTTING the PIECE on the given SQUARE - ASSERTS TRUE
+     */
     XCTAssertTrue(Board.sharedInstance.putPieceOnPosition(piece, square: square))
     
+    /**
+     * GET PIECE from the given SQUARE - ASSERTS NON NIL
+     */
     XCTAssertNotNil(Board.sharedInstance.getPieceOnPosition(square))
     
+    /**
+     * COMPARE the given PIECE and PIECE returned from the SQUARE - ASSERTS TRUE
+     */
     XCTAssertTrue(piece == Board.sharedInstance.getPieceOnPosition(square))
 }
 
 /**
- * Get PIECE by PieceValue and then place it on the SQUARE
+ * GET PIECE by PieceValue and then place it on the SQUARE
  */
-func >> (pieceValue: Int, square: Square) {
+func >> (pieceValue: Int, square: Square) -> Piece {
     
+    /**
+     * GETTING a PIECE from the PIECE FACTORY - Given the PIECE VALUE and STARTING SQUARE
+     */
     let piece: Piece = PieceFactory.getPiece(pieceValue, position: square, delegate: nil)
     
+    /**
+     * PUTTING the PIECE on the given SQUARE - ASSERTS TRUE
+     */
     XCTAssertTrue(Board.sharedInstance.putPieceOnPosition(piece, square: square))
+    
+    return piece
+}
+
+/**
+ * GET POSSIBLE MOVES LIST from PIECE
+ */
+prefix func ~ (piece: Piece) -> [Square] {
+    
+    return (piece.moveStrategy?.generateAllMoves(piece.position))!
 }

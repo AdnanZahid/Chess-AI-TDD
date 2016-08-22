@@ -8,39 +8,39 @@
 
 import Foundation
 
-func fileAdvanceCheck(square1: Square!, square2: Square!) -> Bool {
+func fileAdvanceCheck(move: Move) -> Bool {
     
-    return square1.file != square2.file
+    return move.fromSquare.file != move.toSquare.file
 }
 
-func rankAdvanceCheck(square1: Square!, square2: Square!) -> Bool {
+func rankAdvanceCheck(move: Move) -> Bool {
     
-    return square1.rank != square2.rank
+    return move.fromSquare.rank != move.toSquare.rank
 }
 
-func fileAdvanceOnlyCheck(square1: Square!, square2: Square!) -> Bool {
+func fileAdvanceOnlyCheck(move: Move) -> Bool {
     
-    return fileAdvanceCheck(square1, square2: square2) && !rankAdvanceCheck(square1, square2: square2)
+    return fileAdvanceCheck(Move(fromSquare: move.fromSquare, toSquare: move.toSquare)) && !rankAdvanceCheck(Move(fromSquare: move.fromSquare, toSquare: move.toSquare))
 }
 
-func rankAdvanceOnlyCheck(square1: Square!, square2: Square!) -> Bool {
+func rankAdvanceOnlyCheck(move: Move) -> Bool {
     
-    return !fileAdvanceCheck(square1, square2: square2) && rankAdvanceCheck(square1, square2: square2)
+    return !fileAdvanceCheck(Move(fromSquare: move.fromSquare, toSquare: move.toSquare)) && rankAdvanceCheck(Move(fromSquare: move.fromSquare, toSquare: move.toSquare))
 }
 
-func fileOrRankAdvanceExclusiveCheck(square1: Square!, square2: Square!) -> Bool {
+func fileOrRankAdvanceExclusiveCheck(move: Move) -> Bool {
     
-    return fileAdvanceOnlyCheck(square1, square2: square2) || rankAdvanceOnlyCheck(square1, square2: square2)
+    return fileAdvanceOnlyCheck(Move(fromSquare: move.fromSquare, toSquare: move.toSquare)) || rankAdvanceOnlyCheck(Move(fromSquare: move.fromSquare, toSquare: move.toSquare))
 }
 
-func fileOrRankAdvanceBothCheck(square1: Square!, square2: Square!) -> Bool {
+func fileOrRankAdvanceBothCheck(move: Move) -> Bool {
     
-    return fileAdvanceCheck(square1, square2: square2) && rankAdvanceCheck(square1, square2: square2)
+    return fileAdvanceCheck(Move(fromSquare: move.fromSquare, toSquare: move.toSquare)) && rankAdvanceCheck(Move(fromSquare: move.fromSquare, toSquare: move.toSquare))
 }
 
-func getFileAndRankAdvance(square1: Square!, square2: Square!) -> (Int, Int) {
+func getFileAndRankAdvance(move: Move) -> (Int, Int) {
     
-    return (square2.file - square1.file, square2.rank - square1.rank)
+    return (move.toSquare.file - move.fromSquare.file, move.toSquare.rank - move.fromSquare.rank)
 }
 
 func getFileAndRankSingleAdvance(fileRankPair: (Int, Int)) -> (Int, Int) {

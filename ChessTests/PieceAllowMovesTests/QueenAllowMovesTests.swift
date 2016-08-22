@@ -1,5 +1,5 @@
 //
-//  SoloQueenTests.swift
+//  QueenAllowMovesTests.swift
 //  Chess
 //
 //  Created by Adnan Zahid on 8/9/16.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class SoloQueenTests: XCTestCase {
+class QueenAllowMovesTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -16,9 +16,9 @@ class SoloQueenTests: XCTestCase {
         Board.sharedInstance.setupEmptyBoard()
     }
     
-    ////////////////////////////
-    // WHITE QUEEN TEST CASES //
-    ////////////////////////////
+    ///////////
+    // WHITE //
+    ///////////
     
     func testMoveWhiteQueenFromD4ToD5() {
         
@@ -65,77 +65,52 @@ class SoloQueenTests: XCTestCase {
         (kQueenValue > (F6 > F2)) > A2
     }
     
-    func testGetWhiteQueenOnD4() {
-        
-        kQueenValue ?? D4
-    }
+    ///////////
+    // BLACK //
+    ///////////
     
-    func testPutWhiteQueenOnD4() {
-        
-        kQueenValue >> D4
-    }
-        
-    ////////////////////////////
-    // BLACK QUEEN TEST CASES //
-    ////////////////////////////
-    
-    func testMoveBlackQueenValueFromD4ToD5() {
+    func testMoveBlackQueenFromD4ToD5() {
         
         -kQueenValue > (D4 > D5)
     }
     
-    func testMoveBlackQueenValueFromD4ToE5toF4() {
+    func testMoveBlackQueenFromD4ToE5ToF4() {
         
         (-kQueenValue > (D4 > E5)) > F4
     }
     
-    func testMoveBlackQueenValueFromD4ToD5ToE5() {
+    func testMoveBlackQueenFromD4ToD5ToE5() {
         
         (-kQueenValue > (D4 > D5)) > E5
     }
     
-    func testMoveBlackQueenValueFromF6ToG5() {
+    func testMoveBlackQueenFromF6ToG5() {
         
         -kQueenValue > (F6 > G5)
     }
     
-    func testMoveBlackQueenValueFromF6ToG5ToH4() {
+    func testMoveBlackQueenFromF6ToG5ToH4() {
         
         (-kQueenValue > (F6 > G5)) > H4
     }
     
-    func testMoveBlackQueenValueFromD4ToE5ToF4() {
-        
-        (-kQueenValue > (D4 > E5)) > F4
-    }
-    
-    func testMoveBlackQueenValueFromA1ToH8() {
+    func testMoveBlackQueenFromA1ToH8() {
         
         -kQueenValue > (A1 > H8)
     }
     
-    func testMoveBlackQueenValueFromH1ToA8() {
+    func testMoveBlackQueenFromH1ToA8() {
         
         -kQueenValue > (H1 > A8)
     }
     
-    func testMoveBlackQueenValueFromF6ToF1() {
+    func testMoveBlackQueenFromF6ToF1() {
         
         -kQueenValue > (F6 > F1)
     }
     
-    func testMoveBlackQueenValueFromF6ToF2ToA2() {
+    func testMoveBlackQueenFromF6ToF2ToA2() {
         
         (-kQueenValue > (F6 > F2)) > A2
-    }
-    
-    func testGetBlackQueenValueOnD4() {
-        
-        -kQueenValue ?? D4
-    }
-    
-    func testPutBlackQueenValueOnD4() {
-        
-        -kQueenValue >> D4
     }
 }

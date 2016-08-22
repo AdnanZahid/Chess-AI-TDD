@@ -24,7 +24,9 @@ class Piece: Equatable {
     
     weak var delegate: PieceDelegate?
     
-    var possibleMovesToSquaresList: [Square] = []
+    var moveStrategy: MoveStrategy?
+    
+    var directionsList: [(Int, Int)] = []
     
     init(color: Color, position: Square, hasMoved: Bool, delegate: PieceDelegate?) {
         
@@ -52,34 +54,26 @@ class Piece: Equatable {
         }
     }
     
-    func checkForCollisionsInBetween(toSquare: Square, fileRankPair: (Int, Int)) -> Bool {
+    func checkForClearPath(toSquare: Square, fileRankPair: (Int, Int)) -> Bool {
         
         var result: Bool = true
-    
+        
         var positionToCheck: Square = position
         
-        while positionToCheck != toSquare - getFileAndRankSingleAdvance(fileRankPair) {
+        let secondLastSquare: Square = toSquare - getFileAndRankSingleAdvance(fileRankPair)
+        
+        while positionToCheck != secondLastSquare {
             
             positionToCheck = positionToCheck + getFileAndRankSingleAdvance(fileRankPair)
             
-            result = !checkIfPieceExistsOnSquare(positionToCheck)
+            result = Board.sharedInstance.checkIfSquareIsEmpty(positionToCheck)
             
             if result == false {
                 
-                break;
+                break
             }
         }
-            
+        
         return result
-    }
-    
-    func checkIfPieceExistsOnSquare(square: Square) -> Bool {
-        
-        if let _ = Board.sharedInstance.getPieceOnPosition(square) {
-            
-            return true
-        }
-        
-        return false
     }
 }

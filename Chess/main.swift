@@ -8,4 +8,4 @@
 
 import Foundation
 
-Board.sharedInstance.printBoard()
+let controller: Controller = Controller()

@@ -11,10 +11,9 @@ import Foundation
 class Player {
     
     var isAI: Bool = false
-    
     var color: Color
-    
     var piecesList: [Piece] = []
+    var opponent: Player?
     
     init(color: Color) {
         
@@ -31,5 +30,10 @@ class Player {
     func removePiece(piece: Piece) {
         
         piecesList.remove(piece)
+    }
+    
+    func generateMove() -> Move? {
+        
+        return nil
     }
 }

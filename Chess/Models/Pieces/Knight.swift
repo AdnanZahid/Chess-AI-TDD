@@ -16,27 +16,28 @@ class Knight: Piece {
         symbol = kKnightSymbol
         
         value = abs(kKnightValue)
+        
+        /**
+         * Knight directions
+         */
+        directionsList.append(( 1,  2))
+        directionsList.append(( 2,  1))
+        
+        directionsList.append((-1,  2))
+        directionsList.append((-2,  1))
+        
+        directionsList.append(( 1, -2))
+        directionsList.append(( 2, -1))
+        
+        directionsList.append((-1, -2))
+        directionsList.append((-2, -1))
+        
+        moveStrategy = LimitedMoveStrategy(directionsList: directionsList)
     }
-
+    
     override func move(toSquare: Square) -> Bool {
         
-        var result: Bool = false
-        
-        if     getFileAndRankAdvance(position, square2: toSquare) == ( 1, 2)
-            || getFileAndRankAdvance(position, square2: toSquare) == (-1, 2)
-            
-            || getFileAndRankAdvance(position, square2: toSquare) == ( 2, 1)
-            || getFileAndRankAdvance(position, square2: toSquare) == (-2, 1)
-            
-            || getFileAndRankAdvance(position, square2: toSquare) == ( 1, -2)
-            || getFileAndRankAdvance(position, square2: toSquare) == (-1, -2)
-            
-            || getFileAndRankAdvance(position, square2: toSquare) == ( 2, -1)
-            || getFileAndRankAdvance(position, square2: toSquare) == (-2, -1) {
-            
-            
-            result = true
-        }
+        let result: Bool = King.move(position, toSquare: toSquare, directionsList: directionsList)
         
         updatePosition(result, toSquare: toSquare)
         

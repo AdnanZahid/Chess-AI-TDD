@@ -10,5 +10,5 @@ import Foundation
 
 class EmptyPiece: Piece {
     
-    static let sharedInstance = EmptyPiece(color: Color.white, position: Square(file: FileIndex.k0, rank: RankIndex.k0), hasMoved: false, delegate: nil)
+    static let sharedInstance = EmptyPiece(color: Color.white, position: Square(file: FileIndex.kA, rank: RankIndex.k1), hasMoved: false, delegate: nil)
 }

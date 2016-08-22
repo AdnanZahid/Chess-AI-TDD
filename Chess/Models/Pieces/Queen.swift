@@ -16,13 +16,31 @@ class Queen: Piece {
         symbol = kQueenSymbol
         
         value = abs(kQueenValue)
+        
+        /**
+         * Bishop directions
+         */
+        directionsList.append(( 1,  1))
+        directionsList.append(( 1, -1))
+        directionsList.append((-1,  1))
+        directionsList.append((-1, -1))
+        
+        /**
+         * Rook directions
+         */
+        directionsList.append(( 1,  0))
+        directionsList.append(( 0,  1))
+        directionsList.append((-1,  0))
+        directionsList.append(( 0, -1))
+        
+        moveStrategy = UnlimitedMoveStrategy(directionsList: directionsList)
     }
 
     override func move(toSquare: Square) -> Bool {
         
-        let fileRankPair = getFileAndRankAdvance(position, square2: toSquare)
+        let fileRankPair = getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare))
         
-        let result: Bool = (Rook.move(position, toSquare: toSquare) || Bishop.move(position, toSquare: toSquare)) && checkForCollisionsInBetween(toSquare, fileRankPair: fileRankPair)
+        let result: Bool = (Rook.move(Move(fromSquare: position, toSquare: toSquare)) || Bishop.move(Move(fromSquare: position, toSquare: toSquare))) && checkForClearPath(toSquare, fileRankPair: fileRankPair)
         
         updatePosition(result, toSquare: toSquare)
         

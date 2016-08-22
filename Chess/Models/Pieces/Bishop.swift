@@ -16,26 +16,36 @@ class Bishop: Piece {
         symbol = kBishopSymbol
         
         value = abs(kBishopValue)
+        
+        /**
+         * Bishop directions
+         */
+        directionsList.append(( 1,  1))
+        directionsList.append(( 1, -1))
+        directionsList.append((-1,  1))
+        directionsList.append((-1, -1))
+        
+        moveStrategy = UnlimitedMoveStrategy(directionsList: directionsList)
     }
     
     override func move(toSquare: Square) -> Bool {
         
-        let fileRankPair = getFileAndRankAdvance(position, square2: toSquare)
+        let fileRankPair = getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare))
         
-        let result: Bool = Bishop.move(position, toSquare: toSquare) && checkForCollisionsInBetween(toSquare, fileRankPair: fileRankPair)
+        let result: Bool = Bishop.move(Move(fromSquare: position, toSquare: toSquare)) && checkForClearPath(toSquare, fileRankPair: fileRankPair)
         
         updatePosition(result, toSquare: toSquare)
         
         return result
     }
     
-    static func move(position: Square, toSquare: Square) -> Bool {
+    static func move(move: Move) -> Bool {
         
         var result: Bool = false
         
-        if fileOrRankAdvanceBothCheck(position, square2: toSquare) {
+        if fileOrRankAdvanceBothCheck(Move(fromSquare: move.fromSquare, toSquare: move.toSquare)) {
             
-            let fileRankPair = getFileAndRankAdvance(position, square2: toSquare)
+            let fileRankPair = getFileAndRankAdvance(Move(fromSquare: move.fromSquare, toSquare: move.toSquare))
             
             if abs(fileRankPair.0) == abs(fileRankPair.1) {
                 
@@ -44,10 +54,5 @@ class Bishop: Piece {
         }
         
         return result
-    }
-    
-    static func generateMoves(fileRankPair: (Int, Int)) -> [Square] {
-        
-        return nil
     }
 }
