@@ -25,14 +25,14 @@ class Bishop: Piece {
         directionsList.append((-1,  1))
         directionsList.append((-1, -1))
         
-        moveStrategy = UnlimitedMoveStrategy(directionsList: directionsList)
+        moveStrategy = UnlimitedMoveStrategy(color: color, directionsList: directionsList)
     }
     
     override func move(toSquare: Square) -> Bool {
         
         let fileRankPair = getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare))
         
-        let result: Bool = Bishop.move(Move(fromSquare: position, toSquare: toSquare)) && checkForClearPath(toSquare, fileRankPair: fileRankPair)
+        let result: Bool = Bishop.move(Move(fromSquare: position, toSquare: toSquare)) && Board.sharedInstance.checkForClearPath(Move(fromSquare: position, toSquare: toSquare), fileRankPair: fileRankPair)
         
         updatePosition(result, toSquare: toSquare)
         

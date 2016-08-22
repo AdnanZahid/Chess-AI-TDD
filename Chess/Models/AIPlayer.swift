@@ -18,14 +18,14 @@ class AIPlayer: Player {
     
     override func generateMove() -> Move? {
         
-        let evaluationMove: EvaluationMove = firstAlphaBeta(kMaxPlies, player: self, alpha: Int.min, beta: Int.max)
+        let evaluationMove: EvaluationMove = firstAlphaBeta(kMaxPlies, player: self, alpha: Int.min/2, beta: Int.max/2)
         
         return Move(fromSquare: evaluationMove.fromSquare!, toSquare: evaluationMove.toSquare!)
     }
     
     func firstAlphaBeta(depth: Int, player: Player, alpha: Int, beta: Int) -> EvaluationMove {
         
-        var bestMove: EvaluationMove = EvaluationMove(fromSquare: nil, toSquare: nil, evaluationValue: Int.min)
+        var bestMove: EvaluationMove = EvaluationMove(fromSquare: nil, toSquare: nil, evaluationValue: Int.min/2)
         
         for piece in player.piecesList {
             
@@ -77,7 +77,7 @@ class AIPlayer: Player {
             }
         }
         
-        var bestEvaluationValue: Int = Int.min
+        var bestEvaluationValue: Int = Int.min/2
         
         for piece in player.piecesList {
             

@@ -30,7 +30,7 @@ class King: Piece {
         directionsList.append((-1,  0))
         directionsList.append(( 0, -1))
         
-        moveStrategy = LimitedMoveStrategy(directionsList: directionsList)
+        moveStrategy = LimitedMoveStrategy(color: color, directionsList: directionsList)
     }
     
     override func move(toSquare: Square) -> Bool {

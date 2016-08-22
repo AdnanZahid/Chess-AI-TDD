@@ -66,6 +66,8 @@
 		849A19341D6301BB000BE807 /* UnlimitedMoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A19321D6301BB000BE807 /* UnlimitedMoveStrategy.swift */; };
 		84AC15A11D6A04A90084FAD7 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC15A01D6A04A90084FAD7 /* Square.swift */; };
 		84AC15A21D6A04AA0084FAD7 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AC15A01D6A04A90084FAD7 /* Square.swift */; };
+		84D1184C1D6B8215009FE09B /* EvaluationValueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1184B1D6B8215009FE09B /* EvaluationValueHandler.swift */; };
+		84D1184D1D6B821B009FE09B /* EvaluationValueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1184B1D6B8215009FE09B /* EvaluationValueHandler.swift */; };
 		84DDA5EC1D6A3C7100C2AA37 /* BishopAllowMovesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDA5E61D6A3C7100C2AA37 /* BishopAllowMovesTests.swift */; };
 		84DDA5ED1D6A3C7100C2AA37 /* KingAllowMovesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDA5E71D6A3C7100C2AA37 /* KingAllowMovesTests.swift */; };
 		84DDA5EE1D6A3C7100C2AA37 /* KnightAllowMovesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DDA5E81D6A3C7100C2AA37 /* KnightAllowMovesTests.swift */; };
@@ -142,6 +144,7 @@
 		849A192C1D63016A000BE807 /* LimitedMoveStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LimitedMoveStrategy.swift; path = Models/MoveStrategies/LimitedMoveStrategy.swift; sourceTree = "<group>"; };
 		849A19321D6301BB000BE807 /* UnlimitedMoveStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnlimitedMoveStrategy.swift; path = Models/MoveStrategies/UnlimitedMoveStrategy.swift; sourceTree = "<group>"; };
 		84AC15A01D6A04A90084FAD7 /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Square.swift; path = Models/Square.swift; sourceTree = "<group>"; };
+		84D1184B1D6B8215009FE09B /* EvaluationValueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EvaluationValueHandler.swift; path = Models/EvaluationValueHandler.swift; sourceTree = "<group>"; };
 		84DDA5E61D6A3C7100C2AA37 /* BishopAllowMovesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BishopAllowMovesTests.swift; path = PieceAllowMovesTests/BishopAllowMovesTests.swift; sourceTree = "<group>"; };
 		84DDA5E71D6A3C7100C2AA37 /* KingAllowMovesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KingAllowMovesTests.swift; path = PieceAllowMovesTests/KingAllowMovesTests.swift; sourceTree = "<group>"; };
 		84DDA5E81D6A3C7100C2AA37 /* KnightAllowMovesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KnightAllowMovesTests.swift; path = PieceAllowMovesTests/KnightAllowMovesTests.swift; sourceTree = "<group>"; };
@@ -236,6 +239,7 @@
 			children = (
 				845A1CD81D6AC6D1007E6C45 /* AIPlayer.swift */,
 				2716D4151D58E9620056C582 /* Board.swift */,
+				84D1184B1D6B8215009FE09B /* EvaluationValueHandler.swift */,
 				845A1CD01D6AC233007E6C45 /* GameLogic.swift */,
 				849A19281D6300B3000BE807 /* MoveStrategies */,
 				2716D42A1D58F2230056C582 /* Pieces */,
@@ -463,6 +467,7 @@
 			files = (
 				2716D4351D59028D0056C582 /* Utility.swift in Sources */,
 				2716D4021D58E8ED0056C582 /* main.swift in Sources */,
+				84D1184C1D6B8215009FE09B /* EvaluationValueHandler.swift in Sources */,
 				849A192D1D63016A000BE807 /* LimitedMoveStrategy.swift in Sources */,
 				84AC15A11D6A04A90084FAD7 /* Square.swift in Sources */,
 				846A4FE11D5BD2030062B47D /* OperatorOverloadingUtility.swift in Sources */,
@@ -516,6 +521,7 @@
 				840267EB1D621FB1001A958B /* Player.swift in Sources */,
 				2716D41F1D58EA2A0056C582 /* Constants.swift in Sources */,
 				84DDA5F11D6A3C7100C2AA37 /* RookAllowMovesTests.swift in Sources */,
+				84D1184D1D6B821B009FE09B /* EvaluationValueHandler.swift in Sources */,
 				84DDA5FC1D6A3C7800C2AA37 /* QueenBlockMovesTests.swift in Sources */,
 				849A192B1D6300E6000BE807 /* MoveStrategy.swift in Sources */,
 				849A19271D62F5F8000BE807 /* ArrayExtension.swift in Sources */,

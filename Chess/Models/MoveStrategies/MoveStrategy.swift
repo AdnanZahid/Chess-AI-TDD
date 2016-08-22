@@ -10,11 +10,19 @@ import Foundation
 
 class MoveStrategy {
     
+    var color: Color
+    
     var directionsList: [(Int, Int)]
     
-    init(directionsList: [(Int, Int)]) {
+    init(color: Color, directionsList: [(Int, Int)]) {
         
+        self.color = color
         self.directionsList = directionsList
+    }
+    
+    func getMobility(position: Square) -> Int {
+        
+        return generateAllMoves(position).count
     }
     
     func generateAllMoves(position: Square) -> [Square] {

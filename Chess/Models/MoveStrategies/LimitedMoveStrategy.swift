@@ -15,7 +15,9 @@ class LimitedMoveStrategy: MoveStrategy {
         var possibleMovesToSquaresList: [Square] = []
         let newPosition: Square = position + fileRankPair
         
-        if Board.sharedInstance.checkIfSquareIsNotNil(newPosition) {
+        if Board.sharedInstance.checkIfSquareIsNotNil(newPosition)
+            
+            && Board.sharedInstance.checkIfEmptyOrEnemyPieceExists(color, square: newPosition) {
             
             possibleMovesToSquaresList.append(newPosition)
         }

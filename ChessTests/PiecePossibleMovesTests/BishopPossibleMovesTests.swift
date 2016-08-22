@@ -38,6 +38,34 @@ class BishopPossibleMovesTests: XCTestCase {
         XCTAssertTrue(possibleMoves == comparisonMoves)
     }
     
+    func testPossibleMovesWhiteBishopFromD4FriendlyFire() {
+        
+        kBishopValue >> E5
+        kBishopValue >> E3
+        kBishopValue >> C5
+        kBishopValue >> C3
+        
+        let possibleMoves: [Square] = ~(kBishopValue >> D4)
+        
+        let comparisonMoves: [Square] = []
+        
+        XCTAssertTrue(possibleMoves == comparisonMoves)
+    }
+    
+    func testPossibleMovesWhiteBishopFromD4EnemyFire() {
+        
+        -kBishopValue >> E5
+        -kBishopValue >> E3
+        -kBishopValue >> C5
+        -kBishopValue >> C3
+        
+        let possibleMoves: [Square] = ~(kBishopValue >> D4)
+        
+        let comparisonMoves: [Square] = [E5, E3, C5, C3]
+        
+        XCTAssertTrue(possibleMoves == comparisonMoves)
+    }
+    
     ///////////
     // BLACK //
     ///////////
@@ -56,6 +84,34 @@ class BishopPossibleMovesTests: XCTestCase {
         let possibleMoves: [Square] = ~(-kBishopValue >> E4)
         
         let comparisonMoves: [Square] = [F5, G6, H7, F3, G2, H1, D5, C6, B7, A8, D3, C2, B1]
+        
+        XCTAssertTrue(possibleMoves == comparisonMoves)
+    }
+    
+    func testPossibleMovesBlackBishopFromDE6FriendlyFire() {
+        
+        -kBishopValue >> F7
+        -kBishopValue >> F5
+        -kBishopValue >> D7
+        -kBishopValue >> D5
+        
+        let possibleMoves: [Square] = ~(-kBishopValue >> E6)
+        
+        let comparisonMoves: [Square] = []
+        
+        XCTAssertTrue(possibleMoves == comparisonMoves)
+    }
+    
+    func testPossibleMovesBlackBishopFromDE6EnemyFire() {
+        
+        kBishopValue >> F7
+        kBishopValue >> F5
+        kBishopValue >> D7
+        kBishopValue >> D5
+        
+        let possibleMoves: [Square] = ~(-kBishopValue >> E6)
+        
+        let comparisonMoves: [Square] = [F7, F5, D7, D5]
         
         XCTAssertTrue(possibleMoves == comparisonMoves)
     }

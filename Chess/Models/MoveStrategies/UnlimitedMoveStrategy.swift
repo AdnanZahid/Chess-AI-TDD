@@ -15,11 +15,15 @@ class UnlimitedMoveStrategy: MoveStrategy {
         var possibleMovesToSquaresList: [Square] = []
         var newPosition: Square = position + fileRankPair
         
-        while Board.sharedInstance.checkIfSquareIsNotNil(newPosition) {
+        while Board.sharedInstance.checkIfSquareIsNotNil(newPosition)
             
-            possibleMovesToSquaresList.append(newPosition)
+            && Board.sharedInstance.checkIfEmptyOrEnemyPieceExists(color, square: newPosition)
             
-            newPosition = newPosition + fileRankPair
+            && Board.sharedInstance.checkForClearPath(Move(fromSquare: position, toSquare: newPosition), fileRankPair: fileRankPair) {
+                
+                possibleMovesToSquaresList.append(newPosition)
+                
+                newPosition = newPosition + fileRankPair
         }
         
         return possibleMovesToSquaresList

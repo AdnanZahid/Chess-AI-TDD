@@ -15,21 +15,23 @@ class Controller {
     
     init() {
         
-        gameLogic = GameLogic(isWhitePlayerAI: true, isBlackPlayerAI: false)
+        gameLogic = GameLogic(isWhitePlayerAI: false, isBlackPlayerAI: false)
         
         view = View()
         
         while(true) {
             
-            view.output()
-            
-            if gameLogic.isAITurn() {
+            /**
+             * IF the following CONDITIONS are TRUE, then AI MOVES
+             */
+            if (gameLogic.isAITurn() && gameLogic.move(gameLogic.generateMoveFromAI()))
                 
-                gameLogic.move(gameLogic.generateMoveFromAI())
+                /**
+                 * ELSE HUMAN MOVES
+                 */
+                || gameLogic.move(view.input()!) {
                 
-            } else {
-                
-                gameLogic.move(view.input()!)
+                view.output()
             }
         }
     }

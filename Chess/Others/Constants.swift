@@ -8,7 +8,7 @@
 
 import Foundation
 
-let kMaxPlies = 3
+let kMaxPlies = 1
 
 let kNumberOfSquaresAlongX: Int = 12
 let kNumberOfSquaresAlongY: Int = 12

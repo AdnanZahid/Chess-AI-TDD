@@ -45,7 +45,7 @@ class GameLogic {
         
         var result: Bool = false
         
-        if Board.sharedInstance.movePiece(move) {
+        if currentPlayer.movePiece(move) {
             
             changeTurn()
             

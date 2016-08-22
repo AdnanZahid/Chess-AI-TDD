@@ -53,27 +53,4 @@ class Piece: Equatable {
             hasMoved = true
         }
     }
-    
-    func checkForClearPath(toSquare: Square, fileRankPair: (Int, Int)) -> Bool {
-        
-        var result: Bool = true
-        
-        var positionToCheck: Square = position
-        
-        let secondLastSquare: Square = toSquare - getFileAndRankSingleAdvance(fileRankPair)
-        
-        while positionToCheck != secondLastSquare {
-            
-            positionToCheck = positionToCheck + getFileAndRankSingleAdvance(fileRankPair)
-            
-            result = Board.sharedInstance.checkIfSquareIsEmpty(positionToCheck)
-            
-            if result == false {
-                
-                break
-            }
-        }
-        
-        return result
-    }
 }

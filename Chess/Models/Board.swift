@@ -46,6 +46,11 @@ class Board {
     var currentTurnColor: Color = Color.white
     
     /**
+     * EVALUATION VALUE for computing AI MOVES - POSITIVE for WHITE and NEGATIVE for BLACK
+     */
+    var evaluationValue: Int = 0
+    
+    /**
      * Initialize an EMPTY board
      */
     init() {
@@ -77,16 +82,22 @@ class Board {
                  * This PIECE COLOR has the CURRENT TURN
                  */
                 if piece.color == currentTurnColor {
-                
+                    
                     /**
-                     * Put EMPTY piece on STARTING POSITION
+                     * Check if PIECE can MOVE
                      */
-                    if putEmptyPieceOnPosition(move.fromSquare) {
+                    if piece.move(move.toSquare) {
                         
                         /**
-                         * Check if PIECE can MOVE and PIECE can be put on the DESTINATION SQUARE
+                         * Check if PIECE can be put on the DESTINATION SQUARE
                          */
-                        result = piece.move(move.toSquare) && putPieceOnPosition(piece, square: move.toSquare)
+                        if putPieceOnPosition(piece, square: move.toSquare) {
+                            
+                            /**
+                             * Check if an EMPTY piece can be PUT on STARTING POSITION
+                             */
+                            result = putEmptyPieceOnPosition(move.fromSquare)
+                        }
                     }
                 }
             }
@@ -128,6 +139,45 @@ class Board {
     }
     
     /**
+     * CHECK if given SQUARE is EMPTY or occupied by the ENEMY
+     */
+    func checkIfEmptyOrEnemyPieceExists(color: Color, square: Square) -> Bool {
+        
+        /**
+         * CHECK if given SQUARE is EMPTY or occupied by the ENEMY
+         */
+        if let piece: Piece = pieceArray[square.rank.rawValue][square.file.rawValue] {
+            
+            return piece.color != color || piece == EmptyPiece.sharedInstance
+        }
+        
+        return false
+    }
+    
+    func checkForClearPath(move: Move, fileRankPair: (Int, Int)) -> Bool {
+        
+        var result: Bool = true
+        
+        var positionToCheck: Square = move.fromSquare
+        
+        let secondLastSquare: Square = move.toSquare - getFileAndRankSingleAdvance(fileRankPair)
+        
+        while positionToCheck != secondLastSquare {
+            
+            positionToCheck = positionToCheck + getFileAndRankSingleAdvance(fileRankPair)
+            
+            result = checkIfSquareIsEmpty(positionToCheck)
+            
+            if result == false {
+                
+                break
+            }
+        }
+        
+        return result
+    }
+    
+    /**
      * GET a PIECE from the given SQUARE
      */
     func getPieceOnPosition(square: Square) -> Piece? {
@@ -135,7 +185,7 @@ class Board {
         /**
          * Can not GET a piece from out of bounds
          */
-        if let piece = pieceArray[square.rank.rawValue][square.file.rawValue] {
+        if let piece: Piece = pieceArray[square.rank.rawValue][square.file.rawValue] {
             
             /**
              * Can not GET an empty piece
@@ -159,7 +209,7 @@ class Board {
         /**
          * Can not go out of bounds
          */
-        if let existingPiece = pieceArray[square.rank.rawValue][square.file.rawValue] {
+        if let existingPiece: Piece = pieceArray[square.rank.rawValue][square.file.rawValue] {
             
             /**
              * King can not be captured
@@ -221,7 +271,12 @@ class Board {
     /**
      * Fill the board with PIECES of the given COLOR
      */
-    func setupPieceBoard(color: Color) {
+    func setupPieceBoard(color: Color, pieceDelegate: PieceDelegate) -> [Piece] {
+        
+        /**
+         * Set up a LIST of PIECES to be passed to the corresponding PLAYER
+         */
+        var piecesList: [Piece] = []
         
         /**
          * Pick BLACK RANK ENUMERATION by default
@@ -254,10 +309,20 @@ class Board {
                     piecesConfigurationArray[j][i],
                     position: Square(
                         file: FileIndex(rawValue: i)!,
-                        rank: RankIndex(rawValue: j)!), delegate: nil)
+                        rank: RankIndex(rawValue: j)!), delegate: pieceDelegate)
                 
                 pieceArray[j][i] = piece
+                
+                /**
+                 * Add this PIECE to the LIST of PIECES
+                 */
+                piecesList.append(piece)
             }
         }
+        
+        /**
+         * Return the LIST of PIECES to the corresponding PLAYER
+         */
+        return piecesList
     }
 }

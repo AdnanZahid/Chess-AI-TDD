@@ -32,7 +32,7 @@ class Knight: Piece {
         directionsList.append((-1, -2))
         directionsList.append((-2, -1))
         
-        moveStrategy = LimitedMoveStrategy(directionsList: directionsList)
+        moveStrategy = LimitedMoveStrategy(color: color, directionsList: directionsList)
     }
     
     override func move(toSquare: Square) -> Bool {

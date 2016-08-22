@@ -38,6 +38,44 @@ class QueenPossibleMovesTests: XCTestCase {
         XCTAssertTrue(possibleMoves == comparisonMoves)
     }
     
+    func testPossibleMovesWhiteQueenFromD4FriendlyFire() {
+        
+        kQueenValue >> E5
+        kQueenValue >> E3
+        kQueenValue >> C5
+        kQueenValue >> C3
+        
+        kQueenValue >> E4
+        kQueenValue >> D5
+        kQueenValue >> C4
+        kQueenValue >> D3
+        
+        let possibleMoves: [Square] = ~(kQueenValue >> D4)
+        
+        let comparisonMoves: [Square] = []
+        
+        XCTAssertTrue(possibleMoves == comparisonMoves)
+    }
+    
+    func testPossibleMovesWhiteQueenFromD4EnemyFire() {
+        
+        -kQueenValue >> E5
+        -kQueenValue >> E3
+        -kQueenValue >> C5
+        -kQueenValue >> C3
+        
+        -kQueenValue >> E4
+        -kQueenValue >> D5
+        -kQueenValue >> C4
+        -kQueenValue >> D3
+        
+        let possibleMoves: [Square] = ~(kQueenValue >> D4)
+        
+        let comparisonMoves: [Square] = [E5, E3, C5, C3, E4, D5, C4, D3]
+        
+        XCTAssertTrue(possibleMoves == comparisonMoves)
+    }
+    
     ///////////
     // BLACK //
     ///////////
@@ -56,6 +94,44 @@ class QueenPossibleMovesTests: XCTestCase {
         let possibleMoves: [Square] = ~(-kQueenValue >> E4)
         
         let comparisonMoves: [Square] = [F5, G6, H7, F3, G2, H1, D5, C6, B7, A8, D3, C2, B1, F4, G4, H4, E5, E6, E7, E8, D4, C4, B4, A4, E3, E2, E1]
+        
+        XCTAssertTrue(possibleMoves == comparisonMoves)
+    }
+    
+    func testPossibleMovesBlackQueenFromDE6FriendlyFire() {
+        
+        -kQueenValue >> F7
+        -kQueenValue >> F5
+        -kQueenValue >> D7
+        -kQueenValue >> D5
+        
+        -kQueenValue >> F6
+        -kQueenValue >> E7
+        -kQueenValue >> D6
+        -kQueenValue >> E5
+        
+        let possibleMoves: [Square] = ~(-kQueenValue >> E6)
+        
+        let comparisonMoves: [Square] = []
+        
+        XCTAssertTrue(possibleMoves == comparisonMoves)
+    }
+    
+    func testPossibleMovesBlackQueenFromDE6EnemyFire() {
+        
+        kQueenValue >> F7
+        kQueenValue >> F5
+        kQueenValue >> D7
+        kQueenValue >> D5
+        
+        kQueenValue >> F6
+        kQueenValue >> E7
+        kQueenValue >> D6
+        kQueenValue >> E5
+        
+        let possibleMoves: [Square] = ~(-kQueenValue >> E6)
+        
+        let comparisonMoves: [Square] = [F7, F5, D7, D5, F6, E7, D6, E5]
         
         XCTAssertTrue(possibleMoves == comparisonMoves)
     }

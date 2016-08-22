@@ -30,7 +30,7 @@ class Pawn: Piece {
         directionsList.append((-1, pawnMoveDirection(1)))
         directionsList.append(( 1, pawnMoveDirection(1)))
         
-        moveStrategy = LimitedMoveStrategy(directionsList: directionsList)
+        moveStrategy = LimitedMoveStrategy(color: color, directionsList: directionsList)
     }
     
     override func move(toSquare: Square) -> Bool {
@@ -49,7 +49,7 @@ class Pawn: Piece {
                 
                 let fileRankPair = getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare))
                 
-                result = checkForClearPath(toSquare, fileRankPair: fileRankPair)
+                result = Board.sharedInstance.checkForClearPath(Move(fromSquare: position, toSquare: toSquare), fileRankPair: fileRankPair)
             }
             
         } else if Board.sharedInstance.getPieceOnPosition(toSquare)?.color != color {
