@@ -71,8 +71,4 @@ class GameLogic {
         
         return currentPlayer.generateMove()!
     }
-    
-    func inputTaken(fromSquare: Square, toSquare: Square) {
-        
-    }
 }

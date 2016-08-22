@@ -154,20 +154,46 @@ class Board {
         return false
     }
     
-    func checkForClearPath(move: Move, fileRankPair: (Int, Int)) -> Bool {
+    /**
+     * CHECK for CLEAR PATH for a MOVE
+     */
+    func checkForClearPath(move: Move) -> Bool {
         
         var result: Bool = true
         
+        /**
+         * GET a FILE RANK PAIR from a given MOVE - FILE RANK PAIR indicates the DIRECTION
+         */
+        let fileRankPair = getFileAndRankAdvance(Move(fromSquare: move.fromSquare, toSquare: move.toSquare))
+        
+        /**
+         * GET the STARTING POSITION
+         */
         var positionToCheck: Square = move.fromSquare
         
+        /**
+         * GET the POSITION BEFORE the ENDING POSITION - Call it SECOND LAST SQUARE
+         */
         let secondLastSquare: Square = move.toSquare - getFileAndRankSingleAdvance(fileRankPair)
         
+        /**
+         * CHECK IF STARTING POSITION and SECOND LAST SQUARE are not the SAME - In other words, CHECK if we have to CHECK for a CLEAR PATH
+         */
         while positionToCheck != secondLastSquare {
             
+            /**
+             * INCREMENT the CURRENT POSITION STEP by STEP towards the FINAL POSITION
+             */
             positionToCheck = positionToCheck + getFileAndRankSingleAdvance(fileRankPair)
             
+            /**
+             * CHECK IF the CURRENT POSITION is EMPTY - Hence FIND OUT if a CLEAR PATH exists
+             */
             result = checkIfSquareIsEmpty(positionToCheck)
             
+            /**
+             * IF there is an OBSTACLE in BETWEEN, then do NOT CHECK other SQUARES
+             */
             if result == false {
                 
                 break

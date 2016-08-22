@@ -19,7 +19,7 @@ class UnlimitedMoveStrategy: MoveStrategy {
             
             && Board.sharedInstance.checkIfEmptyOrEnemyPieceExists(color, square: newPosition)
             
-            && Board.sharedInstance.checkForClearPath(Move(fromSquare: position, toSquare: newPosition), fileRankPair: fileRankPair) {
+            && Board.sharedInstance.checkForClearPath(Move(fromSquare: position, toSquare: newPosition)) {
                 
                 possibleMovesToSquaresList.append(newPosition)
                 

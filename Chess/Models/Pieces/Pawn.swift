@@ -47,9 +47,7 @@ class Pawn: Piece {
                 
                 && hasMoved == false {
                 
-                let fileRankPair = getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare))
-                
-                result = Board.sharedInstance.checkForClearPath(Move(fromSquare: position, toSquare: toSquare), fileRankPair: fileRankPair)
+                result = Board.sharedInstance.checkForClearPath(Move(fromSquare: position, toSquare: toSquare))
             }
             
         } else if Board.sharedInstance.getPieceOnPosition(toSquare)?.color != color {

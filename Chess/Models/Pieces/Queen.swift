@@ -38,9 +38,7 @@ class Queen: Piece {
 
     override func move(toSquare: Square) -> Bool {
         
-        let fileRankPair = getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare))
-        
-        let result: Bool = (Rook.move(Move(fromSquare: position, toSquare: toSquare)) || Bishop.move(Move(fromSquare: position, toSquare: toSquare))) && Board.sharedInstance.checkForClearPath(Move(fromSquare: position, toSquare: toSquare), fileRankPair: fileRankPair)
+        let result: Bool = (Rook.move(Move(fromSquare: position, toSquare: toSquare)) || Bishop.move(Move(fromSquare: position, toSquare: toSquare))) && Board.sharedInstance.checkForClearPath(Move(fromSquare: position, toSquare: toSquare))
         
         updatePosition(result, toSquare: toSquare)
         

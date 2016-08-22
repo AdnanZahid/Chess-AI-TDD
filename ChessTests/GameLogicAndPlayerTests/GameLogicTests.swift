@@ -71,5 +71,9 @@ class GameLogicTests: XCTestCase {
         gameLogic.changeTurn()
         
         XCTAssertTrue(gameLogic.isAITurn() == true)
+        
+        gameLogic.changeTurn()
+        
+        XCTAssertTrue(gameLogic.isAITurn() == false)
     }
 }
