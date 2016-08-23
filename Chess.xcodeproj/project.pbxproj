@@ -33,6 +33,7 @@
 		2716D4491D5916B70056C582 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2716D4471D5916B70056C582 /* Knight.swift */; };
 		840267E21D6193D5001A958B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840267E11D6193D5001A958B /* Player.swift */; };
 		840267EB1D621FB1001A958B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840267E11D6193D5001A958B /* Player.swift */; };
+		8402B4931D6CBFB300468EA8 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402B4921D6CBFB300468EA8 /* TestConstants.swift */; };
 		84169B891D6C337500FBFCA5 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84169B881D6C337500FBFCA5 /* Structures.swift */; };
 		84169B8A1D6C337500FBFCA5 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84169B881D6C337500FBFCA5 /* Structures.swift */; };
 		84169B8C1D6C367A00FBFCA5 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84169B8B1D6C367A00FBFCA5 /* Stack.swift */; };
@@ -129,6 +130,7 @@
 		2716D4441D5916370056C582 /* Queen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Queen.swift; path = Models/Pieces/Queen.swift; sourceTree = "<group>"; };
 		2716D4471D5916B70056C582 /* Knight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Knight.swift; path = Models/Pieces/Knight.swift; sourceTree = "<group>"; };
 		840267E11D6193D5001A958B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Models/Player.swift; sourceTree = "<group>"; };
+		8402B4921D6CBFB300468EA8 /* TestConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		84169B881D6C337500FBFCA5 /* Structures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Structures.swift; path = Others/Structures.swift; sourceTree = "<group>"; };
 		84169B8B1D6C367A00FBFCA5 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Others/Stack.swift; sourceTree = "<group>"; };
 		84169B8F1D6C6E1700FBFCA5 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorHandler.swift; path = Others/ErrorHandler.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				8459784E1D6A496500AD67C0 /* PieceCapturesTests */,
 				84AC15A31D6A130E0084FAD7 /* PiecePossibleMovesTests */,
 				846A4FDE1D5BD1020062B47D /* TestUtility.swift */,
+				8402B4921D6CBFB300468EA8 /* TestConstants.swift */,
 			);
 			path = ChessTests;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				84DDA6171D6A3FC400C2AA37 /* QueenBoardOperationsTests.swift in Sources */,
 				84DDA5EF1D6A3C7100C2AA37 /* PawnAllowMovesTests.swift in Sources */,
 				840267EB1D621FB1001A958B /* Player.swift in Sources */,
+				8402B4931D6CBFB300468EA8 /* TestConstants.swift in Sources */,
 				2716D41F1D58EA2A0056C582 /* Constants.swift in Sources */,
 				84DDA5F11D6A3C7100C2AA37 /* RookAllowMovesTests.swift in Sources */,
 				84D1184D1D6B821B009FE09B /* EvaluationValueHandler.swift in Sources */,
