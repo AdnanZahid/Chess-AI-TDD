@@ -19,6 +19,7 @@ class Piece: Equatable {
     var position: Square?
     var hasMoved: Bool?
     var id: Int
+    var captured: Bool = false
     
     weak var delegate: PieceDelegate?
     

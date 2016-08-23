@@ -263,6 +263,11 @@ class Board {
                      */
                     || existingPiece.color != piece.color {
                     
+                    if piece != EmptyPiece.sharedInstance {
+                        
+                        existingPiece.captured = true
+                    }
+                    
                     pieceArray[square.rank.rawValue][square.file.rawValue] = piece
                     
                     if pushToStack {
@@ -307,14 +312,23 @@ class Board {
         
         let moveState: MoveState = moveStateStack.pop()!
         
-        moveState.fromPieceState.piece.hasMoved = moveState.fromPieceState.hasMoved
-        moveState.toPieceState.piece.hasMoved = moveState.toPieceState.hasMoved
-        
         /**
          * PUT the PIECES back where they were BEFORE the MOVE
          */
         putPieceOnPosition(moveState.fromPieceState.piece, square: moveState.fromPieceState.position, pushToStack: false)
         putPieceOnPosition(moveState.toPieceState.piece, square: moveState.toPieceState.position, pushToStack: false)
+        
+        /**
+         * RESET HASMOVED flag of BOTH the PIECES
+         */
+        moveState.fromPieceState.piece.hasMoved = moveState.fromPieceState.hasMoved
+        moveState.toPieceState.piece.hasMoved = moveState.toPieceState.hasMoved
+        
+        /**
+         * RESET CAPTURED flag of BOTH the PIECES
+         */
+        moveState.fromPieceState.piece.captured = false
+        moveState.toPieceState.piece.captured = false
     }
     
     /**

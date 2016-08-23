@@ -27,32 +27,35 @@ class AIPlayer: Player {
         
         for piece in player.piecesList {
             
-            let fromSquare: Square = piece.position!
-            
-            for toSquare in (piece.moveStrategy?.generateAllMoves(fromSquare))! {
+            if piece.captured == false {
                 
-                if player.movePiece(Move(fromSquare: fromSquare, toSquare: toSquare), checkCurrentTurn: false) {
+                let fromSquare: Square = piece.position!
+                
+                for toSquare in (piece.moveStrategy?.generateAllMoves(fromSquare))! {
                     
-                    var localAlpha: Int = alpha
-                    
-                    let evaluationMove: EvaluationMove = EvaluationMove(fromSquare: fromSquare, toSquare: toSquare, evaluationValue: -alphaBeta(depth - 1, player: player.opponent!, alpha: -beta, beta: -localAlpha))
-                    
-                    
-                    Board.sharedInstance.undoMove()
-                    
-                    
-                    if evaluationMove.evaluationValue > bestMove.evaluationValue {
+                    if player.movePiece(Move(fromSquare: fromSquare, toSquare: toSquare), checkCurrentTurn: false) {
                         
-                        bestMove = evaluationMove
-                    }
-                    
-                    if bestMove.evaluationValue >= beta {
+                        var localAlpha: Int = alpha
                         
-                        break
-                    
-                    } else if bestMove.evaluationValue > alpha {
+                        let evaluationMove: EvaluationMove = EvaluationMove(fromSquare: fromSquare, toSquare: toSquare, evaluationValue: -alphaBeta(depth - 1, player: player.opponent!, alpha: -beta, beta: -localAlpha))
                         
-                        localAlpha = bestMove.evaluationValue
+                        
+                        Board.sharedInstance.undoMove()
+                        
+                        
+                        if evaluationMove.evaluationValue > bestMove.evaluationValue {
+                            
+                            bestMove = evaluationMove
+                        }
+                        
+                        if bestMove.evaluationValue >= beta {
+                            
+                            break
+                        
+                        } else if bestMove.evaluationValue > alpha {
+                            
+                            localAlpha = bestMove.evaluationValue
+                        }
                     }
                 }
             }
@@ -79,32 +82,35 @@ class AIPlayer: Player {
         
         for piece in player.piecesList {
             
-            let fromSquare: Square = piece.position!
-            
-            for toSquare in (piece.moveStrategy?.generateAllMoves(fromSquare))! {
+            if piece.captured == false {
                 
-                if player.movePiece(Move(fromSquare: fromSquare, toSquare: toSquare), checkCurrentTurn: false) {
+                let fromSquare: Square = piece.position!
+                
+                for toSquare in (piece.moveStrategy?.generateAllMoves(fromSquare))! {
                     
-                    var localAlpha: Int = alpha
-                    
-                    let evaluationValue: Int = -alphaBeta(depth - 1, player: player.opponent!, alpha: -beta, beta: -localAlpha)
-                    
-                    
-                    Board.sharedInstance.undoMove()
-                    
-                    
-                    if evaluationValue > bestEvaluationValue {
+                    if player.movePiece(Move(fromSquare: fromSquare, toSquare: toSquare), checkCurrentTurn: false) {
                         
-                        bestEvaluationValue = evaluationValue
-                    }
-                    
-                    if bestEvaluationValue >= beta {
+                        var localAlpha: Int = alpha
                         
-                        break
+                        let evaluationValue: Int = -alphaBeta(depth - 1, player: player.opponent!, alpha: -beta, beta: -localAlpha)
                         
-                    } else if bestEvaluationValue > alpha {
                         
-                        localAlpha = bestEvaluationValue
+                        Board.sharedInstance.undoMove()
+                        
+                        
+                        if evaluationValue > bestEvaluationValue {
+                            
+                            bestEvaluationValue = evaluationValue
+                        }
+                        
+                        if bestEvaluationValue >= beta {
+                            
+                            break
+                            
+                        } else if bestEvaluationValue > alpha {
+                            
+                            localAlpha = bestEvaluationValue
+                        }
                     }
                 }
             }
