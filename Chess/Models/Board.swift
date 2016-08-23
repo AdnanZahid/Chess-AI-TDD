@@ -67,7 +67,7 @@ class Board {
     /**
      * MOVE PIECE from STARTING SQUARE to ENDING SQUARE
      */
-    func movePiece(move: Move) -> Bool {
+    func movePiece(move: Move, checkCurrentTurn: Bool) -> Bool {
         
         var result: Bool = false
         
@@ -84,7 +84,7 @@ class Board {
                 /**
                  * This PIECE COLOR has the CURRENT TURN
                  */
-                if piece.color == currentTurnColor {
+                if piece.color == currentTurnColor || checkCurrentTurn == false {
                     
                     /**
                      * Check if PIECE can MOVE
@@ -101,7 +101,6 @@ class Board {
                              */
                             result = putEmptyPieceOnPosition(move.fromSquare)
                         }
-                        
                     } else {
                         ErrorHandler.sharedInstance.logError(Error.InvalidMove)
                     }
@@ -252,7 +251,7 @@ class Board {
             /**
              * King can not be captured
              */
-            if existingPiece.value != abs(kKingValue) {
+            if true || existingPiece.value != abs(kKingValue) {
                 
                 /**
                  * Destination square is empty
@@ -276,15 +275,17 @@ class Board {
                             /**
                              * FROM PIECE STATE
                              */
-                            fromPieceState: PieceState(piece: piece, position: piece.position!),
+                            fromPieceState: PieceState(piece: piece, position: piece.position!, hasMoved: piece.hasMoved!),
                             
                             /**
                              * TO PIECE STATE
                              */
-                            toPieceState: PieceState(piece: existingPiece, position: square)))
+                            toPieceState: PieceState(piece: existingPiece, position: square, hasMoved: piece.hasMoved!)))
                     }
                     
                     result = true
+                    
+                    piece.updatePosition(square, changeHasMoved: pushToStack)
                     
                 } else {
                     ErrorHandler.sharedInstance.logError(Error.FriendlyFire)
@@ -305,6 +306,9 @@ class Board {
     func undoMove() {
         
         let moveState: MoveState = moveStateStack.pop()!
+        
+        moveState.fromPieceState.piece.hasMoved = moveState.fromPieceState.hasMoved
+        moveState.toPieceState.piece.hasMoved = moveState.toPieceState.hasMoved
         
         /**
          * PUT the PIECES back where they were BEFORE the MOVE

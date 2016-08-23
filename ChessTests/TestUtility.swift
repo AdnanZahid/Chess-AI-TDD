@@ -23,14 +23,9 @@ func > (pieceValue: Int, move: Move) -> Piece {
     let piece: Piece = PieceFactory.getPiece(pieceValue, position: move.fromSquare, delegate: nil)
     
     /**
-     * SETTING the CURRENT TURN COLOR of BOARD to match the PIECE COLOR - Because we are not testing the turn based GAME LOGIC yet
-     */
-    Board.sharedInstance.currentTurnColor = piece.color!
-    
-    /**
      * PUTTING the PIECE on the given SQUARE
      */
-    Board.sharedInstance.putPieceOnPosition(piece, square: piece.position!, pushToStack: false)
+    XCTAssertTrue(Board.sharedInstance.putPieceOnPosition(piece, square: piece.position!, pushToStack: false))
     
     /**
      * MOVING the PIECE to the given SQUARE - EXPECTING it to PASS
@@ -45,7 +40,7 @@ func > (pieceValue: Int, move: Move) -> Piece {
  */
 func > (piece: Piece, toSquare: Square) {
     
-    XCTAssertTrue(Board.sharedInstance.movePiece(Move(fromSquare: piece.position!, toSquare: toSquare)))
+    XCTAssertTrue(Board.sharedInstance.movePiece(Move(fromSquare: piece.position!, toSquare: toSquare), checkCurrentTurn: false))
 }
 
 /**
@@ -59,14 +54,9 @@ func !== (pieceValue: Int, move: Move) -> Piece {
     let piece: Piece = PieceFactory.getPiece(pieceValue, position: move.fromSquare, delegate: nil)
     
     /**
-     * SETTING the CURRENT TURN COLOR of BOARD to match the PIECE COLOR - Because we are not testing the turn based GAME LOGIC yet
-     */
-    Board.sharedInstance.currentTurnColor = piece.color!
-    
-    /**
      * PUTTING the PIECE on the given SQUARE
      */
-    Board.sharedInstance.putPieceOnPosition(piece, square: piece.position!, pushToStack: false)
+    XCTAssertTrue(Board.sharedInstance.putPieceOnPosition(piece, square: piece.position!, pushToStack: false))
     
     /**
      * MOVING the PIECE to the given SQUARE - EXPECTING it to FAIL
@@ -81,7 +71,7 @@ func !== (pieceValue: Int, move: Move) -> Piece {
  */
 func !== (piece: Piece, toSquare: Square) {
     
-    XCTAssertFalse(Board.sharedInstance.movePiece(Move(fromSquare: piece.position!, toSquare: toSquare)))
+    XCTAssertFalse(Board.sharedInstance.movePiece(Move(fromSquare: piece.position!, toSquare: toSquare), checkCurrentTurn: false))
 }
 
 /**

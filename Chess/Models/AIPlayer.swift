@@ -31,7 +31,7 @@ class AIPlayer: Player {
             
             for toSquare in (piece.moveStrategy?.generateAllMoves(fromSquare))! {
                 
-                if player.movePiece(Move(fromSquare: fromSquare, toSquare: toSquare)) {
+                if player.movePiece(Move(fromSquare: fromSquare, toSquare: toSquare), checkCurrentTurn: false) {
                     
                     var localAlpha: Int = alpha
                     
@@ -83,7 +83,7 @@ class AIPlayer: Player {
             
             for toSquare in (piece.moveStrategy?.generateAllMoves(fromSquare))! {
                 
-                if player.movePiece(Move(fromSquare: fromSquare, toSquare: toSquare)) {
+                if player.movePiece(Move(fromSquare: fromSquare, toSquare: toSquare), checkCurrentTurn: false) {
                     
                     var localAlpha: Int = alpha
                     

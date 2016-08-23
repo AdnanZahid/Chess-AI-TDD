@@ -13,7 +13,7 @@ class Controller {
     
     init() {
         
-        gameLogic = GameLogic(isWhitePlayerAI: false, isBlackPlayerAI: true)
+        gameLogic = GameLogic(isWhitePlayerAI: true, isBlackPlayerAI: true)
         
         view = View()
         
@@ -29,6 +29,9 @@ class Controller {
                  */
                 || gameLogic.move(view.input()!) {
                 
+                /**
+                 * DISPLAY OUTPUT on VIEW
+                 */
                 view.output()
             }
         }

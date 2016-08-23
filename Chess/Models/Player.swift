@@ -30,11 +30,11 @@ class Player: PieceDelegate {
         piecesList.remove(piece)
     }
     
-    func movePiece(move: Move) -> Bool {
+    func movePiece(move: Move, checkCurrentTurn: Bool) -> Bool {
         
         var result: Bool = false
         
-        if Board.sharedInstance.movePiece(move) {
+        if Board.sharedInstance.movePiece(move, checkCurrentTurn: checkCurrentTurn) {
             
             result = true
             

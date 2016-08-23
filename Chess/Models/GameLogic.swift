@@ -43,7 +43,7 @@ class GameLogic {
         
         var result: Bool = false
         
-        if currentPlayer.movePiece(move) {
+        if currentPlayer.movePiece(move, checkCurrentTurn: true) {
             
             changeTurn()
             

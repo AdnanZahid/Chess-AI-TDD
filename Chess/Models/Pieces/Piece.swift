@@ -49,10 +49,12 @@ class Piece: Equatable {
         return false
     }
     
-    func updatePosition(toSquare: Square) {
+    func updatePosition(toSquare: Square, changeHasMoved: Bool) {
         
         position = toSquare
         
-        hasMoved = true
+        if changeHasMoved {
+            hasMoved = true
+        }
     }
 }

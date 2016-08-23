@@ -20,6 +20,7 @@ struct EvaluationMove {
 struct PieceState {
     let piece: Piece
     let position: Square
+    let hasMoved: Bool
 }
 
 struct MoveState {
