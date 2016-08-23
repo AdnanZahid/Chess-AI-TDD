@@ -8,5 +8,5 @@
 
 class EmptyPiece: Piece {
     
-    static let sharedInstance = EmptyPiece(color: nil, position: nil, hasMoved: nil, delegate: nil)
+    static let sharedInstance: EmptyPiece = EmptyPiece(color: nil, position: nil, hasMoved: nil, delegate: nil)
 }

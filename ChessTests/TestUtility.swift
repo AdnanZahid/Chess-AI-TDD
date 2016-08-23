@@ -25,12 +25,12 @@ func > (pieceValue: Int, move: Move) -> Piece {
     /**
      * SETTING the CURRENT TURN COLOR of BOARD to match the PIECE COLOR - Because we are not testing the turn based GAME LOGIC yet
      */
-    Board.sharedInstance.currentTurnColor = piece.color
+    Board.sharedInstance.currentTurnColor = piece.color!
     
     /**
      * PUTTING the PIECE on the given SQUARE
      */
-    Board.sharedInstance.putPieceOnPosition(piece, square: piece.position)
+    Board.sharedInstance.putPieceOnPosition(piece, square: piece.position!, pushToStack: false)
     
     /**
      * MOVING the PIECE to the given SQUARE - EXPECTING it to PASS
@@ -45,7 +45,7 @@ func > (pieceValue: Int, move: Move) -> Piece {
  */
 func > (piece: Piece, toSquare: Square) {
     
-    XCTAssertTrue(Board.sharedInstance.movePiece(Move(fromSquare: piece.position, toSquare: toSquare)))
+    XCTAssertTrue(Board.sharedInstance.movePiece(Move(fromSquare: piece.position!, toSquare: toSquare)))
 }
 
 /**
@@ -61,12 +61,12 @@ func !== (pieceValue: Int, move: Move) -> Piece {
     /**
      * SETTING the CURRENT TURN COLOR of BOARD to match the PIECE COLOR - Because we are not testing the turn based GAME LOGIC yet
      */
-    Board.sharedInstance.currentTurnColor = piece.color
+    Board.sharedInstance.currentTurnColor = piece.color!
     
     /**
      * PUTTING the PIECE on the given SQUARE
      */
-    Board.sharedInstance.putPieceOnPosition(piece, square: piece.position)
+    Board.sharedInstance.putPieceOnPosition(piece, square: piece.position!, pushToStack: false)
     
     /**
      * MOVING the PIECE to the given SQUARE - EXPECTING it to FAIL
@@ -81,7 +81,7 @@ func !== (pieceValue: Int, move: Move) -> Piece {
  */
 func !== (piece: Piece, toSquare: Square) {
     
-    XCTAssertFalse(Board.sharedInstance.movePiece(Move(fromSquare: piece.position, toSquare: toSquare)))
+    XCTAssertFalse(Board.sharedInstance.movePiece(Move(fromSquare: piece.position!, toSquare: toSquare)))
 }
 
 /**
@@ -105,7 +105,7 @@ func ?? (pieceValue: Int, square: Square) {
     /**
      * PUTTING the PIECE on the given SQUARE - ASSERTS TRUE
      */
-    XCTAssertTrue(Board.sharedInstance.putPieceOnPosition(piece, square: square))
+    XCTAssertTrue(Board.sharedInstance.putPieceOnPosition(piece, square: square, pushToStack: false))
     
     /**
      * GET PIECE from the given SQUARE - ASSERTS NON NIL
@@ -131,7 +131,7 @@ func >> (pieceValue: Int, square: Square) -> Piece {
     /**
      * PUTTING the PIECE on the given SQUARE - ASSERTS TRUE
      */
-    XCTAssertTrue(Board.sharedInstance.putPieceOnPosition(piece, square: square))
+    XCTAssertTrue(Board.sharedInstance.putPieceOnPosition(piece, square: square, pushToStack: false))
     
     return piece
 }
@@ -141,5 +141,5 @@ func >> (pieceValue: Int, square: Square) -> Piece {
  */
 prefix func ~ (piece: Piece) -> [Square] {
     
-    return (piece.moveStrategy?.generateAllMoves(piece.position))!
+    return (piece.moveStrategy?.generateAllMoves(piece.position!))!
 }

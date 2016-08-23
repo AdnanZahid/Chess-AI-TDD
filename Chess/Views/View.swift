@@ -8,10 +8,6 @@
 
 class View {
     
-    init() {
-        
-    }
-    
     func input() -> Move? {
         
         var input: String = readLine(stripNewline: true)!

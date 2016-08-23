@@ -31,7 +31,7 @@ class Board {
     /**
      * This class is used as a SINGLETON - Hence the SHARED INSTANCE
      */
-    static let sharedInstance = Board()
+    static let sharedInstance: Board = Board()
     
     /**
      * Fill the board with EMPTY pieces (piece type EMPTY)
@@ -101,9 +101,18 @@ class Board {
                              */
                             result = putEmptyPieceOnPosition(move.fromSquare)
                         }
+                        
+                    } else {
+                        ErrorHandler.sharedInstance.logError(Error.InvalidMove)
                     }
+                } else {
+                    ErrorHandler.sharedInstance.logError(Error.WrongTurn)
                 }
+            } else {
+                ErrorHandler.sharedInstance.logError(Error.InvalidPiece)
             }
+        } else {
+            ErrorHandler.sharedInstance.logError(Error.SamePosition)
         }
         
         return result
@@ -276,8 +285,15 @@ class Board {
                     }
                     
                     result = true
+                    
+                } else {
+                    ErrorHandler.sharedInstance.logError(Error.FriendlyFire)
                 }
+            } else {
+                ErrorHandler.sharedInstance.logError(Error.KingCapture)
             }
+        } else {
+            ErrorHandler.sharedInstance.logError(Error.InvalidDestination)
         }
         
         return result
