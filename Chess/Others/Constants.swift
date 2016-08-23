@@ -6,7 +6,7 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-let kMaxPlies = 1
+let kMaxPlies = 3
 
 let kNumberOfSquaresAlongX: Int = 12
 let kNumberOfSquaresAlongY: Int = 12

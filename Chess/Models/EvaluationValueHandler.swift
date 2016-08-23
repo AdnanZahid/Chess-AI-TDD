@@ -15,7 +15,7 @@ class EvaluationValueHandler {
         
         for piece in piecesList {
             
-            mobility += (piece.moveStrategy?.getMobility(piece.position))!
+            mobility += (piece.moveStrategy?.getMobility(piece.position!))!
             value += piece.value!
         }
         

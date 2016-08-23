@@ -15,9 +15,9 @@ class Piece: Equatable {
     var symbol: String = kEmptySymbol
     
     var value: Int?
-    var color: Color
-    var position: Square
-    var hasMoved: Bool
+    var color: Color?
+    var position: Square?
+    var hasMoved: Bool?
     var id: Int
     
     weak var delegate: PieceDelegate?
@@ -26,7 +26,7 @@ class Piece: Equatable {
     
     var directionsList: [(Int, Int)] = []
     
-    init(color: Color, position: Square, hasMoved: Bool, delegate: PieceDelegate?) {
+    init(color: Color?, position: Square?, hasMoved: Bool?, delegate: PieceDelegate?) {
         
         self.color = color
         self.position = position
@@ -34,7 +34,14 @@ class Piece: Equatable {
         
         self.delegate = delegate
         
-        id = (position.rank.rawValue * 10) + position.file.rawValue
+        if let validPosition = position {
+            
+            id = (validPosition.rank.rawValue * 10) + validPosition.file.rawValue
+            
+        } else {
+            
+            id = 0
+        }
     }
     
     func move(toSquare: Square) -> Bool {
@@ -42,13 +49,10 @@ class Piece: Equatable {
         return false
     }
     
-    func updatePosition(result: Bool, toSquare: Square) {
+    func updatePosition(toSquare: Square) {
         
-        if result == true {
-            
-            position = toSquare
-            
-            hasMoved = true
-        }
+        position = toSquare
+        
+        hasMoved = true
     }
 }

@@ -80,5 +80,9 @@ class View {
             
             print(kNewLineSymbol, separator: "", terminator: "")
         }
+        
+        print()
+        print("---------------")
+        print()
     }
 }

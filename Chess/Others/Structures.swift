@@ -17,6 +17,16 @@ struct EvaluationMove {
     let evaluationValue: Int
 }
 
+struct PieceState {
+    let piece: Piece
+    let position: Square
+}
+
+struct MoveState {
+    let fromPieceState: PieceState
+    let toPieceState: PieceState
+}
+
 enum RankIndex: Int {
     
     case k__2 = 0

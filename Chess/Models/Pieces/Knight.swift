@@ -8,7 +8,7 @@
 
 class Knight: Piece {
     
-    override init(color: Color, position: Square, hasMoved: Bool, delegate: PieceDelegate?) {
+    override init(color: Color?, position: Square?, hasMoved: Bool?, delegate: PieceDelegate?) {
         super.init(color: color, position: position, hasMoved: hasMoved, delegate: delegate)
         
         symbol = kKnightSymbol
@@ -30,14 +30,14 @@ class Knight: Piece {
         directionsList.append((-1, -2))
         directionsList.append((-2, -1))
         
-        moveStrategy = LimitedMoveStrategy(color: color, directionsList: directionsList)
+        moveStrategy = LimitedMoveStrategy(color: color!, directionsList: directionsList)
     }
     
     override func move(toSquare: Square) -> Bool {
         
-        let result: Bool = King.move(position, toSquare: toSquare, directionsList: directionsList)
+        let result: Bool = King.move(position!, toSquare: toSquare, directionsList: directionsList)
         
-        updatePosition(result, toSquare: toSquare)
+//        updatePosition(result, toSquare: toSquare)
         
         return result
     }

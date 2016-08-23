@@ -27,7 +27,7 @@ class AIPlayer: Player {
         
         for piece in player.piecesList {
             
-            let fromSquare: Square = piece.position
+            let fromSquare: Square = piece.position!
             
             for toSquare in (piece.moveStrategy?.generateAllMoves(fromSquare))! {
                 
@@ -38,7 +38,7 @@ class AIPlayer: Player {
                     let evaluationMove: EvaluationMove = EvaluationMove(fromSquare: fromSquare, toSquare: toSquare, evaluationValue: -alphaBeta(depth - 1, player: player.opponent!, alpha: -beta, beta: -localAlpha))
                     
                     
-//                    undoMove()
+                    Board.sharedInstance.undoMove()
                     
                     
                     if evaluationMove.evaluationValue > bestMove.evaluationValue {
@@ -79,7 +79,7 @@ class AIPlayer: Player {
         
         for piece in player.piecesList {
             
-            let fromSquare: Square = piece.position
+            let fromSquare: Square = piece.position!
             
             for toSquare in (piece.moveStrategy?.generateAllMoves(fromSquare))! {
                 
@@ -90,7 +90,7 @@ class AIPlayer: Player {
                     let evaluationValue: Int = -alphaBeta(depth - 1, player: player.opponent!, alpha: -beta, beta: -localAlpha)
                     
                     
-                    //                    undoMove()
+                    Board.sharedInstance.undoMove()
                     
                     
                     if evaluationValue > bestEvaluationValue {

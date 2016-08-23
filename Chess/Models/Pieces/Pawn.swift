@@ -8,7 +8,7 @@
 
 class Pawn: Piece {
     
-    override init(color: Color, position: Square, hasMoved: Bool, delegate: PieceDelegate?) {
+    override init(color: Color?, position: Square?, hasMoved: Bool?, delegate: PieceDelegate?) {
         super.init(color: color, position: position, hasMoved: hasMoved, delegate: delegate)
         
         symbol = kPawnSymbol
@@ -28,7 +28,7 @@ class Pawn: Piece {
         directionsList.append((-1, pawnMoveDirection(1)))
         directionsList.append(( 1, pawnMoveDirection(1)))
         
-        moveStrategy = LimitedMoveStrategy(color: color, directionsList: directionsList)
+        moveStrategy = LimitedMoveStrategy(color: color!, directionsList: directionsList)
     }
     
     override func move(toSquare: Square) -> Bool {
@@ -37,31 +37,31 @@ class Pawn: Piece {
         
         if Board.sharedInstance.checkIfSquareIsEmpty(toSquare) {
             
-            if        getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare)) == directionsList[0] {
+            if        getFileAndRankAdvance(Move(fromSquare: position!, toSquare: toSquare)) == directionsList[0] {
                 
                 result = true
                 
-            } else if getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare)) == directionsList[1]
+            } else if getFileAndRankAdvance(Move(fromSquare: position!, toSquare: toSquare)) == directionsList[1]
                 
                 && hasMoved == false {
                 
-                result = Board.sharedInstance.checkForClearPath(Move(fromSquare: position, toSquare: toSquare))
+                result = Board.sharedInstance.checkForClearPath(Move(fromSquare: position!, toSquare: toSquare))
             }
             
         } else if Board.sharedInstance.getPieceOnPosition(toSquare)?.color != color {
             
-            let fileAndRankAdvance: (Int, Int) = getFileAndRankAdvance(Move(fromSquare: position, toSquare: toSquare))
+            let fileAndRankAdvance: (Int, Int) = getFileAndRankAdvance(Move(fromSquare: position!, toSquare: toSquare))
             
             result = fileAndRankAdvance == directionsList[2] || fileAndRankAdvance == directionsList[3]
         }
     
-        updatePosition(result, toSquare: toSquare)
+//        updatePosition(result, toSquare: toSquare)
         
         return result
     }
     
     func pawnMoveDirection(number: Int) -> Int {
         
-        return number * color.rawValue
+        return number * color!.rawValue
     }
 }

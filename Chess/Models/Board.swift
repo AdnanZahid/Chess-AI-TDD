@@ -49,6 +49,11 @@ class Board {
     var evaluationValue: Int = 0
     
     /**
+     * A STACK for storing MOVESTATES - So we can UNDO them (helps in AI MOVES)
+     */
+    var moveStateStack: Stack = Stack()
+    
+    /**
      * Initialize an EMPTY board
      */
     init() {
@@ -89,7 +94,7 @@ class Board {
                         /**
                          * Check if PIECE can be put on the DESTINATION SQUARE
                          */
-                        if putPieceOnPosition(piece, square: move.toSquare) {
+                        if putPieceOnPosition(piece, square: move.toSquare, pushToStack: true) {
                             
                             /**
                              * Check if an EMPTY piece can be PUT on STARTING POSITION
@@ -226,7 +231,7 @@ class Board {
     /**
      * PUT a given PIECE on the given SQUARE
      */
-    func putPieceOnPosition(piece: Piece, square: Square) -> Bool {
+    func putPieceOnPosition(piece: Piece, square: Square, pushToStack: Bool) -> Bool {
         
         var result: Bool = false
         
@@ -252,12 +257,44 @@ class Board {
                     
                     pieceArray[square.rank.rawValue][square.file.rawValue] = piece
                     
+                    if pushToStack {
+                        
+                        /**
+                         * Storing the MOVESTATE in a stack - So we can UNDO them (helps in AI MOVES)
+                         */
+                        moveStateStack.push(MoveState(
+                            
+                            /**
+                             * FROM PIECE STATE
+                             */
+                            fromPieceState: PieceState(piece: piece, position: piece.position!),
+                            
+                            /**
+                             * TO PIECE STATE
+                             */
+                            toPieceState: PieceState(piece: existingPiece, position: square)))
+                    }
+                    
                     result = true
                 }
             }
         }
         
         return result
+    }
+    
+    /**
+     * UNDO the TOP MOVE in MOVESTATESTACK (helps in AI MOVES)
+     */
+    func undoMove() {
+        
+        let moveState: MoveState = moveStateStack.pop()!
+        
+        /**
+         * PUT the PIECES back where they were BEFORE the MOVE
+         */
+        putPieceOnPosition(moveState.fromPieceState.piece, square: moveState.fromPieceState.position, pushToStack: false)
+        putPieceOnPosition(moveState.toPieceState.piece, square: moveState.toPieceState.position, pushToStack: false)
     }
     
     /**
@@ -348,5 +385,33 @@ class Board {
          * Return the LIST of PIECES to the corresponding PLAYER
          */
         return piecesList
+    }
+    
+    /**
+     * PRINT THE BOARD - Simple as possible view for debugging
+     */
+    func output() {
+        
+        for j in (allPiecesRankEnumeration).reverse() {
+            for i in allPiecesFileEnumeration {
+                
+                if let _ = Board.sharedInstance.pieceArray[j][i] {
+                    
+                    var symbol: String = Board.sharedInstance.pieceArray[j][i]!.symbol
+                    
+                    if Board.sharedInstance.pieceArray[j][i]!.color == Color.black {
+                        symbol = symbol.lowercaseString
+                    }
+                    
+                    print(symbol, separator: "", terminator: " ")
+                    
+                } else {
+                    
+                    print(kNilSymbol, separator: "", terminator: " ")
+                }
+            }
+            
+            print(kNewLineSymbol, separator: "", terminator: "")
+        }
     }
 }

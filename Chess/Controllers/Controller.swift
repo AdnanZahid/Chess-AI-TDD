@@ -13,7 +13,7 @@ class Controller {
     
     init() {
         
-        gameLogic = GameLogic(isWhitePlayerAI: false, isBlackPlayerAI: false)
+        gameLogic = GameLogic(isWhitePlayerAI: false, isBlackPlayerAI: true)
         
         view = View()
         

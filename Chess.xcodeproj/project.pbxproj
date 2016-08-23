@@ -35,6 +35,8 @@
 		840267EB1D621FB1001A958B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840267E11D6193D5001A958B /* Player.swift */; };
 		84169B891D6C337500FBFCA5 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84169B881D6C337500FBFCA5 /* Structures.swift */; };
 		84169B8A1D6C337500FBFCA5 /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84169B881D6C337500FBFCA5 /* Structures.swift */; };
+		84169B8C1D6C367A00FBFCA5 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84169B8B1D6C367A00FBFCA5 /* Stack.swift */; };
+		84169B8D1D6C367A00FBFCA5 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84169B8B1D6C367A00FBFCA5 /* Stack.swift */; };
 		845978551D6A497700AD67C0 /* BishopCapturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459784F1D6A497700AD67C0 /* BishopCapturesTests.swift */; };
 		845978561D6A497700AD67C0 /* KingCapturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845978501D6A497700AD67C0 /* KingCapturesTests.swift */; };
 		845978571D6A497700AD67C0 /* KnightCapturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845978511D6A497700AD67C0 /* KnightCapturesTests.swift */; };
@@ -126,6 +128,7 @@
 		2716D4471D5916B70056C582 /* Knight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Knight.swift; path = Models/Pieces/Knight.swift; sourceTree = "<group>"; };
 		840267E11D6193D5001A958B /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Models/Player.swift; sourceTree = "<group>"; };
 		84169B881D6C337500FBFCA5 /* Structures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Structures.swift; path = Others/Structures.swift; sourceTree = "<group>"; };
+		84169B8B1D6C367A00FBFCA5 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Others/Stack.swift; sourceTree = "<group>"; };
 		8459784F1D6A497700AD67C0 /* BishopCapturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BishopCapturesTests.swift; path = PieceCapturesTests/BishopCapturesTests.swift; sourceTree = "<group>"; };
 		845978501D6A497700AD67C0 /* KingCapturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KingCapturesTests.swift; path = PieceCapturesTests/KingCapturesTests.swift; sourceTree = "<group>"; };
 		845978511D6A497700AD67C0 /* KnightCapturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KnightCapturesTests.swift; path = PieceCapturesTests/KnightCapturesTests.swift; sourceTree = "<group>"; };
@@ -259,6 +262,7 @@
 				2716D41D1D58EA2A0056C582 /* Constants.swift */,
 				846A4FE01D5BD2030062B47D /* OperatorOverloadingUtility.swift */,
 				846A4FE31D5BD2280062B47D /* PieceFactory.swift */,
+				84169B8B1D6C367A00FBFCA5 /* Stack.swift */,
 				845A1CEA1D6B1940007E6C45 /* StringExtension.swift */,
 				84169B881D6C337500FBFCA5 /* Structures.swift */,
 				2716D4341D59028D0056C582 /* Utility.swift */,
@@ -485,6 +489,7 @@
 				2716D4451D5916370056C582 /* Queen.swift in Sources */,
 				2716D4481D5916B70056C582 /* Knight.swift in Sources */,
 				2716D42F1D58F23C0056C582 /* Piece.swift in Sources */,
+				84169B8C1D6C367A00FBFCA5 /* Stack.swift in Sources */,
 				2716D4421D5914420056C582 /* Rook.swift in Sources */,
 				2716D42D1D58F23C0056C582 /* EmptyPiece.swift in Sources */,
 				849A192A1D6300E6000BE807 /* MoveStrategy.swift in Sources */,
@@ -551,6 +556,7 @@
 				84DDA5F01D6A3C7100C2AA37 /* QueenAllowMovesTests.swift in Sources */,
 				845A1CE91D6B1092007E6C45 /* View.swift in Sources */,
 				2716D4431D5914420056C582 /* Rook.swift in Sources */,
+				84169B8D1D6C367A00FBFCA5 /* Stack.swift in Sources */,
 				84DDA5EC1D6A3C7100C2AA37 /* BishopAllowMovesTests.swift in Sources */,
 				84DDA6141D6A3FC400C2AA37 /* KingBoardOperationsTests.swift in Sources */,
 				84DDA6131D6A3FC400C2AA37 /* BishopBoardOperationsTests.swift in Sources */,
