@@ -6,8 +6,6 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-import Foundation
-
 func fileAdvanceCheck(move: Move) -> Bool {
     
     return move.fromSquare.file != move.toSquare.file

@@ -6,8 +6,6 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-import Foundation
-
 class PieceFactory {
     
     static func getPiece(value: Int, position: Square, delegate: PieceDelegate?) -> Piece {

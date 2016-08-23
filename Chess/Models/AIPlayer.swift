@@ -6,8 +6,6 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-import Foundation
-
 class AIPlayer: Player {
     
     override init(color: Color) {

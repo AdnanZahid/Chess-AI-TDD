@@ -6,8 +6,6 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-import Foundation
-
 class EmptyPiece: Piece {
     
     static let sharedInstance = EmptyPiece(color: Color.white, position: Square(file: FileIndex.kA, rank: RankIndex.k1), hasMoved: false, delegate: nil)

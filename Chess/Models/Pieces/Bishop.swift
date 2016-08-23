@@ -6,8 +6,6 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-import Foundation
-
 class Bishop: Piece {
     
     override init(color: Color, position: Square, hasMoved: Bool, delegate: PieceDelegate?) {

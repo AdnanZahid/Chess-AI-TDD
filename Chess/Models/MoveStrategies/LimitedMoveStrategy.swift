@@ -6,8 +6,6 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-import Foundation
-
 class LimitedMoveStrategy: MoveStrategy {
     
     override func generateMove(position: Square, fileRankPair: (Int, Int)) -> [Square] {

@@ -6,8 +6,6 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-import Foundation
-
 class Controller {
     
     let gameLogic: GameLogic
@@ -15,7 +13,7 @@ class Controller {
     
     init() {
         
-        gameLogic = GameLogic(isWhitePlayerAI: true, isBlackPlayerAI: false)
+        gameLogic = GameLogic(isWhitePlayerAI: false, isBlackPlayerAI: false)
         
         view = View()
         

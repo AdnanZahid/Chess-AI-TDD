@@ -6,8 +6,6 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-import Foundation
-
 /**
  * RANK ENUMERATION for all squares on the board
  */
