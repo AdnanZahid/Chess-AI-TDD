@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Chessy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +28,21 @@
 			<true/>
 		</dict>
 		<key>2716D40B1D58E9140056C582</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84351EC91D6CDFC900DADE74</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84351EDE1D6CDFC900DADE74</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>84351EE91D6CDFC900DADE74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
