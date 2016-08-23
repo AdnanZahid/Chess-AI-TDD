@@ -46,7 +46,7 @@ class Board {
     var currentTurnColor: Color = Color.white
     
     /**
-     * EVALUATION VALUE for computing AI MOVES - POSITIVE for WHITE and NEGATIVE for BLACK
+     * EVALUATION VALUE for computing AI MOVES - POSITIVE for WHITE domination and NEGATIVE for BLACK domination
      */
     var evaluationValue: Int = 0
     
