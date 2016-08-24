@@ -8,11 +8,13 @@
 
 import SceneKit
 
-class GUIView: SCNView, View {
+class GUIView: SCNView, InputHandler, OutputHandler {
     
     var cameraNode: SCNNode?
     var liftedPiece: SCNNode?
     var liftedPieceMovesBoard: SCNNode?
+    
+    var inputHandlerDelegate: InputHandlerDelegate?
     
     override func awakeFromNib() {
         
@@ -47,15 +49,15 @@ class GUIView: SCNView, View {
         ambientLightNode.light?.color = UIColor.darkGrayColor()
         scene?.rootNode.addChildNode(ambientLightNode)
         
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(GUIView.handleTap(_:)))
-        self.gestureRecognizers?.append(tapGesture)
+//        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(GUIView.handleTap(_:)))
+//        self.gestureRecognizers?.append(tapGesture)
         
         scene?.rootNode.addChildNode(getChessBoard())
     }
     
-    func input() -> Move? {
+    func input() {
         
-        return nil
+//        outputHandlerDelegate?.didTakeInput(currentPlayer.generateMove()!)
     }
     
     func output() {

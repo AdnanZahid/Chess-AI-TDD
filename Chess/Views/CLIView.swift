@@ -6,9 +6,11 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-class CLIView: View {
+class CLIView: InputHandler, OutputHandler {
     
-    func input() -> Move? {
+    var inputHandlerDelegate: InputHandlerDelegate?
+    
+    func input() {
         
         var input: String = readLine(stripNewline: true)!
         
@@ -44,10 +46,8 @@ class CLIView: View {
                 
                 rank: RankIndex(rawValue: Character(toRank).asciiValue - kAsciiDifferenceForRank)!)
             
-            return Move(fromSquare: fromSquare, toSquare: toSquare)
+            inputHandlerDelegate?.didTakeInput(Move(fromSquare: fromSquare, toSquare: toSquare))
         }
-        
-        return nil
     }
     
     /**

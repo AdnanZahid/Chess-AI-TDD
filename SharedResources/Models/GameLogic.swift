@@ -6,7 +6,9 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-class GameLogic {
+class GameLogic: InputHandler {
+    
+    var inputHandlerDelegate: InputHandlerDelegate?
     
     let whitePlayer: Player
     let blackPlayer: Player
@@ -65,8 +67,12 @@ class GameLogic {
         return currentPlayer.isAI
     }
     
-    func generateMoveFromAI() -> Move {
+    func input() {
         
-        return currentPlayer.generateMove()!
+        inputHandlerDelegate?.didTakeInput(currentPlayer.generateMove()!)
+    }
+    
+    func output() {
+        
     }
 }
