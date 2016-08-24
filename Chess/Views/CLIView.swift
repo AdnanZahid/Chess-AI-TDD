@@ -1,12 +1,12 @@
 //
-//  View.swift
+//  CLIView.swift
 //  Chess
 //
 //  Created by Adnan Zahid on 8/22/16.
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-class View {
+class CLIView: View {
     
     func input() -> Move? {
         
@@ -51,7 +51,7 @@ class View {
     }
     
     /**
-     * PRINT THE BOARD - Simple as possible view for debugging
+     * PRINT THE BOARD - Simple as possible view for command line
      */
     func output() {
         
