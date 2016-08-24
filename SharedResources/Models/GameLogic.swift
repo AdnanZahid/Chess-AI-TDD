@@ -8,7 +8,7 @@
 
 class GameLogic: InputHandler {
     
-    var inputHandlerDelegate: InputHandlerDelegate?
+    weak var inputHandlerDelegate: InputHandlerDelegate?
     
     let whitePlayer: Player
     let blackPlayer: Player
@@ -70,9 +70,5 @@ class GameLogic: InputHandler {
     func input() {
         
         inputHandlerDelegate?.didTakeInput(currentPlayer.generateMove()!)
-    }
-    
-    func output() {
-        
     }
 }

@@ -1,5 +1,5 @@
 //
-//  OutputHandler.swift
+//  InputOutputHandlers.swift
 //  Chess
 //
 //  Created by Adnan Zahid on 8/24/16.
@@ -19,6 +19,8 @@ protocol InputHandler {
 }
 
 protocol OutputHandler: InputHandler {
+    
+    var isGUIViewAvailable: Bool { get }
     
     func output()
 }

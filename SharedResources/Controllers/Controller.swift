@@ -14,33 +14,17 @@ class Controller: InputHandlerDelegate {
     let outputHandler: OutputHandler
     var inputHandler: InputHandler?
     
-    let isGUIViewAvailable: Bool
-    
-    init(guiView: OutputHandler?) {
+    init(view: OutputHandler) {
         
         /**
          * SET GAMELOGIC with AI or HUMAN PLAYERS
          */
         gameLogic = GameLogic(isWhitePlayerAI: true, isBlackPlayerAI: true)
         
-        if let outputHandler: OutputHandler = guiView {
-            
-            /**
-             * SET GUI as VIEW
-             */
-            self.outputHandler = outputHandler
-            
-            isGUIViewAvailable = true
-            
-        } else {
-            
-            /**
-             * SET CLI as VIEW
-             */
-            outputHandler = CLIView()
-            
-            isGUIViewAvailable = false
-        }
+        /**
+         * SET VIEW as OUTPUTHANDLER
+         */
+        outputHandler = view
         
         /**
          * CHOSE whether to RUN CHESS ENGINE on MAIN THREAD OR A SEPARATE ONE
@@ -53,7 +37,7 @@ class Controller: InputHandlerDelegate {
      */
     func selectThreadAndRunEngine() {
         
-        if !isGUIViewAvailable {
+        if !outputHandler.isGUIViewAvailable {
             
             /**
              * RUN CHESS ENGINE
@@ -111,12 +95,33 @@ class Controller: InputHandlerDelegate {
         inputHandler?.input()
     }
     
+    /**
+     * PlAY HUMAN MOVE
+     */
+    func didTakeInput(move: Move) {
+        
+        /**
+         * TELL GAMELOGIC to MAKE the MOVE if VALID
+         */
+        gameLogic.move(move)
+        
+        /**
+         * SHOW OUTPUT on VIEW
+         */
+        output()
+        
+        /**
+         * CHOSE whether to RUN CHESS ENGINE on MAIN THREAD OR A SEPARATE ONE
+         */
+        selectThreadAndRunEngine()
+    }
+    
     func output() {
         
         /**
          * SHOW OUTPUT on VIEW
          */
-        if !isGUIViewAvailable {
+        if !outputHandler.isGUIViewAvailable {
             
             outputHandler.output()
             
@@ -133,23 +138,5 @@ class Controller: InputHandlerDelegate {
                 self.outputHandler.output()
             }
         }
-    }
-    
-    /**
-     * PlAY HUMAN MOVE
-     */
-    func didTakeInput(move: Move) {
-        
-        gameLogic.move(move)
-        
-        /**
-         * SHOW OUTPUT on VIEW
-         */
-        output()
-        
-        /**
-         * CHOSE whether to RUN CHESS ENGINE on MAIN THREAD OR A SEPARATE ONE
-         */
-        selectThreadAndRunEngine()
     }
 }

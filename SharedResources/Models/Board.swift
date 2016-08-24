@@ -122,15 +122,17 @@ class Board {
      */
     func checkIfSquareIsEmpty(square: Square) -> Bool {
         
+        var result: Bool = false
+        
         /**
          * Check for an EMPTY piece
          */
         if pieceArray[square.rank.rawValue][square.file.rawValue] == EmptyPiece.sharedInstance {
             
-            return true
+            result = true
         }
         
-        return false
+        return result
     }
     
     /**
@@ -138,15 +140,17 @@ class Board {
      */
     func checkIfSquareIsNotNil(square: Square) -> Bool {
         
+        var result: Bool = false
+        
         /**
          * Check for a NIL or out of bounds piece
          */
         if let _ = pieceArray[square.rank.rawValue][square.file.rawValue] {
             
-            return true
+            result = true
         }
         
-        return false
+        return result
     }
     
     /**
@@ -154,15 +158,17 @@ class Board {
      */
     func checkIfEmptyOrEnemyPieceExists(color: Color, square: Square) -> Bool {
         
+        var result: Bool = false
+        
         /**
          * CHECK if given SQUARE is EMPTY or occupied by the ENEMY
          */
         if let piece: Piece = pieceArray[square.rank.rawValue][square.file.rawValue] {
             
-            return piece.color != color || piece == EmptyPiece.sharedInstance
+            result = piece.color != color || piece == EmptyPiece.sharedInstance
         }
         
-        return false
+        return result
     }
     
     /**
@@ -336,6 +342,8 @@ class Board {
      */
     func putEmptyPieceOnPosition(square: Square) -> Bool {
         
+        var result: Bool = false
+        
         /**
          * Check if SQUARE is not OUT OF BOUNDS
          */
@@ -343,11 +351,11 @@ class Board {
             
             pieceArray[square.rank.rawValue][square.file.rawValue] = EmptyPiece.sharedInstance
             
-            return true
+            result = true
             
         }
         
-        return false
+        return result
     }
     
     /**
@@ -419,33 +427,5 @@ class Board {
          * Return the LIST of PIECES to the corresponding PLAYER
          */
         return piecesList
-    }
-    
-    /**
-     * PRINT THE BOARD - Simple as possible view for debugging
-     */
-    func output() {
-        
-        for j in (allPiecesRankEnumeration).reverse() {
-            for i in allPiecesFileEnumeration {
-                
-                if let _ = Board.sharedInstance.pieceArray[j][i] {
-                    
-                    var symbol: String = Board.sharedInstance.pieceArray[j][i]!.symbol
-                    
-                    if Board.sharedInstance.pieceArray[j][i]!.color == Color.black {
-                        symbol = symbol.lowercaseString
-                    }
-                    
-                    print(symbol, separator: "", terminator: " ")
-                    
-                } else {
-                    
-                    print(kNilSymbol, separator: "", terminator: " ")
-                }
-            }
-            
-            print(kNewLineSymbol, separator: "", terminator: "")
-        }
     }
 }

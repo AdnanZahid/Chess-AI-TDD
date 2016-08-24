@@ -6,4 +6,4 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-let controller: Controller = Controller(guiView: nil)
+let controller: Controller = Controller(view: CLIView())

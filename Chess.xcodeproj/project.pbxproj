@@ -203,18 +203,15 @@
 		84E44EA71D6D6B4600FDE572 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E44EA21D6D6B4600FDE572 /* Main.storyboard */; };
 		84E44EA81D6D6B4600FDE572 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E44EA21D6D6B4600FDE572 /* Main.storyboard */; };
 		84E44EA91D6D6B4600FDE572 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E44EA21D6D6B4600FDE572 /* Main.storyboard */; };
-		84E44EB81D6DAA6700FDE572 /* InputOutputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E44EB71D6DAA6700FDE572 /* InputOutputHandler.swift */; };
-		84E44EB91D6DAA6700FDE572 /* InputOutputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E44EB71D6DAA6700FDE572 /* InputOutputHandler.swift */; };
-		84E44EBA1D6DAA6700FDE572 /* InputOutputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E44EB71D6DAA6700FDE572 /* InputOutputHandler.swift */; };
-		84E44EBB1D6DAC1000FDE572 /* InputOutputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E44EB71D6DAA6700FDE572 /* InputOutputHandler.swift */; };
-		84E44EBC1D6DAC1100FDE572 /* InputOutputHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E44EB71D6DAA6700FDE572 /* InputOutputHandler.swift */; };
+		84E44EB81D6DAA6700FDE572 /* InputOutputHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E44EB71D6DAA6700FDE572 /* InputOutputHandlers.swift */; };
+		84E44EB91D6DAA6700FDE572 /* InputOutputHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E44EB71D6DAA6700FDE572 /* InputOutputHandlers.swift */; };
+		84E44EBA1D6DAA6700FDE572 /* InputOutputHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E44EB71D6DAA6700FDE572 /* InputOutputHandlers.swift */; };
+		84E44EBB1D6DAC1000FDE572 /* InputOutputHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E44EB71D6DAA6700FDE572 /* InputOutputHandlers.swift */; };
+		84E44EBC1D6DAC1100FDE572 /* InputOutputHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E44EB71D6DAA6700FDE572 /* InputOutputHandlers.swift */; };
 		84E44EBD1D6DAD7C00FDE572 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351F9F1D6CE1D200DADE74 /* Controller.swift */; };
 		84E44EBE1D6DAD7C00FDE572 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351F9F1D6CE1D200DADE74 /* Controller.swift */; };
 		84E44EBF1D6DAD7D00FDE572 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351F9F1D6CE1D200DADE74 /* Controller.swift */; };
 		84E44EC31D6DB54300FDE572 /* CLIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A1CE71D6B1092007E6C45 /* CLIView.swift */; };
-		84E44EC41D6DB56B00FDE572 /* CLIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A1CE71D6B1092007E6C45 /* CLIView.swift */; };
-		84E44EC51D6DB56C00FDE572 /* CLIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A1CE71D6B1092007E6C45 /* CLIView.swift */; };
-		84E44EC61D6DB56D00FDE572 /* CLIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A1CE71D6B1092007E6C45 /* CLIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,7 +326,7 @@
 		84E44E901D6D6A8F00FDE572 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Others/Info.plist; sourceTree = "<group>"; };
 		84E44EA11D6D6B4600FDE572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Others/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84E44EA31D6D6B4600FDE572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Others/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		84E44EB71D6DAA6700FDE572 /* InputOutputHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputOutputHandler.swift; path = SharedResources/Views/InputOutputHandler.swift; sourceTree = "<group>"; };
+		84E44EB71D6DAA6700FDE572 /* InputOutputHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InputOutputHandlers.swift; path = SharedResources/Views/InputOutputHandlers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -642,7 +639,7 @@
 		84E44EB61D6DAA4D00FDE572 /* InputOutputHandler */ = {
 			isa = PBXGroup;
 			children = (
-				84E44EB71D6DAA6700FDE572 /* InputOutputHandler.swift */,
+				84E44EB71D6DAA6700FDE572 /* InputOutputHandlers.swift */,
 			);
 			name = InputOutputHandler;
 			sourceTree = "<group>";
@@ -840,7 +837,7 @@
 			files = (
 				84351FEA1D6CE2D600DADE74 /* Square.swift in Sources */,
 				84351FEC1D6CE2D600DADE74 /* Constants.swift in Sources */,
-				84E44EBB1D6DAC1000FDE572 /* InputOutputHandler.swift in Sources */,
+				84E44EBB1D6DAC1000FDE572 /* InputOutputHandlers.swift in Sources */,
 				84351FEE1D6CE2D600DADE74 /* OperatorOverloadingUtility.swift in Sources */,
 				84351FF21D6CE2D600DADE74 /* Structures.swift in Sources */,
 				84351FE21D6CE2D600DADE74 /* EmptyPiece.swift in Sources */,
@@ -880,7 +877,7 @@
 				843520111D6CE2D800DADE74 /* EvaluationValueHandler.swift in Sources */,
 				845978581D6A497700AD67C0 /* PawnCapturesTests.swift in Sources */,
 				84DDA5F91D6A3C7800C2AA37 /* KingBlockMovesTests.swift in Sources */,
-				84E44EBC1D6DAC1100FDE572 /* InputOutputHandler.swift in Sources */,
+				84E44EBC1D6DAC1100FDE572 /* InputOutputHandlers.swift in Sources */,
 				84DDA5F81D6A3C7800C2AA37 /* BishopBlockMovesTests.swift in Sources */,
 				84DDA5ED1D6A3C7100C2AA37 /* KingAllowMovesTests.swift in Sources */,
 				84DDA6071D6A3C7F00C2AA37 /* PawnPossibleMovesTests.swift in Sources */,
@@ -973,8 +970,7 @@
 				843520321D6CE2D800DADE74 /* King.swift in Sources */,
 				843520381D6CE2D800DADE74 /* Player.swift in Sources */,
 				8435203A1D6CE2D800DADE74 /* ArrayExtension.swift in Sources */,
-				84E44EB81D6DAA6700FDE572 /* InputOutputHandler.swift in Sources */,
-				84E44EC41D6DB56B00FDE572 /* CLIView.swift in Sources */,
+				84E44EB81D6DAA6700FDE572 /* InputOutputHandlers.swift in Sources */,
 				843520341D6CE2D800DADE74 /* Pawn.swift in Sources */,
 				84E44E7C1D6D690000FDE572 /* GUIView.swift in Sources */,
 				8435202C1D6CE2D800DADE74 /* GameLogic.swift in Sources */,
@@ -985,7 +981,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E44EB91D6DAA6700FDE572 /* InputOutputHandler.swift in Sources */,
+				84E44EB91D6DAA6700FDE572 /* InputOutputHandlers.swift in Sources */,
 				8435205C1D6CE2D900DADE74 /* Utility.swift in Sources */,
 				843520461D6CE2D900DADE74 /* GameLogic.swift in Sources */,
 				8435205B1D6CE2D900DADE74 /* Structures.swift in Sources */,
@@ -1016,7 +1012,6 @@
 				843520571D6CE2D900DADE74 /* OperatorOverloadingUtility.swift in Sources */,
 				843520531D6CE2D900DADE74 /* Square.swift in Sources */,
 				843520521D6CE2D900DADE74 /* Player.swift in Sources */,
-				84E44EC51D6DB56C00FDE572 /* CLIView.swift in Sources */,
 				8435205A1D6CE2D900DADE74 /* StringExtension.swift in Sources */,
 				843520481D6CE2D900DADE74 /* MoveStrategy.swift in Sources */,
 			);
@@ -1026,7 +1021,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E44EBA1D6DAA6700FDE572 /* InputOutputHandler.swift in Sources */,
+				84E44EBA1D6DAA6700FDE572 /* InputOutputHandlers.swift in Sources */,
 				843520761D6CE2DA00DADE74 /* Utility.swift in Sources */,
 				843520601D6CE2DA00DADE74 /* GameLogic.swift in Sources */,
 				843520751D6CE2DA00DADE74 /* Structures.swift in Sources */,
@@ -1057,7 +1052,6 @@
 				843520711D6CE2DA00DADE74 /* OperatorOverloadingUtility.swift in Sources */,
 				8435206D1D6CE2DA00DADE74 /* Square.swift in Sources */,
 				8435206C1D6CE2DA00DADE74 /* Player.swift in Sources */,
-				84E44EC61D6DB56D00FDE572 /* CLIView.swift in Sources */,
 				843520741D6CE2DA00DADE74 /* StringExtension.swift in Sources */,
 				843520621D6CE2DA00DADE74 /* MoveStrategy.swift in Sources */,
 			);

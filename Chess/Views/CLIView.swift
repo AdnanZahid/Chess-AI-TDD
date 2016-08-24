@@ -8,7 +8,9 @@
 
 class CLIView: InputHandler, OutputHandler {
     
-    var inputHandlerDelegate: InputHandlerDelegate?
+    var isGUIViewAvailable: Bool = false
+    
+    weak var inputHandlerDelegate: InputHandlerDelegate?
     
     func input() {
         

@@ -15,6 +15,6 @@ class GUIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        controller = Controller(guiView: view as! GUIView)
+        controller = Controller(view: view as! GUIView)
     }
 }

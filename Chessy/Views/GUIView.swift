@@ -10,11 +10,13 @@ import SceneKit
 
 class GUIView: SCNView, InputHandler, OutputHandler {
     
+    var isGUIViewAvailable: Bool = true
+    
+    weak var inputHandlerDelegate: InputHandlerDelegate?
+    
     var cameraNode: SCNNode?
     var liftedPiece: SCNNode?
     var liftedPieceMovesBoard: SCNNode?
-    
-    var inputHandlerDelegate: InputHandlerDelegate?
     
     override func awakeFromNib() {
         
