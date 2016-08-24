@@ -20,16 +20,6 @@ class Player: PieceDelegate {
         piecesList = Board.sharedInstance.setupPieceBoard(color, pieceDelegate: self)
     }
     
-    func addPiece(piece: Piece) {
-    
-        piecesList.append(piece)
-    }
-    
-    func removePiece(piece: Piece) {
-        
-        piecesList.remove(piece)
-    }
-    
     func movePiece(move: Move, checkCurrentTurn: Bool) -> Bool {
         
         var result: Bool = false
@@ -45,6 +35,8 @@ class Player: PieceDelegate {
     }
     
     func generateMove() -> Move? {
+        
+        preconditionFailure("This method must be overridden")
         
         return nil
     }
