@@ -84,7 +84,7 @@ class GUIView: SCNView, InputHandler, OutputHandler {
                             node.geometry!.firstMaterial = blackMaterial
                         }
                         
-                        node.position = SCNVector3(file, 0, rank)
+                        node.position = SCNVector3(-file, 0, -rank)
                         node.rotation = SCNVector4(1.0, 0, 0, M_PI_2)
                         node.scale = SCNVector3(0.67, 0.67, 0.67)
                         
@@ -121,7 +121,7 @@ class GUIView: SCNView, InputHandler, OutputHandler {
                 
                 let squareNode: SCNNode = SCNNode.init(geometry: geometry)
                 
-                squareNode.position = SCNVector3(file, 0, rank)
+                squareNode.position = SCNVector3(-file, 0, -rank)
 
                 boardNode.addChildNode(squareNode)
             }

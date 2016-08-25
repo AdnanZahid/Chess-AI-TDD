@@ -23,9 +23,9 @@ let kDarkSquareAlpha: CGFloat = 1.0
 
 let kAnimationDuration: CFTimeInterval = 0.5
 
-let kWhiteCameraXPosition: Double = 5.5
+let kWhiteCameraXPosition: Double = -5.5
 let kWhiteCameraYPosition: Double = 12.0
-let kWhiteCameraZPosition: Double = 14.0
+let kWhiteCameraZPosition: Double = 5.0
 
 let kBlackCameraXPosition: Double = 3.5
 let kBlackCameraYPosition: Double = 12.0
