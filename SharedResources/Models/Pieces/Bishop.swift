@@ -30,8 +30,6 @@ class Bishop: Piece {
         
         let result: Bool = Bishop.move(Move(fromSquare: position!, toSquare: toSquare)) && Board.sharedInstance.checkForClearPath(Move(fromSquare: position!, toSquare: toSquare))
         
-//        updatePosition(result, toSquare: toSquare)
-        
         return result
     }
     

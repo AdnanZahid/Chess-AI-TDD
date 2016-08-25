@@ -8,12 +8,12 @@
 
 extension String {
     
-    subscript (i: Int) -> Character {
-        return self[self.startIndex.advancedBy(i)]
+    subscript (index: Int) -> Character {
+        return self[self.startIndex.advancedBy(index)]
     }
     
-    subscript (i: Int) -> String {
-        return String(self[i] as Character)
+    subscript (index: Int) -> String {
+        return String(self[index] as Character)
     }
     
     var asciiArray: [Int] {

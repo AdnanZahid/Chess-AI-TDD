@@ -8,8 +8,8 @@
 
 let kMaxPlies: Int = 2
 
-let kNumberOfSquaresAlongX: Int = 12
-let kNumberOfSquaresAlongY: Int = 12
+var kNumberOfSquaresAlongX: Int = 12
+var kNumberOfSquaresAlongY: Int = 12
 
 let kAsciiDifferenceForFile: Int = 63
 let kAsciiDifferenceForRank: Int = 47
@@ -33,27 +33,57 @@ let kRookValue: Int   = 500
 let kQueenValue: Int  = 900
 let kKingValue: Int   = 2000
 
+
+let X: Int = kNilValue
+let i: Int = kEmptyValue
+let P: Int = -kPawnValue
+let N: Int = -kKnightValue
+let B: Int = -kBishopValue
+let R: Int = -kRookValue
+let Q: Int = -kQueenValue
+let K: Int = -kKingValue
+
+let p: Int = -P
+let n: Int = -N
+let b: Int = -B
+let r: Int = -R
+let q: Int = -Q
+let k: Int = -K
+
 let piecesConfigurationArray: [[Int]] = [
     
-    [ kNilValue, kNilValue,        kNilValue,   kNilValue,     kNilValue,     kNilValue,    kNilValue,   kNilValue,     kNilValue,     kNilValue,          kNilValue, kNilValue ],
-    [ kNilValue, kNilValue,        kNilValue,   kNilValue,     kNilValue,     kNilValue,    kNilValue,   kNilValue,     kNilValue,     kNilValue,          kNilValue, kNilValue ],
+    [ X, X,   X, X, X, X, X, X, X, X,   X, X ],
+    [ X, X,   X, X, X, X, X, X, X, X,   X, X ],
     
+    [ X, X,   r, n, b, q, k, b, n, r,   X, X ],
+    [ X, X,   p, p, p, p, p, p, p, p,   X, X ],
+    [ X, X,   i, i, i, i, i, i, i, i,   X, X ],
+    [ X, X,   i, i, i, i, i, i, i, i,   X, X ],
+    [ X, X,   i, i, i, i, i, i, i, i,   X, X ],
+    [ X, X,   i, i, i, i, i, i, i, i,   X, X ],
+    [ X, X,   P, P, P, P, P, P, P, P,   X, X ],
+    [ X, X,   R, N, B, Q, K, B, N, R,   X, X ],
     
-    
-    
-    [ kNilValue, kNilValue,        kRookValue,  kKnightValue,  kBishopValue,  kQueenValue,  kKingValue,  kBishopValue,  kKnightValue,  kRookValue,         kNilValue, kNilValue ],
-    [ kNilValue, kNilValue,        kPawnValue,  kPawnValue,    kPawnValue,    kPawnValue,   kPawnValue,  kPawnValue,    kPawnValue,    kPawnValue,         kNilValue, kNilValue ],
-    [ kNilValue, kNilValue,        kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,  kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,        kNilValue, kNilValue ],
-    [ kNilValue, kNilValue,        kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,  kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,        kNilValue, kNilValue ],
-    [ kNilValue, kNilValue,        kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,  kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,        kNilValue, kNilValue ],
-    [ kNilValue, kNilValue,        kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,  kEmptyValue, kEmptyValue,   kEmptyValue,   kEmptyValue,        kNilValue, kNilValue ],
-    [ kNilValue, kNilValue,       -kPawnValue, -kPawnValue,   -kPawnValue,   -kPawnValue,  -kPawnValue, -kPawnValue,   -kPawnValue,   -kPawnValue,         kNilValue, kNilValue ],
-    [ kNilValue, kNilValue,       -kRookValue, -kKnightValue, -kBishopValue, -kQueenValue, -kKingValue, -kBishopValue, -kKnightValue, -kRookValue,         kNilValue, kNilValue ],
-    
-    
-    
-    
-    [ kNilValue, kNilValue,        kNilValue,   kNilValue,     kNilValue,     kNilValue,    kNilValue,   kNilValue,     kNilValue,     kNilValue,          kNilValue, kNilValue ],
-    [ kNilValue, kNilValue,        kNilValue,   kNilValue,     kNilValue,     kNilValue,    kNilValue,   kNilValue,     kNilValue,     kNilValue,          kNilValue, kNilValue ]
-    
+    [ X, X,   X, X, X, X, X, X, X, X,   X, X ],
+    [ X, X,   X, X, X, X, X, X, X, X,   X, X ]
 ]
+
+/**
+ * RANK ENUMERATION for all squares on the board
+ */
+let allPiecesRankEnumeration: Range = RankIndex.k1.rawValue ... RankIndex.k8.rawValue
+
+/**
+ * FILE ENUMERATION for all squares on the board
+ */
+let allPiecesFileEnumeration: Range = FileIndex.kA.rawValue ... FileIndex.kH.rawValue
+
+/**
+ * RANK ENUMERATION for squares occupied by WHITE PIECES
+ */
+let whitePiecesRankEnumeration: Range = RankIndex.k1.rawValue ... RankIndex.k2.rawValue
+
+/**
+ * RANK ENUMERATION for squares occupied by BLACK PIECES
+ */
+let blackPiecesRankEnumeration: Range = RankIndex.k7.rawValue ... RankIndex.k8.rawValue

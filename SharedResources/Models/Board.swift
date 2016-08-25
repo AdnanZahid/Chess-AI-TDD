@@ -6,26 +6,6 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-/**
- * RANK ENUMERATION for all squares on the board
- */
-let allPiecesRankEnumeration: Range = RankIndex.k1.rawValue ... RankIndex.k8.rawValue
-
-/**
- * FILE ENUMERATION for all squares on the board
- */
-let allPiecesFileEnumeration: Range = FileIndex.kA.rawValue ... FileIndex.kH.rawValue
-
-/**
- * RANK ENUMERATION for squares occupied by WHITE PIECES
- */
-let whitePiecesRankEnumeration: Range = RankIndex.k1.rawValue ... RankIndex.k2.rawValue
-
-/**
- * RANK ENUMERATION for squares occupied by BLACK PIECES
- */
-let blackPiecesRankEnumeration: Range = RankIndex.k7.rawValue ... RankIndex.k8.rawValue
-
 class Board {
     
     /**
@@ -57,6 +37,9 @@ class Board {
      * Initialize an EMPTY board
      */
     init() {
+        
+        kNumberOfSquaresAlongX = piecesConfigurationArray[0].count
+        kNumberOfSquaresAlongY = piecesConfigurationArray.count
         
         /**
          * Fill the board with EMPTY pieces (piece type EMPTY)
@@ -363,10 +346,10 @@ class Board {
      */
     func setupEmptyBoard() {
         
-        for j in allPiecesRankEnumeration {
-            for i in allPiecesFileEnumeration {
+        for rank in allPiecesRankEnumeration {
+            for file in allPiecesFileEnumeration {
                 
-                pieceArray[j][i] = EmptyPiece.sharedInstance
+                pieceArray[rank][file] = EmptyPiece.sharedInstance
             }
         }
     }
@@ -398,23 +381,23 @@ class Board {
         /**
          * Enumerate over the RANK area occupied by the pieces of given COLOR
          */
-        for j in pieceRankEnumeration {
+        for rank in pieceRankEnumeration {
             
             /**
              * Enumerate over all the FILES
              */
-            for i in allPiecesFileEnumeration {
+            for file in allPiecesFileEnumeration {
                 
                 /**
                  * Get values from a PRE-CONFIGURED ARRAY - DEFAULT CHESS STARTING CONFIGURATION
                  */
                 let piece: Piece = PieceFactory.getPiece(
-                    piecesConfigurationArray[j][i],
+                    piecesConfigurationArray[rank][file],
                     position: Square(
-                        file: FileIndex(rawValue: i)!,
-                        rank: RankIndex(rawValue: j)!), delegate: pieceDelegate)
+                        file: FileIndex(rawValue: file)!,
+                        rank: RankIndex(rawValue: rank)!), delegate: pieceDelegate)
                 
-                pieceArray[j][i] = piece
+                pieceArray[rank][file] = piece
                 
                 /**
                  * Add this PIECE to the LIST of PIECES

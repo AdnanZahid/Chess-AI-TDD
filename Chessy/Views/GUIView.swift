@@ -113,9 +113,8 @@ class GUIView: SCNView, InputHandler, OutputHandler {
         let boardNode: SCNNode = SCNNode.init()
         boardNode.position = SCNVector3Zero
         
-        for rank in 0 ..< kNumberOfRanksOnBoard {
-            
-            for file in 0 ..< kNumberOfFilesOnBoard {
+        for rank in (allPiecesRankEnumeration).reverse() {
+            for file in allPiecesFileEnumeration {
                 
                 let isBlack: Bool = (rank + file) % 2 != 0
                 let geometry: SCNGeometry = isBlack ? darkSquare : lightSquare

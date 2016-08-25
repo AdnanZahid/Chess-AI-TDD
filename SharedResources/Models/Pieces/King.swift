@@ -35,8 +35,6 @@ class King: Piece {
         
         let result: Bool = King.move(position!, toSquare: toSquare, directionsList: directionsList)
         
-//        updatePosition(result, toSquare: toSquare)
-        
         return result
     }
     

@@ -8,9 +8,6 @@
 
 import SceneKit
 
-let kNumberOfRanksOnBoard: Int = 8
-let kNumberOfFilesOnBoard: Int = 8
-
 let kSquareWidth: CGFloat = 1.0
 let kSquareHeight: CGFloat = 0.2
 let kSquareLength: CGFloat = 1.0

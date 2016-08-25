@@ -30,8 +30,6 @@ class Rook: Piece {
         
         let result: Bool = Rook.move(Move(fromSquare: position!, toSquare: toSquare)) && Board.sharedInstance.checkForClearPath(Move(fromSquare: position!, toSquare: toSquare))
         
-//        updatePosition(result, toSquare: toSquare)
-        
         return result
     }
     

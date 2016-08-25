@@ -54,8 +54,6 @@ class Pawn: Piece {
             
             result = fileAndRankAdvance == directionsList[2] || fileAndRankAdvance == directionsList[3]
         }
-    
-//        updatePosition(result, toSquare: toSquare)
         
         return result
     }

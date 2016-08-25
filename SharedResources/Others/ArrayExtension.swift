@@ -10,13 +10,13 @@ extension Array {
     
     mutating func remove <U: Equatable> (object: U) {
         
-        for i in count - 1 ... 0 {
+        for index in count - 1 ... 0 {
             
-            if let element = [i] as? U {
+            if let element = [index] as? U {
                 
                 if element == object {
                     
-                    removeAtIndex(i)
+                    removeAtIndex(index)
                 }
             }
         }

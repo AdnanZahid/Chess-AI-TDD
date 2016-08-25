@@ -28,10 +28,39 @@ class Player: PieceDelegate {
             
             result = true
             
-            Board.sharedInstance.evaluationValue = (EvaluationValueHandler.getEvaluationValue(piecesList) * color.rawValue) + (EvaluationValueHandler.getEvaluationValue((opponent?.piecesList)!) * (opponent?.color.rawValue)!)
+            /**
+             * SET the BOARD EVALUATION VALUE
+             */
+            setBoardEvaluationValue()
         }
         
         return result
+    }
+    
+    /**
+     * SET the BOARD EVALUATION VALUE
+     */
+    func setBoardEvaluationValue() {
+        
+        Board.sharedInstance.evaluationValue =
+            
+            /**
+             * SELF PLAYER EVALUATION VALUE - MULTIPLIED BY +1 for WHITE
+             *                              - MULTIPLIED BY -1 for BLACK
+             */
+            (EvaluationValueHandler.getEvaluationValue(piecesList)
+                * color.rawValue)
+            /**
+             * ADD TO
+             */
+            +
+            
+            /**
+             * OPPONENT PLAYER EVALUATION VALUE - MULTIPLIED BY +1 for WHITE
+             *                                  - MULTIPLIED BY -1 for BLACK
+             */
+            (EvaluationValueHandler.getEvaluationValue((opponent?.piecesList)!)
+                * (opponent?.color.rawValue)!)
     }
     
     func generateMove() -> Move? {

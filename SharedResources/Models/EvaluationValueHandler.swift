@@ -18,7 +18,7 @@ class EvaluationValueHandler {
             if piece.captured == false {
                 
                 mobility += (piece.moveStrategy?.getMobility(piece.position!))!
-                value += piece.value!
+                value += piece.value
             }
         }
         

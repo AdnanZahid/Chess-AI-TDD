@@ -10,22 +10,20 @@ protocol PieceDelegate: class {
     
 }
 
-class Piece: Equatable {
+class Piece {
     
     var symbol: String = kEmptySymbol
+    var value:  Int    = kEmptyValue
     
-    var value: Int?
+    var captured: Bool = false
+    
+    var moveStrategy: MoveStrategy?
+    var directionsList: [(Int, Int)] = []
+    
     var color: Color?
     var position: Square?
     var hasMoved: Bool?
-    var id: Int
-    var captured: Bool = false
-    
     weak var delegate: PieceDelegate?
-    
-    var moveStrategy: MoveStrategy?
-    
-    var directionsList: [(Int, Int)] = []
     
     init(color: Color?, position: Square?, hasMoved: Bool?, delegate: PieceDelegate?) {
         
@@ -34,18 +32,11 @@ class Piece: Equatable {
         self.hasMoved = hasMoved
         
         self.delegate = delegate
-        
-        if let validPosition = position {
-            
-            id = (validPosition.rank.rawValue * 10) + validPosition.file.rawValue
-            
-        } else {
-            
-            id = 0
-        }
     }
     
     func move(toSquare: Square) -> Bool {
+        
+        preconditionFailure("This method must be overridden")
         
         return false
     }
@@ -55,6 +46,7 @@ class Piece: Equatable {
         position = toSquare
         
         if changeHasMoved {
+            
             hasMoved = true
         }
     }

@@ -57,14 +57,14 @@ class CLIView: InputHandler, OutputHandler {
      */
     func output() {
         
-        for j in (allPiecesRankEnumeration).reverse() {
-            for i in allPiecesFileEnumeration {
+        for rank in (allPiecesRankEnumeration).reverse() {
+            for file in allPiecesFileEnumeration {
                 
-                if let _ = Board.sharedInstance.pieceArray[j][i] {
+                if let _ = Board.sharedInstance.pieceArray[rank][file] {
                     
-                    var symbol: String = Board.sharedInstance.pieceArray[j][i]!.symbol
+                    var symbol: String = Board.sharedInstance.pieceArray[rank][file]!.symbol
                     
-                    if Board.sharedInstance.pieceArray[j][i]!.color == Color.black {
+                    if Board.sharedInstance.pieceArray[rank][file]!.color == Color.black {
                         symbol = symbol.lowercaseString
                     }
                     
