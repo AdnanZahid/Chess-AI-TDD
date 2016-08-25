@@ -27,35 +27,14 @@ class Controller: InputHandlerDelegate {
         outputHandler = view
         
         /**
-         * CHOSE whether to RUN CHESS ENGINE on MAIN THREAD OR A SEPARATE ONE
+         * SET UP VIEW
          */
-        selectThreadAndRunEngine()
-    }
-    
-    /**
-     * CHOSE whether to RUN CHESS ENGINE on MAIN THREAD OR A SEPARATE ONE
-     */
-    func selectThreadAndRunEngine() {
+        outputHandler.setup()
         
-        if !outputHandler.isGUIViewAvailable {
-            
-            /**
-             * RUN CHESS ENGINE
-             */
-            runEngine()
-            
-        } else {
-            /**
-             * RUN on SEPARATE THREAD
-             */
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-                
-                /**
-                 * RUN CHESS ENGINE
-                 */
-                self.runEngine()
-            }
-        }
+        /**
+         * CHOSE whether to RUN CHESS ENGINE on MAIN QUEUE OR A SEPARATE ONE
+         */
+        selectQueueAndRun(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), action: { self.runEngine() })
     }
     
     /**
@@ -103,39 +82,50 @@ class Controller: InputHandlerDelegate {
         /**
          * TELL GAMELOGIC to MAKE the MOVE if VALID
          */
-        gameLogic.move(move)
+        if gameLogic.move(move) {
         
-        /**
-         * SHOW OUTPUT on VIEW
-         */
-        output()
-        
-        /**
-         * CHOSE whether to RUN CHESS ENGINE on MAIN THREAD OR A SEPARATE ONE
-         */
-        selectThreadAndRunEngine()
-    }
-    
-    func output() {
-        
-        /**
-         * SHOW OUTPUT on VIEW
-         */
-        if !outputHandler.isGUIViewAvailable {
-            
-            outputHandler.output()
+            /**
+             * SHOW OUTPUT on VIEW
+             */
+            selectQueueAndRun(dispatch_get_main_queue(), action: { self.outputHandler.output(move) })
             
         } else {
             
             /**
-             * RUN on MAIN THREAD
+             * CANCEL MOVE on VIEW (PUT PIECE DOWN)
              */
-            dispatch_async(dispatch_get_main_queue()) {
+            selectQueueAndRun(dispatch_get_main_queue(), action: { self.outputHandler.cancelMove() })
+        }
+        
+        /**
+         * CHOSE whether to RUN CHESS ENGINE on MAIN QUEUE OR A SEPARATE ONE
+         */
+        selectQueueAndRun(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), action: { self.runEngine() })
+    }
+    
+    /**
+     * CHOSE whether to RUN CHESS ENGINE on MAIN QUEUE OR A SEPARATE ONE
+     */
+    func selectQueueAndRun(queue: dispatch_queue_t, action: () -> ()) {
+        
+        if !outputHandler.isGUIViewAvailable {
+            
+            /**
+             * RUN ACTION
+             */
+            action()
+            
+        } else {
+            
+            /**
+             * RUN on the following QUEUE
+             */
+            dispatch_async(queue) {
                 
                 /**
-                 * DISPLAY OUTPUT on VIEW
+                 * RUN ACTION
                  */
-                self.outputHandler.output()
+                action()
             }
         }
     }

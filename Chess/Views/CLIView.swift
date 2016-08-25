@@ -52,10 +52,7 @@ class CLIView: InputHandler, OutputHandler {
         }
     }
     
-    /**
-     * PRINT THE BOARD - Simple as possible view for command line
-     */
-    func output() {
+    func setup() {
         
         for rank in (allPiecesRankEnumeration).reverse() {
             for file in allPiecesFileEnumeration {
@@ -82,5 +79,20 @@ class CLIView: InputHandler, OutputHandler {
         print()
         print("---------------")
         print()
+    }
+    
+    /**
+     * PRINT THE BOARD - Simple as possible view for command line
+     */
+    func output(move: Move) {
+        
+        setup()
+    }
+    
+    /**
+     * CANCEL MOVE on VIEW
+     */
+    func cancelMove() {
+        
     }
 }

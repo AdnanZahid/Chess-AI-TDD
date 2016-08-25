@@ -12,6 +12,8 @@ protocol PieceDelegate: class {
 
 class Piece {
     
+    var id: Int = 0
+    
     var symbol: String = kEmptySymbol
     var value:  Int    = kEmptyValue
     
@@ -32,6 +34,11 @@ class Piece {
         self.hasMoved = hasMoved
         
         self.delegate = delegate
+        
+        if let validPosition = position {
+            
+            id = (validPosition.rank.rawValue * 10) + validPosition.file.rawValue
+        }
     }
     
     func move(toSquare: Square) -> Bool {

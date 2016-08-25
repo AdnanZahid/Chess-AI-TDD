@@ -8,6 +8,9 @@
 
 import SceneKit
 
+let kStartingFilePosition: Int = 2
+let kStartingRankPosition: Int = 2
+
 let kPieceXOffset: Int = -11
 
 let kPieceXRotation: Double = M_PI_2
@@ -51,5 +54,10 @@ let kLightXPosition: Double = 0.0
 let kLightYPosition: Double = 10.0
 let kLightZPosition: Double = 10.0
 
-let kLiftPieceYDistance: Double     = 0.5
-let kCapturedPieceZDistance: Double = 10.0
+let kCapturedPieceZDistance: Float = 10.0
+
+enum LiftPieceDirection: Float {
+    
+    case Up   = 0.5
+    case Down = 0
+}

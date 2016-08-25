@@ -22,5 +22,9 @@ protocol OutputHandler: InputHandler {
     
     var isGUIViewAvailable: Bool { get }
     
-    func output()
+    func setup()
+    
+    func output(move: Move)
+    
+    func cancelMove()
 }

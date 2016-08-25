@@ -18,6 +18,11 @@ class GUIView: SCNView, InputHandler, OutputHandler {
     var liftedPiece: SCNNode?
     var liftedPieceMovesBoard: SCNNode?
     
+    /**
+     * PIECE SCNNODE ARRAY
+     */
+    var pieceNodeArray = [[SCNNode?]](count: FileIndex.kH - FileIndex.kA + 1, repeatedValue: [SCNNode?](count: RankIndex.k8 - RankIndex.k1 + 1, repeatedValue: nil))
+    
     override func awakeFromNib() {
         
         scene = SCNScene.init()
@@ -51,18 +56,47 @@ class GUIView: SCNView, InputHandler, OutputHandler {
         ambientLightNode.light?.color = UIColor.darkGrayColor()
         scene?.rootNode.addChildNode(ambientLightNode)
         
-//        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(GUIView.handleTap(_:)))
-//        self.gestureRecognizers?.append(tapGesture)
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(GUIView.handleTap(_:)))
+        gestureRecognizers?.append(tapGesture)
         
         scene?.rootNode.addChildNode(getChessBoard())
     }
     
     func input() {
         
-//        outputHandlerDelegate?.didTakeInput(currentPlayer.generateMove()!)
+        /**
+         * DO NOTHING
+         */
     }
     
-    func output() {
+    func output(move: Move) {
+        
+        let fromFile: Int = move.fromSquare.file.rawValue - kStartingFilePosition
+        let fromRank: Int = move.fromSquare.rank.rawValue - kStartingRankPosition
+        
+        let toFile: Int = move.toSquare.file.rawValue - kStartingFilePosition
+        let toRank: Int = move.toSquare.rank.rawValue - kStartingRankPosition
+        
+        if let node: SCNNode = pieceNodeArray[fromRank][fromFile] {
+            
+            if let existingNode: SCNNode = pieceNodeArray[toRank][toFile] {
+                
+                existingNode.removeFromParentNode()
+            }
+            
+            pieceNodeArray[toRank][toFile] = node
+            pieceNodeArray[fromRank][fromFile] = nil
+            
+            animateWithAction({
+                
+                node.position = SCNVector3(toFile + kStartingFilePosition + kPieceXOffset, 0, -(toRank + kStartingRankPosition))
+            })
+        }
+        
+        liftedPiece = nil
+    }
+    
+    func setup() {
         
         for rank in (allPiecesRankEnumeration).reverse() {
             for file in allPiecesFileEnumeration {
@@ -89,6 +123,10 @@ class GUIView: SCNView, InputHandler, OutputHandler {
                         node.scale = SCNVector3(kPieceXScale, kPieceYScale, kPieceZScale)
                         
                         scene?.rootNode.addChildNode(node)
+                        
+                        node.name = "PIECE"
+                        
+                        pieceNodeArray[rank - kStartingRankPosition][file - kStartingFilePosition] = node
                     }
                 }
             }
@@ -122,8 +160,10 @@ class GUIView: SCNView, InputHandler, OutputHandler {
                 let squareNode: SCNNode = SCNNode.init(geometry: geometry)
                 
                 squareNode.position = SCNVector3(-file, 0, -rank)
-
+                
                 boardNode.addChildNode(squareNode)
+                
+                squareNode.name = "SQUARE"
             }
         }
         
@@ -131,7 +171,7 @@ class GUIView: SCNView, InputHandler, OutputHandler {
     }
     
     func handleTap(gestureRecognizer: UIGestureRecognizer) {
-    
+        
         let point: CGPoint = gestureRecognizer.locationInView(self)
         let hitResults: [SCNHitTestResult] = hitTest(point, options: nil)
         
@@ -142,10 +182,51 @@ class GUIView: SCNView, InputHandler, OutputHandler {
             let node: SCNNode = result.node
             
             animateWithAction({
-            
-                //////////////////////////////////////////////////////////////
+                
+                if self.liftedPiece != nil {
+                    
+                    self.moveToSquare(node)
+                    
+                } else if node.name == "PIECE" && self.liftedPiece == nil {
+                    
+                    self.liftPiece(node, direction: LiftPieceDirection.Up)
+                    
+                }
             })
         }
+    }
+    
+    func liftPiece(node: SCNNode, direction: LiftPieceDirection) {
+        
+        liftedPiece = node
+        
+        animateWithAction({
+            
+            node.position.y = direction.rawValue
+        })
+    }
+    
+    func moveToSquare(node: SCNNode) {
+        
+        let move: Move = Move(fromSquare: Square(
+            
+            file: FileIndex(rawValue: Int(liftedPiece!.position.x) - kPieceXOffset)!,
+            
+            rank: RankIndex(rawValue: -Int(liftedPiece!.position.z))!),
+                              
+                              toSquare: Square(
+                                
+                                file: FileIndex(rawValue: Int(node.position.x) - kPieceXOffset)!,
+                                
+                                rank: RankIndex(rawValue: -Int(node.position.z))!))
+        
+        inputHandlerDelegate?.didTakeInput(move)
+    }
+    
+    func cancelMove() {
+        
+        liftPiece(liftedPiece!, direction: LiftPieceDirection.Down)
+        liftedPiece = nil
     }
     
     func animateWithAction(action: () -> ()) {
