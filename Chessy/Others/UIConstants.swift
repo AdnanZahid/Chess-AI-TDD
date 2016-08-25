@@ -8,6 +8,14 @@
 
 import SceneKit
 
+let kPieceXOffset: Int = -11
+
+let kPieceXRotation: Double = M_PI_2
+
+let kPieceXScale: Double = 0.67
+let kPieceYScale: Double = 0.67
+let kPieceZScale: Double = 0.67
+
 let kSquareWidth: CGFloat = 1.0
 let kSquareHeight: CGFloat = 0.2
 let kSquareLength: CGFloat = 1.0

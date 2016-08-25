@@ -84,9 +84,9 @@ class GUIView: SCNView, InputHandler, OutputHandler {
                             node.geometry!.firstMaterial = blackMaterial
                         }
                         
-                        node.position = SCNVector3(-file, 0, -rank)
-                        node.rotation = SCNVector4(1.0, 0, 0, M_PI_2)
-                        node.scale = SCNVector3(0.67, 0.67, 0.67)
+                        node.position = SCNVector3(file + kPieceXOffset, 0, -rank)
+                        node.eulerAngles = SCNVector3(kPieceXRotation, 0.0, 0.0)
+                        node.scale = SCNVector3(kPieceXScale, kPieceYScale, kPieceZScale)
                         
                         scene?.rootNode.addChildNode(node)
                     }
