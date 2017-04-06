@@ -8,7 +8,7 @@
 
 protocol InputHandlerDelegate: class {
     
-    func didTakeInput(move: Move)
+    func didTakeInput(_ move: Move)
 }
 
 protocol InputHandler {
@@ -24,7 +24,7 @@ protocol OutputHandler: InputHandler {
     
     func setup()
     
-    func output(move: Move)
+    func output(_ move: Move)
     
     func cancelMove()
 }

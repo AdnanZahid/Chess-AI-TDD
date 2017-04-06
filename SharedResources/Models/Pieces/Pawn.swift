@@ -31,7 +31,7 @@ class Pawn: Piece {
         moveStrategy = LimitedMoveStrategy(color: color!, directionsList: directionsList)
     }
     
-    override func move(toSquare: Square) -> Bool {
+    override func move(_ toSquare: Square) -> Bool {
         
         var result: Bool = false
         
@@ -58,7 +58,7 @@ class Pawn: Piece {
         return result
     }
     
-    func pawnMoveDirection(number: Int) -> Int {
+    func pawnMoveDirection(_ number: Int) -> Int {
         
         return number * color!.rawValue
     }

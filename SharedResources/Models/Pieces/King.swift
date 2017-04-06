@@ -31,14 +31,14 @@ class King: Piece {
         moveStrategy = LimitedMoveStrategy(color: color!, directionsList: directionsList)
     }
     
-    override func move(toSquare: Square) -> Bool {
+    override func move(_ toSquare: Square) -> Bool {
         
         let result: Bool = King.move(position!, toSquare: toSquare, directionsList: directionsList)
         
         return result
     }
     
-    static func move(position: Square, toSquare: Square, directionsList: [(Int, Int)]) -> Bool {
+    static func move(_ position: Square, toSquare: Square, directionsList: [(Int, Int)]) -> Bool {
         
         var result: Bool = false
         

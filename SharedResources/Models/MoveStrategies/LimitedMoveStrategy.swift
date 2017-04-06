@@ -8,7 +8,7 @@
 
 class LimitedMoveStrategy: MoveStrategy {
     
-    override func generateMove(position: Square, fileRankPair: (Int, Int)) -> [Square] {
+    override func generateMove(_ position: Square, fileRankPair: (Int, Int)) -> [Square] {
         
         var possibleMovesToSquaresList: [Square] = []
         let newPosition: Square = position + fileRankPair

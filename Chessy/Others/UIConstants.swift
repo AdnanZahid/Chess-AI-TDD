@@ -58,6 +58,6 @@ let kCapturedPieceZDistance: Float = 10.0
 
 enum LiftPieceDirection: Float {
     
-    case Up   = 0.5
-    case Down = 0
+    case up   = 0.5
+    case down = 0
 }

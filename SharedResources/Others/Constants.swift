@@ -71,19 +71,19 @@ let piecesConfigurationArray: [[Int]] = [
 /**
  * RANK ENUMERATION for all squares on the board
  */
-let allPiecesRankEnumeration: Range = RankIndex.k1.rawValue ... RankIndex.k8.rawValue
+let allPiecesRankEnumeration = RankIndex.k1.rawValue ... RankIndex.k8.rawValue
 
 /**
  * FILE ENUMERATION for all squares on the board
  */
-let allPiecesFileEnumeration: Range = FileIndex.kA.rawValue ... FileIndex.kH.rawValue
+let allPiecesFileEnumeration = FileIndex.kA.rawValue ... FileIndex.kH.rawValue
 
 /**
  * RANK ENUMERATION for squares occupied by WHITE PIECES
  */
-let whitePiecesRankEnumeration: Range = RankIndex.k1.rawValue ... RankIndex.k2.rawValue
+let whitePiecesRankEnumeration = RankIndex.k1.rawValue ... RankIndex.k2.rawValue
 
 /**
  * RANK ENUMERATION for squares occupied by BLACK PIECES
  */
-let blackPiecesRankEnumeration: Range = RankIndex.k7.rawValue ... RankIndex.k8.rawValue
+let blackPiecesRankEnumeration = RankIndex.k7.rawValue ... RankIndex.k8.rawValue

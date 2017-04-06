@@ -20,7 +20,7 @@ class Player: PieceDelegate {
         piecesList = Board.sharedInstance.setupPieceBoard(color, pieceDelegate: self)
     }
     
-    func movePiece(move: Move, checkCurrentTurn: Bool) -> Bool {
+    func movePiece(_ move: Move, checkCurrentTurn: Bool) -> Bool {
         
         var result: Bool = false
         

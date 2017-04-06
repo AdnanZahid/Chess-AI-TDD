@@ -34,7 +34,7 @@ class Controller: InputHandlerDelegate {
         /**
          * CHOSE whether to RUN CHESS ENGINE on MAIN QUEUE OR A SEPARATE ONE
          */
-        selectQueueAndRun(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), action: { self.runEngine() })
+        selectQueueAndRun(DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default), action: { self.runEngine() })
     }
     
     /**
@@ -77,7 +77,7 @@ class Controller: InputHandlerDelegate {
     /**
      * PlAY HUMAN MOVE
      */
-    func didTakeInput(move: Move) {
+    func didTakeInput(_ move: Move) {
         
         /**
          * TELL GAMELOGIC to MAKE the MOVE if VALID
@@ -87,26 +87,26 @@ class Controller: InputHandlerDelegate {
             /**
              * SHOW OUTPUT on VIEW
              */
-            selectQueueAndRun(dispatch_get_main_queue(), action: { self.outputHandler.output(move) })
+            selectQueueAndRun(DispatchQueue.main, action: { self.outputHandler.output(move) })
             
         } else {
             
             /**
              * CANCEL MOVE on VIEW (PUT PIECE DOWN)
              */
-            selectQueueAndRun(dispatch_get_main_queue(), action: { self.outputHandler.cancelMove() })
+            selectQueueAndRun(DispatchQueue.main, action: { self.outputHandler.cancelMove() })
         }
         
         /**
          * CHOSE whether to RUN CHESS ENGINE on MAIN QUEUE OR A SEPARATE ONE
          */
-        selectQueueAndRun(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), action: { self.runEngine() })
+        selectQueueAndRun(DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default), action: { self.runEngine() })
     }
     
     /**
      * CHOSE whether to RUN CHESS ENGINE on MAIN QUEUE OR A SEPARATE ONE
      */
-    func selectQueueAndRun(queue: dispatch_queue_t, action: () -> ()) {
+    func selectQueueAndRun(_ queue: DispatchQueue, action: @escaping () -> ()) {
         
         if !outputHandler.isGUIViewAvailable {
             
@@ -120,7 +120,7 @@ class Controller: InputHandlerDelegate {
             /**
              * RUN on the following QUEUE
              */
-            dispatch_async(queue) {
+            queue.async {
                 
                 /**
                  * RUN ACTION

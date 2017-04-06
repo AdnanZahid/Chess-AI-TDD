@@ -26,7 +26,7 @@ class ErrorHandler {
     
     var error: Error = Error.None
     
-    func logError(error: Error) {
+    func logError(_ error: Error) {
         
         self.error = error
     }

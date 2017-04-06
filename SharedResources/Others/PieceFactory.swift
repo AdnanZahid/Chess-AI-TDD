@@ -8,7 +8,7 @@
 
 class PieceFactory {
     
-    static func getPiece(value: Int, position: Square, delegate: PieceDelegate?) -> Piece {
+    static func getPiece(_ value: Int, position: Square, delegate: PieceDelegate?) -> Piece {
         
         switch value {
         case kNilValue:

@@ -16,7 +16,7 @@ class Board {
     /**
      * Fill the board with EMPTY pieces (piece type EMPTY)
      */
-    var pieceArray = [[Piece?]](count: kNumberOfSquaresAlongX, repeatedValue: [Piece?](count: kNumberOfSquaresAlongY, repeatedValue: nil))
+    var pieceArray = [[Piece?]](repeating: [Piece?](repeating: nil, count: kNumberOfSquaresAlongY), count: kNumberOfSquaresAlongX)
     
     /**
      * Assign the CURRENT TURN COLOR to WHITE by default - Later it changes according to turns
@@ -50,7 +50,7 @@ class Board {
     /**
      * MOVE PIECE from STARTING SQUARE to ENDING SQUARE
      */
-    func movePiece(move: Move, checkCurrentTurn: Bool) -> Bool {
+    func movePiece(_ move: Move, checkCurrentTurn: Bool) -> Bool {
         
         var result: Bool = false
         
@@ -103,7 +103,7 @@ class Board {
     /**
      * CHECK if given SQUARE is EMPTY
      */
-    func checkIfSquareIsEmpty(square: Square) -> Bool {
+    func checkIfSquareIsEmpty(_ square: Square) -> Bool {
         
         var result: Bool = false
         
@@ -121,7 +121,7 @@ class Board {
     /**
      * CHECK if given SQUARE is not OUT OF BOUNDS
      */
-    func checkIfSquareIsNotNil(square: Square) -> Bool {
+    func checkIfSquareIsNotNil(_ square: Square) -> Bool {
         
         var result: Bool = false
         
@@ -139,7 +139,7 @@ class Board {
     /**
      * CHECK if given SQUARE is EMPTY or occupied by the ENEMY
      */
-    func checkIfEmptyOrEnemyPieceExists(color: Color, square: Square) -> Bool {
+    func checkIfEmptyOrEnemyPieceExists(_ color: Color, square: Square) -> Bool {
         
         var result: Bool = false
         
@@ -157,7 +157,7 @@ class Board {
     /**
      * CHECK for CLEAR PATH for a MOVE
      */
-    func checkForClearPath(move: Move) -> Bool {
+    func checkForClearPath(_ move: Move) -> Bool {
         
         var result: Bool = true
         
@@ -206,7 +206,7 @@ class Board {
     /**
      * GET a PIECE from the given SQUARE
      */
-    func getPieceOnPosition(square: Square) -> Piece? {
+    func getPieceOnPosition(_ square: Square) -> Piece? {
         
         /**
          * Can not GET a piece from out of bounds
@@ -228,7 +228,7 @@ class Board {
     /**
      * PUT a given PIECE on the given SQUARE
      */
-    func putPieceOnPosition(piece: Piece, square: Square, pushToStack: Bool) -> Bool {
+    func putPieceOnPosition(_ piece: Piece, square: Square, pushToStack: Bool) -> Bool {
         
         var result: Bool = false
         
@@ -323,7 +323,7 @@ class Board {
     /**
      * PUT an EMPTY PIECE on the given SQUARE
      */
-    func putEmptyPieceOnPosition(square: Square) -> Bool {
+    func putEmptyPieceOnPosition(_ square: Square) -> Bool {
         
         var result: Bool = false
         
@@ -357,7 +357,7 @@ class Board {
     /**
      * Fill the board with PIECES of the given COLOR
      */
-    func setupPieceBoard(color: Color, pieceDelegate: PieceDelegate) -> [Piece] {
+    func setupPieceBoard(_ color: Color, pieceDelegate: PieceDelegate) -> [Piece] {
         
         /**
          * Set up a LIST of PIECES to be passed to the corresponding PLAYER

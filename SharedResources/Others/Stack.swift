@@ -8,14 +8,14 @@
 
 class Stack {
     
-    private var stackArray: [MoveState] = []
+    fileprivate var stackArray: [MoveState] = []
     
     func clear() {
         
         stackArray.removeAll()
     }
     
-    func push(moveState: MoveState) {
+    func push(_ moveState: MoveState) {
         
         stackArray.append(moveState)
     }

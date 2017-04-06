@@ -8,7 +8,7 @@
 
 extension Array {
     
-    mutating func remove <U: Equatable> (object: U) {
+    mutating func remove <U: Equatable> (_ object: U) {
         
         for index in count - 1 ... 0 {
             
@@ -16,7 +16,7 @@ extension Array {
                 
                 if element == object {
                     
-                    removeAtIndex(index)
+                    self.remove(at: index)
                 }
             }
         }

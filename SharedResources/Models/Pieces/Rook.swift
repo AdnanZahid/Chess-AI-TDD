@@ -26,14 +26,14 @@ class Rook: Piece {
         moveStrategy = UnlimitedMoveStrategy(color: color!, directionsList: directionsList)
     }
     
-    override func move(toSquare: Square) -> Bool {
+    override func move(_ toSquare: Square) -> Bool {
         
         let result: Bool = Rook.move(Move(fromSquare: position!, toSquare: toSquare)) && Board.sharedInstance.checkForClearPath(Move(fromSquare: position!, toSquare: toSquare))
         
         return result
     }
     
-    static func move(move: Move) -> Bool {
+    static func move(_ move: Move) -> Bool {
         
         var result: Bool = false
         

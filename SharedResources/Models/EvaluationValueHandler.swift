@@ -8,7 +8,7 @@
 
 class EvaluationValueHandler {
     
-    static func getEvaluationValue(piecesList: [Piece]) -> Int {
+    static func getEvaluationValue(_ piecesList: [Piece]) -> Int {
     
         var mobility: Int = 0
         var value: Int = 0

@@ -41,7 +41,7 @@ class GameLogic: InputHandler {
         currentPlayer = whitePlayer
     }
     
-    func move(move: Move) -> Bool {
+    func move(_ move: Move) -> Bool {
         
         var result: Bool = false
         

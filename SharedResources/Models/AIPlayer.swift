@@ -21,7 +21,7 @@ class AIPlayer: Player {
         return Move(fromSquare: evaluationMove.fromSquare!, toSquare: evaluationMove.toSquare!)
     }
     
-    func firstAlphaBeta(depth: Int, player: Player, alpha: Int, beta: Int) -> EvaluationMove {
+    func firstAlphaBeta(_ depth: Int, player: Player, alpha: Int, beta: Int) -> EvaluationMove {
         
         var bestMove: EvaluationMove = EvaluationMove(fromSquare: nil, toSquare: nil, evaluationValue: Int.min/2)
         
@@ -64,7 +64,7 @@ class AIPlayer: Player {
         return bestMove
     }
     
-    func alphaBeta(depth: Int, player: Player, alpha: Int, beta: Int) -> Int {
+    func alphaBeta(_ depth: Int, player: Player, alpha: Int, beta: Int) -> Int {
         
         if depth == 0 {
             

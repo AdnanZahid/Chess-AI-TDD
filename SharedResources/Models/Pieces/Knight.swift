@@ -33,7 +33,7 @@ class Knight: Piece {
         moveStrategy = LimitedMoveStrategy(color: color!, directionsList: directionsList)
     }
     
-    override func move(toSquare: Square) -> Bool {
+    override func move(_ toSquare: Square) -> Bool {
         
         let result: Bool = King.move(position!, toSquare: toSquare, directionsList: directionsList)
         

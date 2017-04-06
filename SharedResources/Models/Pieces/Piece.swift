@@ -41,14 +41,14 @@ class Piece {
         }
     }
     
-    func move(toSquare: Square) -> Bool {
+    func move(_ toSquare: Square) -> Bool {
         
         preconditionFailure("This method must be overridden")
         
         return false
     }
     
-    func updatePosition(toSquare: Square, changeHasMoved: Bool) {
+    func updatePosition(_ toSquare: Square, changeHasMoved: Bool) {
         
         position = toSquare
         

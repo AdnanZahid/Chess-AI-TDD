@@ -9,7 +9,7 @@
 extension String {
     
     subscript (index: Int) -> Character {
-        return self[self.startIndex.advancedBy(index)]
+        return self[self.characters.index(self.startIndex, offsetBy: index)]
     }
     
     subscript (index: Int) -> String {
@@ -17,13 +17,13 @@ extension String {
     }
     
     var asciiArray: [Int] {
-        return unicodeScalars.filter{$0.isASCII()}.map{Int($0.value)}
+        return unicodeScalars.filter{$0.isASCII}.map{Int($0.value)}
     }
 }
 
 extension Character {
     
     var asciiValue: Int {
-        return Int((String(self).unicodeScalars.filter{$0.isASCII()}.first?.value)!)
+        return Int((String(self).unicodeScalars.filter{$0.isASCII}.first?.value)!)
     }
 }

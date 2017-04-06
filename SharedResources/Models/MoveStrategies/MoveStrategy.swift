@@ -18,23 +18,23 @@ class MoveStrategy {
         self.directionsList = directionsList
     }
     
-    func getMobility(position: Square) -> Int {
+    func getMobility(_ position: Square) -> Int {
         
         return generateAllMoves(position).count
     }
     
-    func generateAllMoves(position: Square) -> [Square] {
+    func generateAllMoves(_ position: Square) -> [Square] {
         
         var possibleMovesToSquaresList: [Square] = []
         
         for direction in directionsList {
-            possibleMovesToSquaresList.appendContentsOf(generateMove(position, fileRankPair: direction))
+            possibleMovesToSquaresList.append(contentsOf: generateMove(position, fileRankPair: direction))
         }
         
         return possibleMovesToSquaresList
     }
     
-    func generateMove(position: Square, fileRankPair: (Int, Int)) -> [Square] {
+    func generateMove(_ position: Square, fileRankPair: (Int, Int)) -> [Square] {
         
         return []
     }
