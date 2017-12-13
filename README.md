@@ -15,7 +15,7 @@ Here's a screenshot of the bot playing itself:
 
 Please see the following files for more information:
 
-1. [AIPlayer..swift](https://github.com/AdnanZahid/Chess-AI-TDD/blob/master/SharedResources/Models/AIPlayer.swift)
+1. [AIPlayer.swift](https://github.com/AdnanZahid/Chess-AI-TDD/blob/master/SharedResources/Models/AIPlayer.swift)
 2. [EvaluationValueHandler.swift](https://github.com/AdnanZahid/Chess-AI-TDD/blob/master/SharedResources/Models/EvaluationValueHandler.swift)
 
 Graphical programming is done in Apple's SceneKit framework (used for 3D graphics programming).
