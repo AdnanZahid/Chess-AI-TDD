@@ -1,4 +1,4 @@
-# Chess-AI-TDD
+# Chess playing bot (test driven development)
 
 This is a **chess playing bot** written in Swift.
 
