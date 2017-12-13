@@ -11,7 +11,7 @@ Here is a summary of it's working principle:
 
 Here's a screenshot of the bot playing itself:
 
-![Game](https://github.com/AdnanZahid/ReinforcementLearning/blob/master/Screenshot.png)
+![Screenshot](https://github.com/AdnanZahid/Chess-AI-TDD/blob/master/Screenshot.png)
 
 Please see the following files for more information:
 
