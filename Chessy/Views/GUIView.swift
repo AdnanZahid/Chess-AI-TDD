@@ -71,11 +71,11 @@ class GUIView: SCNView, InputHandler, OutputHandler {
     
     func output(_ move: Move) {
         
-        let fromFile: Int = move.fromSquare.file.rawValue - kStartingFilePosition
-        let fromRank: Int = move.fromSquare.rank.rawValue - kStartingRankPosition
+        let fromFile = move.fromSquare.file.rawValue - kStartingFilePosition
+        let fromRank = move.fromSquare.rank.rawValue - kStartingRankPosition
         
-        let toFile: Int = move.toSquare.file.rawValue - kStartingFilePosition
-        let toRank: Int = move.toSquare.rank.rawValue - kStartingRankPosition
+        let toFile = move.toSquare.file.rawValue - kStartingFilePosition
+        let toRank = move.toSquare.rank.rawValue - kStartingRankPosition
         
         if let node: SCNNode = pieceNodeArray[fromRank][fromFile] {
             
@@ -170,7 +170,7 @@ class GUIView: SCNView, InputHandler, OutputHandler {
         return boardNode
     }
     
-    func handleTap(_ gestureRecognizer: UIGestureRecognizer) {
+    @objc func handleTap(_ gestureRecognizer: UIGestureRecognizer) {
         
         let point: CGPoint = gestureRecognizer.location(in: self)
         let hitResults: [SCNHitTestResult] = hitTest(point, options: nil)

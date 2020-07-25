@@ -421,12 +421,12 @@
 		2716D41C1D58E9DA0056C582 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				849A19281D6300B3000BE807 /* MoveStrategies */,
+				2716D42A1D58F2230056C582 /* Pieces */,
 				84351FA11D6CE23100DADE74 /* AIPlayer.swift */,
 				84351FA21D6CE23100DADE74 /* Board.swift */,
 				84351FA31D6CE23100DADE74 /* EvaluationValueHandler.swift */,
 				84351FA41D6CE23100DADE74 /* GameLogic.swift */,
-				849A19281D6300B3000BE807 /* MoveStrategies */,
-				2716D42A1D58F2230056C582 /* Pieces */,
 				84351FA51D6CE23100DADE74 /* Player.swift */,
 				84351FA61D6CE23100DADE74 /* Square.swift */,
 			);
@@ -771,6 +771,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1137,6 +1138,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1174,6 +1176,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1225,7 +1228,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = adnanzahid.scenekit.Chessy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1241,7 +1244,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = adnanzahid.scenekit.Chessy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1258,7 +1261,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = adnanzahid.scenekit.ChessyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chessy.app/Chessy";
 			};
 			name = Debug;
@@ -1274,7 +1277,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = adnanzahid.scenekit.ChessyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chessy.app/Chessy";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1290,7 +1293,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = adnanzahid.scenekit.ChessyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Chessy;
 			};
 			name = Debug;
@@ -1305,7 +1308,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = adnanzahid.scenekit.ChessyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Chessy;
 				VALIDATE_PRODUCT = YES;
 			};

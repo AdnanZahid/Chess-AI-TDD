@@ -10,14 +10,11 @@ class AIPlayer: Player {
     
     override init(color: Color) {
         super.init(color: color)
-        
         isAI = true
     }
     
     override func generateMove() -> Move? {
-        
-        let evaluationMove: EvaluationMove = firstAlphaBeta(kMaxPlies, player: self, alpha: Int.min/2, beta: Int.max/2)
-        
+        let evaluationMove = firstAlphaBeta(kMaxPlies, player: self, alpha: Int.min/2, beta: Int.max/2)
         return Move(fromSquare: evaluationMove.fromSquare!, toSquare: evaluationMove.toSquare!)
     }
     
@@ -35,7 +32,7 @@ class AIPlayer: Player {
                     
                     if player.movePiece(Move(fromSquare: fromSquare, toSquare: toSquare), checkCurrentTurn: false) {
                         
-                        var localAlpha: Int = alpha
+                        var localAlpha = alpha
                         
                         let evaluationMove: EvaluationMove = EvaluationMove(fromSquare: fromSquare, toSquare: toSquare, evaluationValue: -alphaBeta(depth - 1, player: player.opponent!, alpha: -beta, beta: -localAlpha))
                         
@@ -78,7 +75,7 @@ class AIPlayer: Player {
             }
         }
         
-        var bestEvaluationValue: Int = Int.min/2
+        var bestEvaluationValue = Int.min/2
         
         for piece in player.piecesList {
             
@@ -90,9 +87,9 @@ class AIPlayer: Player {
                     
                     if player.movePiece(Move(fromSquare: fromSquare, toSquare: toSquare), checkCurrentTurn: false) {
                         
-                        var localAlpha: Int = alpha
+                        var localAlpha = alpha
                         
-                        let evaluationValue: Int = -alphaBeta(depth - 1, player: player.opponent!, alpha: -beta, beta: -localAlpha)
+                        let evaluationValue = -alphaBeta(depth - 1, player: player.opponent!, alpha: -beta, beta: -localAlpha)
                         
                         
                         Board.sharedInstance.undoMove()

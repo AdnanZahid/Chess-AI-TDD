@@ -7,68 +7,35 @@
 //
 
 class GameLogic: InputHandler {
-    
     weak var inputHandlerDelegate: InputHandlerDelegate?
-    
     let whitePlayer: Player
     let blackPlayer: Player
-    
     var currentPlayer: Player
     
     init(isWhitePlayerAI: Bool, isBlackPlayerAI: Bool) {
-        
-        if isWhitePlayerAI {
-            
-            whitePlayer = AIPlayer(color: Color.white)
-            
-        } else {
-            
-            whitePlayer = Player(color: Color.white)
-        }
-        
-        if isBlackPlayerAI {
-            
-            blackPlayer = AIPlayer(color: Color.black)
-            
-        } else {
-            
-            blackPlayer = Player(color: Color.black)
-        }
-        
+        whitePlayer = isWhitePlayerAI ? AIPlayer(color: Color.white) : Player(color: Color.white)
+        blackPlayer = isBlackPlayerAI ? AIPlayer(color: Color.black) : Player(color: Color.black)
         whitePlayer.opponent = blackPlayer
         blackPlayer.opponent = whitePlayer
-        
         currentPlayer = whitePlayer
     }
     
     func move(_ move: Move) -> Bool {
-        
-        var result: Bool = false
-        
-        if currentPlayer.movePiece(move, checkCurrentTurn: true) {
-            
-            changeTurn()
-            
-            result = true
-        }
-        
-        return result
+        guard currentPlayer.movePiece(move, checkCurrentTurn: true) else { return false }
+        changeTurn()
+        return true
     }
     
     func changeTurn() {
-        
         currentPlayer = currentPlayer.opponent!
-        
         Board.sharedInstance.currentTurnColor = currentPlayer.color
     }
     
     func isAITurn() -> Bool {
-        
         return currentPlayer.isAI
     }
     
     func input() {
-        
         inputHandlerDelegate?.didTakeInput(currentPlayer.generateMove()!)
     }
 }

@@ -8,16 +8,16 @@
 
 import SceneKit
 
-let kStartingFilePosition: Int = 2
-let kStartingRankPosition: Int = 2
+let kStartingFilePosition = 2
+let kStartingRankPosition = 2
 
-let kPieceXOffset: Int = -11
+let kPieceXOffset = -11
 
-let kPieceXRotation: Double = M_PI_2
+let kPieceXRotation = Double.pi/2
 
-let kPieceXScale: Double = 0.67
-let kPieceYScale: Double = 0.67
-let kPieceZScale: Double = 0.67
+let kPieceXScale = 0.67
+let kPieceYScale = 0.67
+let kPieceZScale = 0.67
 
 let kSquareWidth: CGFloat = 1.0
 let kSquareHeight: CGFloat = 0.2
@@ -32,32 +32,31 @@ let kLightSquareAlpha: CGFloat = 1.0
 let kDarkSquareWhite: CGFloat = 0.15
 let kDarkSquareAlpha: CGFloat = 1.0
 
-let kAnimationDuration: CFTimeInterval = 0.5
+let kAnimationDuration = 0.5
 
-let kWhiteCameraXPosition: Double = -5.5
-let kWhiteCameraYPosition: Double = 12.0
-let kWhiteCameraZPosition: Double = 5.0
+let kWhiteCameraXPosition = -5.5
+let kWhiteCameraYPosition = 12.0
+let kWhiteCameraZPosition = 5.0
 
-let kBlackCameraXPosition: Double = 3.5
-let kBlackCameraYPosition: Double = 12.0
-let kBlackCameraZPosition: Double = -7.0
+let kBlackCameraXPosition = 3.5
+let kBlackCameraYPosition = 12.0
+let kBlackCameraZPosition = -7.0
 
-let kWhiteCameraXRotation: Double = 0.0
-let kWhiteCameraYRotation: Double = 0.0
-let kWhiteCameraZRotation: Double = 0.0
+let kWhiteCameraXRotation = 0.0
+let kWhiteCameraYRotation = 0.0
+let kWhiteCameraZRotation = 0.0
 
-let kBlackCameraXRotation: Double = 0.0
-let kBlackCameraYRotation: Double = 0.0
-let kBlackCameraZRotation: Double = M_PI
+let kBlackCameraXRotation = 0.0
+let kBlackCameraYRotation = 0.0
+let kBlackCameraZRotation = Double.pi
 
-let kLightXPosition: Double = 0.0
-let kLightYPosition: Double = 10.0
-let kLightZPosition: Double = 10.0
+let kLightXPosition = 0.0
+let kLightYPosition = 10.0
+let kLightZPosition = 10.0
 
-let kCapturedPieceZDistance: Float = 10.0
+let kCapturedPieceZDistance = 10.0
 
 enum LiftPieceDirection: Float {
-    
     case up   = 0.5
     case down = 0
 }

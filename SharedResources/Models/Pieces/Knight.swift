@@ -10,33 +10,20 @@ class Knight: Piece {
     
     override init(color: Color?, position: Square?, hasMoved: Bool?, delegate: PieceDelegate?) {
         super.init(color: color, position: position, hasMoved: hasMoved, delegate: delegate)
-        
         symbol = kKnightSymbol
-        
-        value = abs(kKnightValue)
-        
-        /**
-         * Knight directions
-         */
+        value = abs(kKnightValue) * color!.rawValue
         directionsList.append(( 1,  2))
         directionsList.append(( 2,  1))
-        
         directionsList.append((-1,  2))
         directionsList.append((-2,  1))
-        
         directionsList.append(( 1, -2))
         directionsList.append(( 2, -1))
-        
         directionsList.append((-1, -2))
         directionsList.append((-2, -1))
-        
         moveStrategy = LimitedMoveStrategy(color: color!, directionsList: directionsList)
     }
     
     override func move(_ toSquare: Square) -> Bool {
-        
-        let result: Bool = King.move(position!, toSquare: toSquare, directionsList: directionsList)
-        
-        return result
+        return King.move(position!, toSquare: toSquare, directionsList: directionsList)
     }
 }

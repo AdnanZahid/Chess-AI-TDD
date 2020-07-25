@@ -10,43 +10,24 @@ class Bishop: Piece {
     
     override init(color: Color?, position: Square?, hasMoved: Bool?, delegate: PieceDelegate?) {
         super.init(color: color, position: position, hasMoved: hasMoved, delegate: delegate)
-        
         symbol = kBishopSymbol
-        
-        value = abs(kBishopValue)
-        
-        /**
-         * Bishop directions
-         */
+        value = abs(kBishopValue) * color!.rawValue
         directionsList.append(( 1,  1))
         directionsList.append(( 1, -1))
         directionsList.append((-1,  1))
         directionsList.append((-1, -1))
-        
         moveStrategy = UnlimitedMoveStrategy(color: color!, directionsList: directionsList)
     }
     
     override func move(_ toSquare: Square) -> Bool {
-        
-        let result: Bool = Bishop.move(Move(fromSquare: position!, toSquare: toSquare)) && Board.sharedInstance.checkForClearPath(Move(fromSquare: position!, toSquare: toSquare))
-        
-        return result
+        return Bishop.move(Move(fromSquare: position!, toSquare: toSquare)) &&
+            Board.sharedInstance.checkForClearPath(Move(fromSquare: position!, toSquare: toSquare))
     }
     
     static func move(_ move: Move) -> Bool {
-        
-        var result: Bool = false
-        
-        if fileOrRankAdvanceBothCheck(Move(fromSquare: move.fromSquare, toSquare: move.toSquare)) {
-            
-            let fileRankPair = getFileAndRankAdvance(Move(fromSquare: move.fromSquare, toSquare: move.toSquare))
-            
-            if abs(fileRankPair.0) == abs(fileRankPair.1) {
-                
-                result = true
-            }
-        }
-        
-        return result
+        guard fileOrRankAdvanceBothCheck(Move(fromSquare: move.fromSquare, toSquare: move.toSquare)) else { return false }
+        let fileRankPair = getFileAndRankAdvance(Move(fromSquare: move.fromSquare, toSquare: move.toSquare))
+        guard abs(fileRankPair.0) == abs(fileRankPair.1) else { return false }
+        return true
     }
 }

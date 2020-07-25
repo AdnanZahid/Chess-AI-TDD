@@ -6,49 +6,49 @@
 //  Copyright © 2016 Chess. All rights reserved.
 //
 
-let kMaxPlies: Int = 2
+let kMaxPlies = 4
 
-var kNumberOfSquaresAlongX: Int = 12
-var kNumberOfSquaresAlongY: Int = 12
+var kNumberOfSquaresAlongX = 12
+var kNumberOfSquaresAlongY = 12
 
-let kAsciiDifferenceForFile: Int = 63
-let kAsciiDifferenceForRank: Int = 47
+let kAsciiDifferenceForFile = 63
+let kAsciiDifferenceForRank = 47
 
-let kNewLineSymbol: String = "\n"
-let kNilSymbol: String     = "X"
-let kEmptySymbol: String   = "-"
-let kPawnSymbol: String    = "P"
-let kKnightSymbol: String  = "N"
-let kBishopSymbol: String  = "B"
-let kRookSymbol: String    = "R"
-let kQueenSymbol: String   = "Q"
-let kKingSymbol: String    = "K"
+let kNewLineSymbol = "\n"
+let kNilSymbol     = "X"
+let kEmptySymbol   = "-"
+let kPawnSymbol    = "P"
+let kKnightSymbol  = "N"
+let kBishopSymbol  = "B"
+let kRookSymbol    = "R"
+let kQueenSymbol   = "Q"
+let kKingSymbol    = "K"
 
-let kNilValue: Int    = -1
-let kEmptyValue: Int  = 0
-let kPawnValue: Int   = 100
-let kKnightValue: Int = 300
-let kBishopValue: Int = 305
-let kRookValue: Int   = 500
-let kQueenValue: Int  = 900
-let kKingValue: Int   = 2000
+let kNilValue    = -1
+let kEmptyValue  = 0
+let kPawnValue   = 100
+let kKnightValue = 300
+let kBishopValue = 305
+let kRookValue   = 500
+let kQueenValue  = 900
+let kKingValue   = 2000
 
 
-let X: Int = kNilValue
-let i: Int = kEmptyValue
-let P: Int = -kPawnValue
-let N: Int = -kKnightValue
-let B: Int = -kBishopValue
-let R: Int = -kRookValue
-let Q: Int = -kQueenValue
-let K: Int = -kKingValue
+let X = kNilValue
+let i = kEmptyValue
+let P = -kPawnValue
+let N = -kKnightValue
+let B = -kBishopValue
+let R = -kRookValue
+let Q = -kQueenValue
+let K = -kKingValue
 
-let p: Int = -P
-let n: Int = -N
-let b: Int = -B
-let r: Int = -R
-let q: Int = -Q
-let k: Int = -K
+let p = -P
+let n = -N
+let b = -B
+let r = -R
+let q = -Q
+let k = -K
 
 let piecesConfigurationArray: [[Int]] = [
     

@@ -10,24 +10,12 @@ class Pawn: Piece {
     
     override init(color: Color?, position: Square?, hasMoved: Bool?, delegate: PieceDelegate?) {
         super.init(color: color, position: position, hasMoved: hasMoved, delegate: delegate)
-        
         symbol = kPawnSymbol
-        
-        value = abs(kPawnValue)
-        
-        /**
-         * Pawn directions
-         *
-         * ---------------
-         *
-         * The method pawnMoveDirection(number) determines the DIRECTION according to COLOR
-         */
+        value = abs(kPawnValue) * color!.rawValue
         directionsList.append((0, pawnMoveDirection(1)))
         directionsList.append((0, pawnMoveDirection(2)))
-        
         directionsList.append((-1, pawnMoveDirection(1)))
         directionsList.append(( 1, pawnMoveDirection(1)))
-        
         moveStrategy = LimitedMoveStrategy(color: color!, directionsList: directionsList)
     }
     

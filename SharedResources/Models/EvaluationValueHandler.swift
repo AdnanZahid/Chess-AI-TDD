@@ -10,14 +10,14 @@ class EvaluationValueHandler {
     
     static func getEvaluationValue(_ piecesList: [Piece]) -> Int {
     
-        var mobility: Int = 0
-        var value: Int = 0
+        var mobility = 0
+        var value = 0
         
         for piece in piecesList {
             
             if piece.captured == false {
                 
-                mobility += (piece.moveStrategy?.getMobility(piece.position!))!
+//                mobility += (piece.moveStrategy?.getMobility(piece.position!))!
                 value += piece.value
             }
         }

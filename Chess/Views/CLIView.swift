@@ -14,9 +14,9 @@ class CLIView: InputHandler, OutputHandler {
     
     func input() {
         
-        var input: String = readLine(stripNewline: true)!
+        var input: String = readLine(strippingNewline: true)!
         
-        input = input.capitalizedString
+        input = input.capitalized
         
         let fromFile: String = input[0]
         let fromRank: String = input[1]
@@ -54,7 +54,7 @@ class CLIView: InputHandler, OutputHandler {
     
     func setup() {
         
-        for rank in (allPiecesRankEnumeration).reverse() {
+        for rank in (allPiecesRankEnumeration).reversed() {
             for file in allPiecesFileEnumeration {
                 
                 if let _ = Board.sharedInstance.pieceArray[rank][file] {
@@ -62,7 +62,7 @@ class CLIView: InputHandler, OutputHandler {
                     var symbol: String = Board.sharedInstance.pieceArray[rank][file]!.symbol
                     
                     if Board.sharedInstance.pieceArray[rank][file]!.color == Color.black {
-                        symbol = symbol.lowercaseString
+                        symbol = symbol.lowercased()
                     }
                     
                     print(symbol, separator: "", terminator: " ")
@@ -84,7 +84,7 @@ class CLIView: InputHandler, OutputHandler {
     /**
      * PRINT THE BOARD - Simple as possible view for command line
      */
-    func output(move: Move) {
+    func output(_ move: Move) {
         
         setup()
     }

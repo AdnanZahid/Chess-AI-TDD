@@ -8,11 +8,11 @@
 
 extension String {
     
-    subscript (index: Int) -> Character {
-        return self[self.characters.index(self.startIndex, offsetBy: index)]
+    subscript(index: Int) -> Character {
+        return self[self.index(self.startIndex, offsetBy: index)]
     }
     
-    subscript (index: Int) -> String {
+    subscript(index: Int) -> String {
         return String(self[index] as Character)
     }
     

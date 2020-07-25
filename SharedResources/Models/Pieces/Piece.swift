@@ -12,7 +12,7 @@ protocol PieceDelegate: class {
 
 class Piece {
     
-    var id: Int = 0
+    var id = 0
     
     var symbol: String = kEmptySymbol
     var value:  Int    = kEmptyValue
