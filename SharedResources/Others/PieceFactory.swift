@@ -8,48 +8,38 @@
 
 class PieceFactory {
     
-    static func getPiece(_ value: Int, position: Square, delegate: PieceDelegate?) -> Piece {
+    static func getPiece(_ value: Int) -> Piece? {
         
         switch value {
-        case kNilValue:
-            return EmptyPiece.sharedInstance
-            
-        //////////////////
-        // WHITE PIECES //
-        //////////////////
             
         case kKingValue:
-            return King(color: Color.white, position: position, hasMoved: false, delegate: delegate)
+            return .whiteKing
         case kQueenValue:
-            return Queen(color: Color.white, position: position, hasMoved: false, delegate: delegate)
+            return .whiteQueen
         case kRookValue:
-            return Rook(color: Color.white, position: position, hasMoved: false, delegate: delegate)
+            return .whiteRook
         case kKnightValue:
-            return Knight(color: Color.white, position: position, hasMoved: false, delegate: delegate)
+            return .whiteKnight
         case kBishopValue:
-            return Bishop(color: Color.white, position: position, hasMoved: false, delegate: delegate)
+            return .whiteBishop
         case kPawnValue:
-            return Pawn(color: Color.white, position: position, hasMoved: false, delegate: delegate)
-            
-        //////////////////
-        // BLACK PIECES //
-        //////////////////
+            return .whitePawn
             
         case -kKingValue:
-            return King(color: Color.black, position: position, hasMoved: false, delegate: delegate)
+            return .blackKing
         case -kQueenValue:
-            return Queen(color: Color.black, position: position, hasMoved: false, delegate: delegate)
+            return .blackQueen
         case -kRookValue:
-            return Rook(color: Color.black, position: position, hasMoved: false, delegate: delegate)
+            return .blackRook
         case -kKnightValue:
-            return Knight(color: Color.black, position: position, hasMoved: false, delegate: delegate)
+            return .blackKnight
         case -kBishopValue:
-            return Bishop(color: Color.black, position: position, hasMoved: false, delegate: delegate)
+            return .blackBishop
         case -kPawnValue:
-            return Pawn(color: Color.black, position: position, hasMoved: false, delegate: delegate)
+            return .blackPawn
             
         default:
-            return EmptyPiece.sharedInstance
+            return nil
         }
     }
 }

@@ -16,17 +16,7 @@
 		84351FDB1D6CE2D600DADE74 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA21D6CE23100DADE74 /* Board.swift */; };
 		84351FDC1D6CE2D600DADE74 /* EvaluationValueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA31D6CE23100DADE74 /* EvaluationValueHandler.swift */; };
 		84351FDD1D6CE2D600DADE74 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA41D6CE23100DADE74 /* GameLogic.swift */; };
-		84351FDE1D6CE2D600DADE74 /* LimitedMoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAD1D6CE24500DADE74 /* LimitedMoveStrategy.swift */; };
-		84351FDF1D6CE2D600DADE74 /* MoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAE1D6CE24500DADE74 /* MoveStrategy.swift */; };
-		84351FE01D6CE2D600DADE74 /* UnlimitedMoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAF1D6CE24500DADE74 /* UnlimitedMoveStrategy.swift */; };
-		84351FE11D6CE2D600DADE74 /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB31D6CE25200DADE74 /* Bishop.swift */; };
-		84351FE21D6CE2D600DADE74 /* EmptyPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB41D6CE25200DADE74 /* EmptyPiece.swift */; };
-		84351FE31D6CE2D600DADE74 /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB51D6CE25200DADE74 /* King.swift */; };
-		84351FE41D6CE2D600DADE74 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB61D6CE25200DADE74 /* Knight.swift */; };
-		84351FE51D6CE2D600DADE74 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB71D6CE25200DADE74 /* Pawn.swift */; };
 		84351FE61D6CE2D600DADE74 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB81D6CE25200DADE74 /* Piece.swift */; };
-		84351FE71D6CE2D600DADE74 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB91D6CE25200DADE74 /* Queen.swift */; };
-		84351FE81D6CE2D600DADE74 /* Rook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FBA1D6CE25200DADE74 /* Rook.swift */; };
 		84351FE91D6CE2D600DADE74 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA51D6CE23100DADE74 /* Player.swift */; };
 		84351FEA1D6CE2D600DADE74 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA61D6CE23100DADE74 /* Square.swift */; };
 		84351FEB1D6CE2D600DADE74 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FCA1D6CE25D00DADE74 /* ArrayExtension.swift */; };
@@ -43,17 +33,7 @@
 		843520101D6CE2D800DADE74 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA21D6CE23100DADE74 /* Board.swift */; };
 		843520111D6CE2D800DADE74 /* EvaluationValueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA31D6CE23100DADE74 /* EvaluationValueHandler.swift */; };
 		843520121D6CE2D800DADE74 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA41D6CE23100DADE74 /* GameLogic.swift */; };
-		843520131D6CE2D800DADE74 /* LimitedMoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAD1D6CE24500DADE74 /* LimitedMoveStrategy.swift */; };
-		843520141D6CE2D800DADE74 /* MoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAE1D6CE24500DADE74 /* MoveStrategy.swift */; };
-		843520151D6CE2D800DADE74 /* UnlimitedMoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAF1D6CE24500DADE74 /* UnlimitedMoveStrategy.swift */; };
-		843520161D6CE2D800DADE74 /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB31D6CE25200DADE74 /* Bishop.swift */; };
-		843520171D6CE2D800DADE74 /* EmptyPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB41D6CE25200DADE74 /* EmptyPiece.swift */; };
-		843520181D6CE2D800DADE74 /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB51D6CE25200DADE74 /* King.swift */; };
-		843520191D6CE2D800DADE74 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB61D6CE25200DADE74 /* Knight.swift */; };
-		8435201A1D6CE2D800DADE74 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB71D6CE25200DADE74 /* Pawn.swift */; };
 		8435201B1D6CE2D800DADE74 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB81D6CE25200DADE74 /* Piece.swift */; };
-		8435201C1D6CE2D800DADE74 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB91D6CE25200DADE74 /* Queen.swift */; };
-		8435201D1D6CE2D800DADE74 /* Rook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FBA1D6CE25200DADE74 /* Rook.swift */; };
 		8435201E1D6CE2D800DADE74 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA51D6CE23100DADE74 /* Player.swift */; };
 		8435201F1D6CE2D800DADE74 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA61D6CE23100DADE74 /* Square.swift */; };
 		843520201D6CE2D800DADE74 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FCA1D6CE25D00DADE74 /* ArrayExtension.swift */; };
@@ -69,17 +49,7 @@
 		8435202A1D6CE2D800DADE74 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA21D6CE23100DADE74 /* Board.swift */; };
 		8435202B1D6CE2D800DADE74 /* EvaluationValueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA31D6CE23100DADE74 /* EvaluationValueHandler.swift */; };
 		8435202C1D6CE2D800DADE74 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA41D6CE23100DADE74 /* GameLogic.swift */; };
-		8435202D1D6CE2D800DADE74 /* LimitedMoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAD1D6CE24500DADE74 /* LimitedMoveStrategy.swift */; };
-		8435202E1D6CE2D800DADE74 /* MoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAE1D6CE24500DADE74 /* MoveStrategy.swift */; };
-		8435202F1D6CE2D800DADE74 /* UnlimitedMoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAF1D6CE24500DADE74 /* UnlimitedMoveStrategy.swift */; };
-		843520301D6CE2D800DADE74 /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB31D6CE25200DADE74 /* Bishop.swift */; };
-		843520311D6CE2D800DADE74 /* EmptyPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB41D6CE25200DADE74 /* EmptyPiece.swift */; };
-		843520321D6CE2D800DADE74 /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB51D6CE25200DADE74 /* King.swift */; };
-		843520331D6CE2D800DADE74 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB61D6CE25200DADE74 /* Knight.swift */; };
-		843520341D6CE2D800DADE74 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB71D6CE25200DADE74 /* Pawn.swift */; };
 		843520351D6CE2D800DADE74 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB81D6CE25200DADE74 /* Piece.swift */; };
-		843520361D6CE2D800DADE74 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB91D6CE25200DADE74 /* Queen.swift */; };
-		843520371D6CE2D800DADE74 /* Rook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FBA1D6CE25200DADE74 /* Rook.swift */; };
 		843520381D6CE2D800DADE74 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA51D6CE23100DADE74 /* Player.swift */; };
 		843520391D6CE2D800DADE74 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA61D6CE23100DADE74 /* Square.swift */; };
 		8435203A1D6CE2D800DADE74 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FCA1D6CE25D00DADE74 /* ArrayExtension.swift */; };
@@ -95,17 +65,7 @@
 		843520441D6CE2D900DADE74 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA21D6CE23100DADE74 /* Board.swift */; };
 		843520451D6CE2D900DADE74 /* EvaluationValueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA31D6CE23100DADE74 /* EvaluationValueHandler.swift */; };
 		843520461D6CE2D900DADE74 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA41D6CE23100DADE74 /* GameLogic.swift */; };
-		843520471D6CE2D900DADE74 /* LimitedMoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAD1D6CE24500DADE74 /* LimitedMoveStrategy.swift */; };
-		843520481D6CE2D900DADE74 /* MoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAE1D6CE24500DADE74 /* MoveStrategy.swift */; };
-		843520491D6CE2D900DADE74 /* UnlimitedMoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAF1D6CE24500DADE74 /* UnlimitedMoveStrategy.swift */; };
-		8435204A1D6CE2D900DADE74 /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB31D6CE25200DADE74 /* Bishop.swift */; };
-		8435204B1D6CE2D900DADE74 /* EmptyPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB41D6CE25200DADE74 /* EmptyPiece.swift */; };
-		8435204C1D6CE2D900DADE74 /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB51D6CE25200DADE74 /* King.swift */; };
-		8435204D1D6CE2D900DADE74 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB61D6CE25200DADE74 /* Knight.swift */; };
-		8435204E1D6CE2D900DADE74 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB71D6CE25200DADE74 /* Pawn.swift */; };
 		8435204F1D6CE2D900DADE74 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB81D6CE25200DADE74 /* Piece.swift */; };
-		843520501D6CE2D900DADE74 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB91D6CE25200DADE74 /* Queen.swift */; };
-		843520511D6CE2D900DADE74 /* Rook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FBA1D6CE25200DADE74 /* Rook.swift */; };
 		843520521D6CE2D900DADE74 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA51D6CE23100DADE74 /* Player.swift */; };
 		843520531D6CE2D900DADE74 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA61D6CE23100DADE74 /* Square.swift */; };
 		843520541D6CE2D900DADE74 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FCA1D6CE25D00DADE74 /* ArrayExtension.swift */; };
@@ -121,17 +81,7 @@
 		8435205E1D6CE2DA00DADE74 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA21D6CE23100DADE74 /* Board.swift */; };
 		8435205F1D6CE2DA00DADE74 /* EvaluationValueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA31D6CE23100DADE74 /* EvaluationValueHandler.swift */; };
 		843520601D6CE2DA00DADE74 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA41D6CE23100DADE74 /* GameLogic.swift */; };
-		843520611D6CE2DA00DADE74 /* LimitedMoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAD1D6CE24500DADE74 /* LimitedMoveStrategy.swift */; };
-		843520621D6CE2DA00DADE74 /* MoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAE1D6CE24500DADE74 /* MoveStrategy.swift */; };
-		843520631D6CE2DA00DADE74 /* UnlimitedMoveStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FAF1D6CE24500DADE74 /* UnlimitedMoveStrategy.swift */; };
-		843520641D6CE2DA00DADE74 /* Bishop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB31D6CE25200DADE74 /* Bishop.swift */; };
-		843520651D6CE2DA00DADE74 /* EmptyPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB41D6CE25200DADE74 /* EmptyPiece.swift */; };
-		843520661D6CE2DA00DADE74 /* King.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB51D6CE25200DADE74 /* King.swift */; };
-		843520671D6CE2DA00DADE74 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB61D6CE25200DADE74 /* Knight.swift */; };
-		843520681D6CE2DA00DADE74 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB71D6CE25200DADE74 /* Pawn.swift */; };
 		843520691D6CE2DA00DADE74 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB81D6CE25200DADE74 /* Piece.swift */; };
-		8435206A1D6CE2DA00DADE74 /* Queen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FB91D6CE25200DADE74 /* Queen.swift */; };
-		8435206B1D6CE2DA00DADE74 /* Rook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FBA1D6CE25200DADE74 /* Rook.swift */; };
 		8435206C1D6CE2DA00DADE74 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA51D6CE23100DADE74 /* Player.swift */; };
 		8435206D1D6CE2DA00DADE74 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FA61D6CE23100DADE74 /* Square.swift */; };
 		8435206E1D6CE2DA00DADE74 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84351FCA1D6CE25D00DADE74 /* ArrayExtension.swift */; };
@@ -263,17 +213,7 @@
 		84351FA41D6CE23100DADE74 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameLogic.swift; path = ../SharedResources/Models/GameLogic.swift; sourceTree = "<group>"; };
 		84351FA51D6CE23100DADE74 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = ../SharedResources/Models/Player.swift; sourceTree = "<group>"; };
 		84351FA61D6CE23100DADE74 /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Square.swift; path = ../SharedResources/Models/Square.swift; sourceTree = "<group>"; };
-		84351FAD1D6CE24500DADE74 /* LimitedMoveStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LimitedMoveStrategy.swift; path = ../SharedResources/Models/MoveStrategies/LimitedMoveStrategy.swift; sourceTree = "<group>"; };
-		84351FAE1D6CE24500DADE74 /* MoveStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoveStrategy.swift; path = ../SharedResources/Models/MoveStrategies/MoveStrategy.swift; sourceTree = "<group>"; };
-		84351FAF1D6CE24500DADE74 /* UnlimitedMoveStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnlimitedMoveStrategy.swift; path = ../SharedResources/Models/MoveStrategies/UnlimitedMoveStrategy.swift; sourceTree = "<group>"; };
-		84351FB31D6CE25200DADE74 /* Bishop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bishop.swift; path = ../SharedResources/Models/Pieces/Bishop.swift; sourceTree = "<group>"; };
-		84351FB41D6CE25200DADE74 /* EmptyPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyPiece.swift; path = ../SharedResources/Models/Pieces/EmptyPiece.swift; sourceTree = "<group>"; };
-		84351FB51D6CE25200DADE74 /* King.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = King.swift; path = ../SharedResources/Models/Pieces/King.swift; sourceTree = "<group>"; };
-		84351FB61D6CE25200DADE74 /* Knight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Knight.swift; path = ../SharedResources/Models/Pieces/Knight.swift; sourceTree = "<group>"; };
-		84351FB71D6CE25200DADE74 /* Pawn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pawn.swift; path = ../SharedResources/Models/Pieces/Pawn.swift; sourceTree = "<group>"; };
 		84351FB81D6CE25200DADE74 /* Piece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Piece.swift; path = ../SharedResources/Models/Pieces/Piece.swift; sourceTree = "<group>"; };
-		84351FB91D6CE25200DADE74 /* Queen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Queen.swift; path = ../SharedResources/Models/Pieces/Queen.swift; sourceTree = "<group>"; };
-		84351FBA1D6CE25200DADE74 /* Rook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rook.swift; path = ../SharedResources/Models/Pieces/Rook.swift; sourceTree = "<group>"; };
 		84351FC31D6CE25D00DADE74 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../SharedResources/Others/Constants.swift; sourceTree = "<group>"; };
 		84351FC41D6CE25D00DADE74 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorHandler.swift; path = ../SharedResources/Others/ErrorHandler.swift; sourceTree = "<group>"; };
 		84351FC51D6CE25D00DADE74 /* OperatorOverloadingUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperatorOverloadingUtility.swift; path = ../SharedResources/Others/OperatorOverloadingUtility.swift; sourceTree = "<group>"; };
@@ -421,7 +361,6 @@
 		2716D41C1D58E9DA0056C582 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				849A19281D6300B3000BE807 /* MoveStrategies */,
 				2716D42A1D58F2230056C582 /* Pieces */,
 				84351FA11D6CE23100DADE74 /* AIPlayer.swift */,
 				84351FA21D6CE23100DADE74 /* Board.swift */,
@@ -454,14 +393,7 @@
 		2716D42A1D58F2230056C582 /* Pieces */ = {
 			isa = PBXGroup;
 			children = (
-				84351FB31D6CE25200DADE74 /* Bishop.swift */,
-				84351FB41D6CE25200DADE74 /* EmptyPiece.swift */,
-				84351FB51D6CE25200DADE74 /* King.swift */,
-				84351FB61D6CE25200DADE74 /* Knight.swift */,
-				84351FB71D6CE25200DADE74 /* Pawn.swift */,
 				84351FB81D6CE25200DADE74 /* Piece.swift */,
-				84351FB91D6CE25200DADE74 /* Queen.swift */,
-				84351FBA1D6CE25200DADE74 /* Rook.swift */,
 			);
 			name = Pieces;
 			sourceTree = "<group>";
@@ -542,16 +474,6 @@
 				845A1CE71D6B1092007E6C45 /* CLIView.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		849A19281D6300B3000BE807 /* MoveStrategies */ = {
-			isa = PBXGroup;
-			children = (
-				84351FAD1D6CE24500DADE74 /* LimitedMoveStrategy.swift */,
-				84351FAE1D6CE24500DADE74 /* MoveStrategy.swift */,
-				84351FAF1D6CE24500DADE74 /* UnlimitedMoveStrategy.swift */,
-			);
-			name = MoveStrategies;
 			sourceTree = "<group>";
 		};
 		84AC15A31D6A130E0084FAD7 /* PiecePossibleMovesTests */ = {
@@ -844,30 +766,20 @@
 				84E44EBB1D6DAC1000FDE572 /* InputOutputHandlers.swift in Sources */,
 				84351FEE1D6CE2D600DADE74 /* OperatorOverloadingUtility.swift in Sources */,
 				84351FF21D6CE2D600DADE74 /* Structures.swift in Sources */,
-				84351FE21D6CE2D600DADE74 /* EmptyPiece.swift in Sources */,
 				84351FEF1D6CE2D600DADE74 /* PieceFactory.swift in Sources */,
 				84351FF11D6CE2D600DADE74 /* StringExtension.swift in Sources */,
 				84351FDA1D6CE2D600DADE74 /* AIPlayer.swift in Sources */,
 				84351FF31D6CE2D600DADE74 /* Utility.swift in Sources */,
-				84351FE01D6CE2D600DADE74 /* UnlimitedMoveStrategy.swift in Sources */,
 				84351FD91D6CE2D600DADE74 /* Controller.swift in Sources */,
-				84351FE11D6CE2D600DADE74 /* Bishop.swift in Sources */,
 				84351FDC1D6CE2D600DADE74 /* EvaluationValueHandler.swift in Sources */,
-				84351FE41D6CE2D600DADE74 /* Knight.swift in Sources */,
-				84351FE71D6CE2D600DADE74 /* Queen.swift in Sources */,
 				84351FED1D6CE2D600DADE74 /* ErrorHandler.swift in Sources */,
 				84351FDB1D6CE2D600DADE74 /* Board.swift in Sources */,
 				84351FF01D6CE2D600DADE74 /* Stack.swift in Sources */,
 				2716D4021D58E8ED0056C582 /* main.swift in Sources */,
 				845A1CE81D6B1092007E6C45 /* CLIView.swift in Sources */,
-				84351FDE1D6CE2D600DADE74 /* LimitedMoveStrategy.swift in Sources */,
-				84351FDF1D6CE2D600DADE74 /* MoveStrategy.swift in Sources */,
 				84351FE61D6CE2D600DADE74 /* Piece.swift in Sources */,
-				84351FE81D6CE2D600DADE74 /* Rook.swift in Sources */,
-				84351FE31D6CE2D600DADE74 /* King.swift in Sources */,
 				84351FE91D6CE2D600DADE74 /* Player.swift in Sources */,
 				84351FEB1D6CE2D600DADE74 /* ArrayExtension.swift in Sources */,
-				84351FE51D6CE2D600DADE74 /* Pawn.swift in Sources */,
 				84351FDD1D6CE2D600DADE74 /* GameLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -885,7 +797,6 @@
 				84DDA5F81D6A3C7800C2AA37 /* BishopBlockMovesTests.swift in Sources */,
 				84DDA5ED1D6A3C7100C2AA37 /* KingAllowMovesTests.swift in Sources */,
 				84DDA6071D6A3C7F00C2AA37 /* PawnPossibleMovesTests.swift in Sources */,
-				843520191D6CE2D800DADE74 /* Knight.swift in Sources */,
 				84DDA6151D6A3FC400C2AA37 /* KnightBoardOperationsTests.swift in Sources */,
 				843520231D6CE2D800DADE74 /* OperatorOverloadingUtility.swift in Sources */,
 				84DDA6171D6A3FC400C2AA37 /* QueenBoardOperationsTests.swift in Sources */,
@@ -894,7 +805,6 @@
 				84DDA5F11D6A3C7100C2AA37 /* RookAllowMovesTests.swift in Sources */,
 				84DDA5FC1D6A3C7800C2AA37 /* QueenBlockMovesTests.swift in Sources */,
 				845978571D6A497700AD67C0 /* KnightCapturesTests.swift in Sources */,
-				8435201C1D6CE2D800DADE74 /* Queen.swift in Sources */,
 				845978591D6A497700AD67C0 /* QueenCapturesTests.swift in Sources */,
 				84DDA6181D6A3FC400C2AA37 /* RookBoardOperationsTests.swift in Sources */,
 				843520101D6CE2D800DADE74 /* Board.swift in Sources */,
@@ -903,17 +813,12 @@
 				845978561D6A497700AD67C0 /* KingCapturesTests.swift in Sources */,
 				845A1CD51D6AC550007E6C45 /* GameLogicTests.swift in Sources */,
 				843520241D6CE2D800DADE74 /* PieceFactory.swift in Sources */,
-				843520141D6CE2D800DADE74 /* MoveStrategy.swift in Sources */,
-				8435201D1D6CE2D800DADE74 /* Rook.swift in Sources */,
-				843520161D6CE2D800DADE74 /* Bishop.swift in Sources */,
 				84DDA6061D6A3C7F00C2AA37 /* KnightPossibleMovesTests.swift in Sources */,
 				843520281D6CE2D800DADE74 /* Utility.swift in Sources */,
-				843520151D6CE2D800DADE74 /* UnlimitedMoveStrategy.swift in Sources */,
 				84DDA6091D6A3C7F00C2AA37 /* RookPossibleMovesTests.swift in Sources */,
 				8435200E1D6CE2D800DADE74 /* Controller.swift in Sources */,
 				84DDA5FD1D6A3C7800C2AA37 /* RookBlockMovesTests.swift in Sources */,
 				845978551D6A497700AD67C0 /* BishopCapturesTests.swift in Sources */,
-				843520181D6CE2D800DADE74 /* King.swift in Sources */,
 				8459785A1D6A497700AD67C0 /* RookCapturesTests.swift in Sources */,
 				84DDA6161D6A3FC400C2AA37 /* PawnBoardOperationsTests.swift in Sources */,
 				845A1CD71D6AC570007E6C45 /* PlayerTests.swift in Sources */,
@@ -923,7 +828,6 @@
 				84DDA5F01D6A3C7100C2AA37 /* QueenAllowMovesTests.swift in Sources */,
 				84DDA5EC1D6A3C7100C2AA37 /* BishopAllowMovesTests.swift in Sources */,
 				84DDA6141D6A3FC400C2AA37 /* KingBoardOperationsTests.swift in Sources */,
-				843520171D6CE2D800DADE74 /* EmptyPiece.swift in Sources */,
 				84DDA6131D6A3FC400C2AA37 /* BishopBoardOperationsTests.swift in Sources */,
 				84DDA5FB1D6A3C7800C2AA37 /* PawnBlockMovesTests.swift in Sources */,
 				84DDA6081D6A3C7F00C2AA37 /* QueenPossibleMovesTests.swift in Sources */,
@@ -931,9 +835,7 @@
 				84DDA6051D6A3C7F00C2AA37 /* KingPossibleMovesTests.swift in Sources */,
 				84E44EC31D6DB54300FDE572 /* CLIView.swift in Sources */,
 				8435201B1D6CE2D800DADE74 /* Piece.swift in Sources */,
-				843520131D6CE2D800DADE74 /* LimitedMoveStrategy.swift in Sources */,
 				8435201F1D6CE2D800DADE74 /* Square.swift in Sources */,
-				8435201A1D6CE2D800DADE74 /* Pawn.swift in Sources */,
 				843520271D6CE2D800DADE74 /* Structures.swift in Sources */,
 				8435201E1D6CE2D800DADE74 /* Player.swift in Sources */,
 				84DDA6041D6A3C7F00C2AA37 /* BishopPossibleMovesTests.swift in Sources */,
@@ -950,32 +852,22 @@
 				8435203B1D6CE2D800DADE74 /* Constants.swift in Sources */,
 				8435203D1D6CE2D800DADE74 /* OperatorOverloadingUtility.swift in Sources */,
 				843520411D6CE2D800DADE74 /* Structures.swift in Sources */,
-				843520311D6CE2D800DADE74 /* EmptyPiece.swift in Sources */,
 				8435203E1D6CE2D800DADE74 /* PieceFactory.swift in Sources */,
 				843520401D6CE2D800DADE74 /* StringExtension.swift in Sources */,
 				843520291D6CE2D800DADE74 /* AIPlayer.swift in Sources */,
 				843520421D6CE2D800DADE74 /* Utility.swift in Sources */,
-				8435202F1D6CE2D800DADE74 /* UnlimitedMoveStrategy.swift in Sources */,
-				843520301D6CE2D800DADE74 /* Bishop.swift in Sources */,
 				8435202B1D6CE2D800DADE74 /* EvaluationValueHandler.swift in Sources */,
-				843520331D6CE2D800DADE74 /* Knight.swift in Sources */,
-				843520361D6CE2D800DADE74 /* Queen.swift in Sources */,
 				8435203C1D6CE2D800DADE74 /* ErrorHandler.swift in Sources */,
 				84E44EBD1D6DAD7C00FDE572 /* Controller.swift in Sources */,
 				8435202A1D6CE2D800DADE74 /* Board.swift in Sources */,
 				84E44E851D6D697900FDE572 /* UIConstants.swift in Sources */,
 				8435203F1D6CE2D800DADE74 /* Stack.swift in Sources */,
-				8435202D1D6CE2D800DADE74 /* LimitedMoveStrategy.swift in Sources */,
-				8435202E1D6CE2D800DADE74 /* MoveStrategy.swift in Sources */,
 				84E44E891D6D698100FDE572 /* GUIViewController.swift in Sources */,
 				84E44E911D6D6A8F00FDE572 /* AppDelegate.swift in Sources */,
 				843520351D6CE2D800DADE74 /* Piece.swift in Sources */,
-				843520371D6CE2D800DADE74 /* Rook.swift in Sources */,
-				843520321D6CE2D800DADE74 /* King.swift in Sources */,
 				843520381D6CE2D800DADE74 /* Player.swift in Sources */,
 				8435203A1D6CE2D800DADE74 /* ArrayExtension.swift in Sources */,
 				84E44EB81D6DAA6700FDE572 /* InputOutputHandlers.swift in Sources */,
-				843520341D6CE2D800DADE74 /* Pawn.swift in Sources */,
 				84E44E7C1D6D690000FDE572 /* GUIView.swift in Sources */,
 				8435202C1D6CE2D800DADE74 /* GameLogic.swift in Sources */,
 			);
@@ -990,34 +882,24 @@
 				843520461D6CE2D900DADE74 /* GameLogic.swift in Sources */,
 				8435205B1D6CE2D900DADE74 /* Structures.swift in Sources */,
 				84E44E7D1D6D690000FDE572 /* GUIView.swift in Sources */,
-				8435204E1D6CE2D900DADE74 /* Pawn.swift in Sources */,
 				8435204F1D6CE2D900DADE74 /* Piece.swift in Sources */,
 				843520581D6CE2D900DADE74 /* PieceFactory.swift in Sources */,
 				84351EE41D6CDFC900DADE74 /* ChessyTests.swift in Sources */,
 				84E44E921D6D6A8F00FDE572 /* AppDelegate.swift in Sources */,
-				843520501D6CE2D900DADE74 /* Queen.swift in Sources */,
-				8435204C1D6CE2D900DADE74 /* King.swift in Sources */,
-				843520491D6CE2D900DADE74 /* UnlimitedMoveStrategy.swift in Sources */,
-				8435204B1D6CE2D900DADE74 /* EmptyPiece.swift in Sources */,
 				843520431D6CE2D900DADE74 /* AIPlayer.swift in Sources */,
 				843520441D6CE2D900DADE74 /* Board.swift in Sources */,
 				843520451D6CE2D900DADE74 /* EvaluationValueHandler.swift in Sources */,
 				843520551D6CE2D900DADE74 /* Constants.swift in Sources */,
-				8435204D1D6CE2D900DADE74 /* Knight.swift in Sources */,
 				84E44E861D6D697900FDE572 /* UIConstants.swift in Sources */,
-				8435204A1D6CE2D900DADE74 /* Bishop.swift in Sources */,
-				843520471D6CE2D900DADE74 /* LimitedMoveStrategy.swift in Sources */,
 				843520591D6CE2D900DADE74 /* Stack.swift in Sources */,
 				843520561D6CE2D900DADE74 /* ErrorHandler.swift in Sources */,
 				84E44EBE1D6DAD7C00FDE572 /* Controller.swift in Sources */,
 				84E44E8A1D6D698100FDE572 /* GUIViewController.swift in Sources */,
 				843520541D6CE2D900DADE74 /* ArrayExtension.swift in Sources */,
-				843520511D6CE2D900DADE74 /* Rook.swift in Sources */,
 				843520571D6CE2D900DADE74 /* OperatorOverloadingUtility.swift in Sources */,
 				843520531D6CE2D900DADE74 /* Square.swift in Sources */,
 				843520521D6CE2D900DADE74 /* Player.swift in Sources */,
 				8435205A1D6CE2D900DADE74 /* StringExtension.swift in Sources */,
-				843520481D6CE2D900DADE74 /* MoveStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1030,34 +912,24 @@
 				843520601D6CE2DA00DADE74 /* GameLogic.swift in Sources */,
 				843520751D6CE2DA00DADE74 /* Structures.swift in Sources */,
 				84E44E7E1D6D690000FDE572 /* GUIView.swift in Sources */,
-				843520681D6CE2DA00DADE74 /* Pawn.swift in Sources */,
 				843520691D6CE2DA00DADE74 /* Piece.swift in Sources */,
 				843520721D6CE2DA00DADE74 /* PieceFactory.swift in Sources */,
 				84351EEF1D6CDFC900DADE74 /* ChessyUITests.swift in Sources */,
 				84E44E931D6D6A8F00FDE572 /* AppDelegate.swift in Sources */,
-				8435206A1D6CE2DA00DADE74 /* Queen.swift in Sources */,
-				843520661D6CE2DA00DADE74 /* King.swift in Sources */,
-				843520631D6CE2DA00DADE74 /* UnlimitedMoveStrategy.swift in Sources */,
-				843520651D6CE2DA00DADE74 /* EmptyPiece.swift in Sources */,
 				8435205D1D6CE2DA00DADE74 /* AIPlayer.swift in Sources */,
 				8435205E1D6CE2DA00DADE74 /* Board.swift in Sources */,
 				8435205F1D6CE2DA00DADE74 /* EvaluationValueHandler.swift in Sources */,
 				8435206F1D6CE2DA00DADE74 /* Constants.swift in Sources */,
-				843520671D6CE2DA00DADE74 /* Knight.swift in Sources */,
 				84E44E871D6D697900FDE572 /* UIConstants.swift in Sources */,
-				843520641D6CE2DA00DADE74 /* Bishop.swift in Sources */,
-				843520611D6CE2DA00DADE74 /* LimitedMoveStrategy.swift in Sources */,
 				843520731D6CE2DA00DADE74 /* Stack.swift in Sources */,
 				843520701D6CE2DA00DADE74 /* ErrorHandler.swift in Sources */,
 				84E44EBF1D6DAD7D00FDE572 /* Controller.swift in Sources */,
 				84E44E8B1D6D698100FDE572 /* GUIViewController.swift in Sources */,
 				8435206E1D6CE2DA00DADE74 /* ArrayExtension.swift in Sources */,
-				8435206B1D6CE2DA00DADE74 /* Rook.swift in Sources */,
 				843520711D6CE2DA00DADE74 /* OperatorOverloadingUtility.swift in Sources */,
 				8435206D1D6CE2DA00DADE74 /* Square.swift in Sources */,
 				8435206C1D6CE2DA00DADE74 /* Player.swift in Sources */,
 				843520741D6CE2DA00DADE74 /* StringExtension.swift in Sources */,
-				843520621D6CE2DA00DADE74 /* MoveStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

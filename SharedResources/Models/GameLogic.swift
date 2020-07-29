@@ -28,7 +28,6 @@ class GameLogic: InputHandler {
     
     func changeTurn() {
         currentPlayer = currentPlayer.opponent!
-        Board.sharedInstance.currentTurnColor = currentPlayer.color
     }
     
     func isAITurn() -> Bool {

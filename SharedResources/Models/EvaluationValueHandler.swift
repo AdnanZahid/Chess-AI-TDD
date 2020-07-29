@@ -15,11 +15,11 @@ class EvaluationValueHandler {
         
         for piece in piecesList {
             
-            if piece.captured == false {
+//            if piece.captured == false {
                 
 //                mobility += (piece.moveStrategy?.getMobility(piece.position!))!
-                value += piece.value
-            }
+//                value += piece.value
+//            }
         }
         
         return mobility + value

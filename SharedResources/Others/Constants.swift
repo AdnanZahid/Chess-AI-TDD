@@ -8,12 +8,6 @@
 
 let kMaxPlies = 4
 
-var kNumberOfSquaresAlongX = 12
-var kNumberOfSquaresAlongY = 12
-
-let kAsciiDifferenceForFile = 63
-let kAsciiDifferenceForRank = 47
-
 let kNewLineSymbol = "\n"
 let kNilSymbol     = "X"
 let kEmptySymbol   = "-"
@@ -52,38 +46,12 @@ let k = -K
 
 let piecesConfigurationArray: [[Int]] = [
     
-    [ X, X,   X, X, X, X, X, X, X, X,   X, X ],
-    [ X, X,   X, X, X, X, X, X, X, X,   X, X ],
-    
-    [ X, X,   r, n, b, q, k, b, n, r,   X, X ],
-    [ X, X,   p, p, p, p, p, p, p, p,   X, X ],
-    [ X, X,   i, i, i, i, i, i, i, i,   X, X ],
-    [ X, X,   i, i, i, i, i, i, i, i,   X, X ],
-    [ X, X,   i, i, i, i, i, i, i, i,   X, X ],
-    [ X, X,   i, i, i, i, i, i, i, i,   X, X ],
-    [ X, X,   P, P, P, P, P, P, P, P,   X, X ],
-    [ X, X,   R, N, B, Q, K, B, N, R,   X, X ],
-    
-    [ X, X,   X, X, X, X, X, X, X, X,   X, X ],
-    [ X, X,   X, X, X, X, X, X, X, X,   X, X ]
+    [r, n, b, q, k, b, n, r],
+    [p, p, p, p, p, p, p, p],
+    [i, i, i, i, i, i, i, i],
+    [i, i, i, i, i, i, i, i],
+    [i, i, i, i, i, i, i, i],
+    [i, i, i, i, i, i, i, i],
+    [P, P, P, P, P, P, P, P],
+    [R, N, B, Q, K, B, N, R]
 ]
-
-/**
- * RANK ENUMERATION for all squares on the board
- */
-let allPiecesRankEnumeration = RankIndex.k1.rawValue ... RankIndex.k8.rawValue
-
-/**
- * FILE ENUMERATION for all squares on the board
- */
-let allPiecesFileEnumeration = FileIndex.kA.rawValue ... FileIndex.kH.rawValue
-
-/**
- * RANK ENUMERATION for squares occupied by WHITE PIECES
- */
-let whitePiecesRankEnumeration = RankIndex.k1.rawValue ... RankIndex.k2.rawValue
-
-/**
- * RANK ENUMERATION for squares occupied by BLACK PIECES
- */
-let blackPiecesRankEnumeration = RankIndex.k7.rawValue ... RankIndex.k8.rawValue

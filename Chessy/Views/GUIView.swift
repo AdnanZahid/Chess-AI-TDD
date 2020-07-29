@@ -98,39 +98,39 @@ class GUIView: SCNView, InputHandler, OutputHandler {
     
     func setup() {
         
-        for rank in (allPiecesRankEnumeration).reversed() {
-            for file in allPiecesFileEnumeration {
-                
-                if let _ = Board.sharedInstance.pieceArray[rank][file] {
-                    
-                    let piece: Piece = Board.sharedInstance.pieceArray[rank][file]!
-                    
-                    if piece != EmptyPiece.sharedInstance {
-                        
-                        let pieces: SCNScene = SCNScene.init(named: "art.scnassets/ChessPieces.dae")!
-                        
-                        let node: SCNNode = pieces.rootNode.childNode(withName: piece.symbol, recursively: true)!
-                        
-                        if piece.color == Color.black {
-                            
-                            let blackMaterial: SCNMaterial = node.geometry!.firstMaterial!
-                            blackMaterial.diffuse.contents = UIColor.init(white:kDarkSquareWhite, alpha:kDarkSquareAlpha)
-                            node.geometry!.firstMaterial = blackMaterial
-                        }
-                        
-                        node.position = SCNVector3(file + kPieceXOffset, 0, -rank)
-                        node.eulerAngles = SCNVector3(kPieceXRotation, 0.0, 0.0)
-                        node.scale = SCNVector3(kPieceXScale, kPieceYScale, kPieceZScale)
-                        
-                        scene?.rootNode.addChildNode(node)
-                        
-                        node.name = "PIECE"
-                        
-                        pieceNodeArray[rank - kStartingRankPosition][file - kStartingFilePosition] = node
-                    }
-                }
-            }
-        }
+//        for rank in (allPiecesRankEnumeration).reversed() {
+//            for file in allPiecesFileEnumeration {
+//
+//                if let _ = Board.sharedInstance.pieceArray[rank][file] {
+//
+//                    let piece: Piece = Board.sharedInstance.pieceArray[rank][file]!
+//
+//                    if piece != EmptyPiece.sharedInstance {
+//
+//                        let pieces: SCNScene = SCNScene.init(named: "art.scnassets/ChessPieces.dae")!
+//
+//                        let node: SCNNode = pieces.rootNode.childNode(withName: piece.symbol, recursively: true)!
+//
+//                        if piece.color == Color.black {
+//
+//                            let blackMaterial: SCNMaterial = node.geometry!.firstMaterial!
+//                            blackMaterial.diffuse.contents = UIColor.init(white:kDarkSquareWhite, alpha:kDarkSquareAlpha)
+//                            node.geometry!.firstMaterial = blackMaterial
+//                        }
+//
+//                        node.position = SCNVector3(file + kPieceXOffset, 0, -rank)
+//                        node.eulerAngles = SCNVector3(kPieceXRotation, 0.0, 0.0)
+//                        node.scale = SCNVector3(kPieceXScale, kPieceYScale, kPieceZScale)
+//
+//                        scene?.rootNode.addChildNode(node)
+//
+//                        node.name = "PIECE"
+//
+//                        pieceNodeArray[rank - kStartingRankPosition][file - kStartingFilePosition] = node
+//                    }
+//                }
+//            }
+//        }
     }
     
     func getChessBoard() -> SCNNode {
@@ -151,21 +151,21 @@ class GUIView: SCNView, InputHandler, OutputHandler {
         let boardNode: SCNNode = SCNNode.init()
         boardNode.position = SCNVector3Zero
         
-        for rank in (allPiecesRankEnumeration).reversed() {
-            for file in allPiecesFileEnumeration {
-                
-                let isBlack: Bool = (rank + file) % 2 != 0
-                let geometry: SCNGeometry = isBlack ? darkSquare : lightSquare
-                
-                let squareNode: SCNNode = SCNNode.init(geometry: geometry)
-                
-                squareNode.position = SCNVector3(-file, 0, -rank)
-                
-                boardNode.addChildNode(squareNode)
-                
-                squareNode.name = "SQUARE"
-            }
-        }
+//        for rank in (allPiecesRankEnumeration).reversed() {
+//            for file in allPiecesFileEnumeration {
+//                
+//                let isBlack: Bool = (rank + file) % 2 != 0
+//                let geometry: SCNGeometry = isBlack ? darkSquare : lightSquare
+//                
+//                let squareNode: SCNNode = SCNNode.init(geometry: geometry)
+//                
+//                squareNode.position = SCNVector3(-file, 0, -rank)
+//                
+//                boardNode.addChildNode(squareNode)
+//                
+//                squareNode.name = "SQUARE"
+//            }
+//        }
         
         return boardNode
     }
