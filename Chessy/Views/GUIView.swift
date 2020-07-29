@@ -170,7 +170,7 @@ class GUIView: SCNView, InputHandler, OutputHandler {
         return boardNode
     }
     
-    func handleTap(_ gestureRecognizer: UIGestureRecognizer) {
+    @objc func handleTap(_ gestureRecognizer: UIGestureRecognizer) {
         
         let point: CGPoint = gestureRecognizer.location(in: self)
         let hitResults: [SCNHitTestResult] = hitTest(point, options: nil)

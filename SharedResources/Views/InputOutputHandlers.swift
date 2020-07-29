@@ -13,7 +13,7 @@ protocol InputHandlerDelegate: class {
 
 protocol InputHandler {
     
-    weak var inputHandlerDelegate: InputHandlerDelegate? { get set }
+    var inputHandlerDelegate: InputHandlerDelegate? { get set }
     
     func input()
 }
